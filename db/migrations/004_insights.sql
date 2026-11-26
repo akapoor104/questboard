@@ -250,9 +250,11 @@ declare t jsonb := coalesce(p_data->'tables', '{}'::jsonb); v_cfg jsonb; v_count
 begin
   if p_data is null or (p_data->>'version')::int is distinct from 1 then perform qb.fail('bad_input'); end if;
   if p_replace then
-    delete from qb.reviews; delete from qb.parent_notes; delete from qb.word_uses; delete from qb.closeouts;
-    delete from qb.day_marks; delete from qb.cards; delete from qb.goals; delete from qb.library_items;
-    delete from qb.categories; delete from qb.words; delete from qb.encouragements;
+    -- Supabase's safeupdate refuses an UPDATE or DELETE without WHERE.
+    delete from qb.reviews where true; delete from qb.parent_notes where true; delete from qb.word_uses where true;
+    delete from qb.closeouts where true; delete from qb.day_marks where true; delete from qb.cards where true;
+    delete from qb.goals where true; delete from qb.library_items where true; delete from qb.categories where true;
+    delete from qb.words where true; delete from qb.encouragements where true;
   end if;
   v_cfg := t->'app_config'->0;
   if v_cfg is not null then
@@ -264,7 +266,8 @@ begin
       unlock_minutes = coalesce((v_cfg->>'unlock_minutes')::int, unlock_minutes),
       catchup_alert_threshold = coalesce((v_cfg->>'catchup_alert_threshold')::int, catchup_alert_threshold),
       structured_weekly_max_min = coalesce((v_cfg->>'structured_weekly_max_min')::int, structured_weekly_max_min),
-      updated_at = qb.now();
+      updated_at = qb.now()
+    where id;
   end if;
   -- Restore or migration: the children in the file replace any others (their devices go with them).
   if p_replace and jsonb_array_length(coalesce(t->'children', '[]'::jsonb)) > 0 then
@@ -451,7 +454,7 @@ begin
   end if;
   select coalesce(array_agg(distinct lower(trim(e))), '{}') into v_emails from unnest(p_parent_emails) e where trim(e) <> '';
   if cardinality(v_emails) = 0 then raise exception 'Give at least one parent e-mail address.'; end if;
-  update qb.app_config set family_name = trim(p_family_name), timezone = p_timezone, parent_emails = v_emails, updated_at = qb.now();
+  update qb.app_config set family_name = trim(p_family_name), timezone = p_timezone, parent_emails = v_emails, updated_at = qb.now() where id;
   if not exists (select 1 from qb.children) then
     insert into qb.children (name) values (trim(p_child_name));
   end if;

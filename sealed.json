@@ -2,9 +2,9 @@
   "note": "SHA-256 of the sealed files. Written by `node scripts/check.mjs --reseal`. Do not edit by hand.",
   "files": {
     "db/migrations/001_schema.sql": "f15080a21ee5d4adcbf003ffbc297bd79b36b1d91197960cb9fcf431750f6104",
-    "db/migrations/002_core.sql": "9f7803a76275284acdc30bc17cde9e0d9e8e910a6d2fbaf5ad51976a6f3cc908",
+    "db/migrations/002_core.sql": "77d77a5de8990595c51e877abd1ca5a70e2e4c1d5d9ef07db410e757874e1f88",
     "db/migrations/003_board.sql": "627fba21cc1a96dfbdf79d851b72f9d732751293a507a20969146b7cd5dfd568",
-    "db/migrations/004_insights.sql": "3485356ebd2802a36f03133d9030ef0a12ec8c2ff399d356aade935475fc081e",
+    "db/migrations/004_insights.sql": "61c24ff447415771917c63111872c7ed166ecd09e8c44e97c951620f60e46597",
     "db/migrations/005_grants.sql": "ebbf589faa21517a1c40c3bc76a4a518eb47857478941cf82e0d2eeff948b568",
     "db/test/supabase_stubs.sql": "aa49c8d42979423ef369c9b8906781257337dec3177945b8d2fd36a5805fb9ad",
     "db/test/test_helpers.sql": "2ce572cafa1ef079c34e084e83359a4dbad3e6fe5d5d2807fd29e48c44ede3f3",

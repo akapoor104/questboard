@@ -387,7 +387,8 @@ begin
       catchup_alert_threshold = coalesce((p_patch->>'catchup_alert_threshold')::int, catchup_alert_threshold),
       structured_weekly_max_min = coalesce((p_patch->>'structured_weekly_max_min')::int, structured_weekly_max_min),
       parent_emails = coalesce(v_emails, parent_emails),
-      updated_at = qb.now();
+      updated_at = qb.now()
+    where id;                                 -- Supabase's safeupdate refuses an UPDATE or DELETE without WHERE.
     if exists (select 1 from qb.app_config where day_start_min >= day_end_min) then
       raise check_violation;
     end if;
@@ -424,6 +425,6 @@ language plpgsql security definer set search_path = qb, public, pg_temp as $$
 declare v_token text := qb.random_hex();
 begin
   perform qb.require_parent();
-  update qb.app_config set automation_token_hash = encode(sha256(convert_to(v_token, 'UTF8')), 'hex'), updated_at = qb.now();
+  update qb.app_config set automation_token_hash = encode(sha256(convert_to(v_token, 'UTF8')), 'hex'), updated_at = qb.now() where id;
   return jsonb_build_object('token', v_token);
 end $$;

@@ -45,4 +45,11 @@ What I think is needed (one of):
    safety setting; tables have RLS with no policies, so the API cannot reach them directly anyway.
 Sealed file involved? yes: db/migrations/002_core.sql and 004_insights.sql. The screen cannot
 adapt: the refusal happens inside the server function, before anything returns.
-Answer:
+Answer: 2026-11-26, a parent chose option 1. `where id` added to the `app_config` updates in
+`update_settings`, `rotate_automation_token`, `qb.load` and `admin_setup`; `where true` added to
+the 11 deletes in `qb.load` (no change in behaviour: `app_config` has exactly one row, `id = true`).
+The parent copied the files in and ran `--reseal` (only those two hashes changed). `npm run
+check:e2e` passes; `npm run test:pg` was not run (no local PostgreSQL). The live project gets the
+same four functions from a SQL Editor paste (`create or replace`, which keeps their grants), then
+`005_grants.sql` again as a check. Still to confirm on the real project: New key, saving family
+settings, and Restore from a backup.
