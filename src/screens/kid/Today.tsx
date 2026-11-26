@@ -10,12 +10,14 @@ import { useToast } from '../../components/Toast.tsx';
 import type { CardAction } from '../../lib/cardActions.ts';
 import { addDays, formatLongDate, monday } from '../../lib/dates.ts';
 import { openCount } from '../../lib/today.ts';
+import { CloseOutDialog } from './today/CloseOutDialog.tsx';
 import { CloseOutPanel } from './today/CloseOutPanel.tsx';
 import { DayTimeline } from './today/DayTimeline.tsx';
 import { Reminders } from './today/Reminders.tsx';
 import { StackColumn } from './today/StackColumn.tsx';
 import { TimeBar } from './today/TimeBar.tsx';
 import { TrayColumn } from './today/TrayColumn.tsx';
+import { UnconfirmedSheet } from './today/UnconfirmedSheet.tsx';
 import { WordPanel } from './today/WordPanel.tsx';
 import './Today.css';
 
@@ -41,6 +43,8 @@ export function Today() {
   const today = useTodayData();
   const cats = useCategories();
   const [open, setOpen] = useState<{ card: Card; start?: CardAction } | null>(null);
+  /** The other dialogs Today can show (one at a time, never with the card sheet). */
+  const [dialog, setDialog] = useState<'closeout' | 'unconfirmed' | null>(null);
 
   const reload = async () => {
     await Promise.all([board.reload(), today.reload()]);
@@ -71,6 +75,7 @@ export function Today() {
   const t = today.data;
   const todayCards = b.cards.filter((c) => c.date === b.today);
   const openCard = (card: Card, start?: CardAction) => setOpen({ card, start });
+  const closeout = b.closeouts.find((c) => c.date === b.today) ?? null;
   const toToday = (card: Card) => {
     void quick.run(() => api.placeCard(card.id, { place: 'day', date: b.today }))
       .then((r) => { if (r) toast.show('Moved to today.'); });
@@ -100,8 +105,13 @@ export function Today() {
           )}
           <TimeBar cards={todayCards} cats={cats} />
         </div>
-        {t.word && <div className="today-word"><WordPanel word={t.word} /></div>}
-        <div className="today-alerts"><Reminders alerts={t.alerts} board={b} /></div>
+        {t.word && <div className="today-word"><WordPanel word={t.word} api={api} childId={child.id} reload={today.reload} /></div>}
+        <div className="today-alerts">
+          <Reminders
+            alerts={t.alerts} board={b} cats={cats} timeZone={me.timezone}
+            onSortOut={() => setDialog('unconfirmed')} onGiveDay={(card) => openCard(card, 'give_time')}
+          />
+        </div>
         <div className="today-stack">
           <StackColumn
             pool={b.pool} week={week} cats={cats} timeZone={me.timezone} onOpen={openCard} onToToday={toToday} busy={quick.busy}
@@ -115,13 +125,22 @@ export function Today() {
         </div>
         <div className="today-side">
           <TrayColumn tray={b.tray} cards={b.cards} cats={cats} timeZone={me.timezone} onOpen={openCard} />
-          <CloseOutPanel open={openCount(b.cards, b.today)} closed={b.closeouts.some((c) => c.date === b.today)} />
+          <CloseOutPanel open={openCount(b.cards, b.today)} closed={closeout !== null} onOpen={() => setDialog('closeout')} />
         </div>
       </div>
       {open && sheetCard && (
         <CardSheet
           key={open.card.id + (open.start ?? '')} card={sheetCard} board={b} role="kid" api={api} reload={reload}
           onClose={() => setOpen(null)} cats={cats} settings={me} timeZone={me.timezone} start={open.start}
+        />
+      )}
+      {dialog === 'closeout' && (
+        <CloseOutDialog api={api} childId={child.id} closeout={closeout} reload={reload} onClose={() => setDialog(null)} />
+      )}
+      {dialog === 'unconfirmed' && (
+        <UnconfirmedSheet
+          board={b} api={api} role="kid" reload={reload} cats={cats} settings={me} timeZone={me.timezone}
+          onClose={() => setDialog(null)}
         />
       )}
     </main>

@@ -1,0 +1,17 @@
+/* CloseOutDialog: "Close out today". */
+.closeoutdialog-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.closeoutdialog-label { font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; }
+.closeoutdialog-label .muted { font-weight: 400; }
+.closeoutdialog-moods { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-2); }
+.closeoutdialog-mood {
+  min-height: 52px; padding: 0 var(--space-1); border-radius: var(--radius-m);
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.closeoutdialog-mood[aria-pressed='true'] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.closeoutdialog-input {
+  min-height: var(--tap); padding: 0 var(--space-3); font: inherit; font-size: var(--text-l); color: var(--ink);
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface);
+}
+.closeoutdialog-error { margin: 0; font-weight: 600; }
+.closeoutdialog-buttons { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-3); padding-top: var(--space-2); }

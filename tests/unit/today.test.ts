@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import type { Card } from '../../src/api/types.ts';
 import {
-  campfireText, cardCount, cardMeta, closeOutText, dueSoonText, hourLabel, hourRows, openCount, pctText, splitPool,
+  campfireText, cardCount, cardMeta, closedToastText, closeOutText, dueSoonText, hourLabel, hourRows, openCount, pctText, splitPool,
   stackGroups, timedBox, trayOrigin, trayOriginText, unconfirmedText,
 } from '../../src/lib/today.ts';
 
@@ -122,4 +122,6 @@ test('reminder and panel sentences', () => {
   assert.equal(closeOutText(7), '7 cards still need a percent. When every card has one, close the day to keep the campfire burning.');
   assert.equal(closeOutText(1), '1 card still needs a percent. When every card has one, close the day to keep the campfire burning.');
   assert.equal(closeOutText(0), 'Every card has a percent. Close the day to keep the campfire burning.');
+  assert.equal(closedToastText(3), 'Day closed. Campfire: 3 days.');
+  assert.equal(closedToastText(1), 'Day closed. Campfire: 1 day.');
 });

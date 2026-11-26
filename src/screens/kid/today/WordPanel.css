@@ -12,3 +12,18 @@
 .word-pos { color: var(--c-blue-tint2); font-style: italic; }
 .word-def { font-size: 15px; }
 .word-example { color: var(--c-blue-tint2); }
+.word-used {
+  margin-top: 6px; align-self: flex-start; display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: var(--tap); padding: 0 var(--space-4); border-radius: var(--radius-m);
+  border: 1px solid var(--c-blue-tint2); background: transparent; color: var(--on-ink);
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.word-used[aria-pressed='true'] { background: var(--on-ink); color: var(--ink); border-color: var(--on-ink); }
+.word-used:disabled { cursor: default; }
+
+/* Dark theme: --ink turns light, so the panel would become a white box. Keep it a dark inset. */
+:root[data-theme='dark'] .word { background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); }
+:root[data-theme='dark'] .word-label, :root[data-theme='dark'] .word-pos,
+:root[data-theme='dark'] .word-example { color: var(--c-blue-deep); }
+:root[data-theme='dark'] .word-used { color: var(--ink); border-color: var(--c-blue-deep); }
+:root[data-theme='dark'] .word-used[aria-pressed='true'] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }

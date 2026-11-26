@@ -60,3 +60,20 @@ export async function openParent(page: Page, path = '/parent'): Promise<void> {
 export function card(page: Page, region: string, title: string) {
   return page.getByRole('region', { name: region }).getByTestId('card').filter({ hasText: title });
 }
+
+/** Says how a card on Today went. */
+export async function resolveOnToday(page: Page, title: string, pct: '0%' | '25%' | '50%' | '75%' | '100%'): Promise<void> {
+  await card(page, 'Today', title).getByRole('button', { name: title }).first().click();
+  await page.getByRole('dialog').getByRole('button', { name: 'How did it go?' }).click();
+  const dialog = page.getByRole('dialog', { name: 'How did it go?' });
+  await dialog.getByRole('button', { name: pct, exact: true }).click();
+  await dialog.getByRole('button', { name: 'Save' }).click();
+  await expect(dialog).toHaveCount(0);
+  await expect(card(page, 'Today', title).first()).toHaveAttribute('data-status', 'resolved');
+}
+
+/** Moves the frozen clock to the same time on the next day and reloads. The board is locked again by then. */
+export async function goToNextDay(page: Page): Promise<void> {
+  await page.clock.setFixedTime(new Date('2026-12-22T18:06:00Z'));
+  await page.reload();
+}

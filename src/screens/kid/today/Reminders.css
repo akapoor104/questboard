@@ -6,3 +6,5 @@
 }
 .reminders-text { font-weight: 600; flex: 1 1 240px; }
 .reminders-btn { background: var(--c-yellow-deep); border-color: var(--c-yellow-deep); color: var(--surface); }
+.reminders-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.reminders-done { margin: 0; font-size: var(--text-l); font-weight: 600; }

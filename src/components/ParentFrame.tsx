@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSession } from '../app/session.tsx';
 import { Icon } from './Icon.tsx';
@@ -7,6 +7,10 @@ import './ParentFrame.css';
 /** The parent side: one centered column and the tab bar at the bottom (a layout piece). */
 export function ParentFrame({ children }: { children: ReactNode }) {
   const { conn } = useSession();
+  // Parent screens are always light, whatever his board uses.
+  useEffect(() => {
+    document.documentElement.dataset.theme = 'light';
+  }, []);
   return (
     <div className="parentframe">
       {conn.mode === 'demo' && (

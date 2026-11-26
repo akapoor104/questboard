@@ -1,0 +1,22 @@
+/* ProfileSheet: "My profile". */
+.profile-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.profile-label { font-family: var(--font-ui); font-size: var(--text-l); }
+.profile-avatars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2); }
+.profile-avatar {
+  min-height: 56px; border-radius: var(--radius-m); border: 2px solid transparent;
+  background: var(--cat-tint); color: var(--cat-deep);
+  display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.profile-avatar[aria-pressed='true'] { border-color: var(--ink); }
+.profile-themes { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.profile-theme {
+  min-height: var(--tap); border-radius: var(--radius-m); border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; cursor: pointer;
+}
+.profile-theme[aria-pressed='true'] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.profile-avatar:disabled, .profile-theme:disabled { cursor: default; }
+.profile-error { margin: 0; font-weight: 600; }
+.profile-parent {
+  align-self: flex-start; display: inline-flex; align-items: center; min-height: var(--tap);
+  color: var(--ink-2); font-weight: 600;
+}

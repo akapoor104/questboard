@@ -28,3 +28,6 @@
     padding-bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
   }
 }
+
+/* Dark theme: --ink is light there, so dim with the ground color instead. */
+:root[data-theme='dark'] .sheet-backdrop { background: color-mix(in srgb, var(--ground) 75%, transparent); }

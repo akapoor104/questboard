@@ -132,6 +132,11 @@ export function dueSoonText(count: number, cards: Card[]): string {
   return n === 1 ? '1 must-do is due soon and not on a day yet.' : `${n} must-dos are due soon and not on a day yet.`;
 }
 
+/** The toast after closing a day; `streak` is getToday().streak.current. */
+export function closedToastText(streak: number): string {
+  return `Day closed. Campfire: ${streak} ${streak === 1 ? 'day' : 'days'}.`;
+}
+
 /** The Close out panel's sentence. */
 export function closeOutText(open: number): string {
   if (open === 0) return 'Every card has a percent. Close the day to keep the campfire burning.';
