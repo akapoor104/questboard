@@ -1,0 +1,8 @@
+.reminders { display: flex; flex-direction: column; gap: var(--space-2); }
+.reminders-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4); border-radius: 14px;
+  background: var(--c-yellow-tint); color: var(--c-yellow-deep);
+}
+.reminders-text { font-weight: 600; flex: 1 1 240px; }
+.reminders-btn { background: var(--c-yellow-deep); border-color: var(--c-yellow-deep); color: var(--surface); }

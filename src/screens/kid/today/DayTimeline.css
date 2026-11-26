@@ -1,0 +1,33 @@
+.dayline-any { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-3) 14px; }
+.dayline-anylist {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-2);
+}
+
+.dayline-box { padding: 14px 14px 14px var(--space-2); }
+.dayline-grid { position: relative; }
+
+/* The hour scale and the now line sit behind the cards. */
+.dayline-scale { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.dayline-hour { position: absolute; left: 0; right: 0; border-top: 1px solid var(--line-2); }
+.dayline-hourlabel {
+  position: absolute; left: 0; width: 56px; padding-top: 3px;
+  text-align: right; font-size: var(--text-xs); color: var(--ink-2);
+}
+.dayline-now { position: absolute; left: 0; right: 0; height: 0; border-top: 2px solid var(--ink); }
+.dayline-nowlabel {
+  position: absolute; left: 0; width: 56px; transform: translateY(-50%); margin-top: -1px;
+  text-align: right; font-size: 11px; font-weight: 700; color: var(--ink);
+  background: var(--surface); padding-right: 2px;
+}
+
+.dayline-lane { position: absolute; top: 0; bottom: 0; left: 64px; right: 0; margin: 0; padding: 0; list-style: none; z-index: 1; }
+.dayline-slot { position: absolute; padding: 1px 2px; }
+
+@media (max-width: 699px) {
+  /* Taller slots on a phone, so a 30-minute card has room for its title and its time. */
+  .dayline-grid { --slot: 24px; }
+  .dayline-hourlabel, .dayline-nowlabel { width: 44px; }
+  .dayline-lane { left: 50px; }
+  .dayline-anylist { grid-template-columns: minmax(0, 1fr); }
+}

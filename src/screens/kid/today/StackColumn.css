@@ -1,0 +1,6 @@
+.stack-add {
+  display: flex; align-items: center; justify-content: center; gap: 6px; min-height: var(--tap);
+  border-radius: var(--radius-m); border: 1px dashed var(--ink-3); color: var(--ink-2);
+  font-weight: 600; text-decoration: none;
+}
+.stack-older { margin-top: var(--space-2); font-family: var(--font-ui); }

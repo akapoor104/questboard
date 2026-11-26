@@ -1,0 +1,62 @@
+/* Today: three columns at 1100px and up, two on a tablet, one on a phone (docs/05-design.md, "Layout"). */
+
+.today-page { max-width: 1280px; width: 100%; margin: 0 auto; padding-top: var(--space-5); }
+
+.today {
+  display: grid; gap: var(--space-5); align-items: start;
+  grid-template-columns: 280px minmax(0, 1fr) 80px 260px;
+  grid-template-areas:
+    'head head word word'
+    'alerts alerts alerts alerts'
+    'stack day day side';
+}
+.today-head { grid-area: head; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.today-word { grid-area: word; min-width: 0; align-self: stretch; display: flex; flex-direction: column; }
+.today-word > * { flex: 1; }
+.today-alerts { grid-area: alerts; min-width: 0; }
+.today-alerts:empty { display: none; }
+.today-stack { grid-area: stack; min-width: 0; }
+.today-day { grid-area: day; min-width: 0; }
+.today-side { grid-area: side; min-width: 0; display: flex; flex-direction: column; gap: var(--space-5); }
+
+.today-title { font-size: var(--text-3xl); letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.today-cheer { margin: 6px 0 0; font-size: 17px; color: var(--ink-2); }
+.today-note { display: flex; flex-direction: column; gap: var(--space-1); }
+.today-note p { margin: 0; font-size: var(--text-l); }
+
+/* Shared by the columns */
+.today-col { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.today-colhead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-1) var(--space-2); }
+.today-colhead h2 { font-size: var(--text-xl); }
+.today-colhead .muted { font-size: var(--text-s); }
+.today-hint { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+.today-empty { margin: 0; padding: var(--space-4); border-radius: var(--radius-m); background: var(--surface); border: 1px dashed var(--line); color: var(--ink-2); }
+.today-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+
+.closeout { display: flex; flex-direction: column; gap: var(--space-2); padding: 14px var(--space-4); }
+.closeout-title { font-family: var(--font-ui); font-size: var(--text-l); }
+
+/* Tablet: the timeline, and beside it the stack above the tray. */
+@media (max-width: 1099px) {
+  .today {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      'head word'
+      'alerts alerts'
+      'day stack'
+      'day side';
+  }
+}
+
+/* Phone: one column. Reminders, Today, Catch-up tray, stack, word of the day. */
+@media (max-width: 699px) {
+  .today-page { padding-top: var(--space-4); }
+  .today {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    gap: var(--space-4);
+    grid-template-areas: 'head' 'alerts' 'day' 'side' 'stack' 'word';
+  }
+  .today-title { font-size: var(--text-2xl); }
+}

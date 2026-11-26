@@ -1,0 +1,73 @@
+/* CardTile: one card, in three variants. Colors come from the cat-<color> class (tokens.css). */
+
+.cardtile { position: relative; min-width: 0; color: var(--ink); }
+
+.cardtile-open {
+  display: block; width: 100%; min-width: 0; padding: 0; margin: 0;
+  border: 0; background: none; text-align: left; cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.cardtile-open:focus-visible { outline-offset: 1px; border-radius: 4px; }
+
+.cardtile-end { margin-left: auto; white-space: nowrap; }
+.cardtile-must { display: inline-flex; align-items: center; gap: var(--space-1); font-weight: 600; color: var(--cat-deep); white-space: nowrap; }
+
+/* full: stack and tray */
+.cardtile-full .card-meta { flex-wrap: wrap; }
+.cardtile-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.cardtile-meta { font-size: var(--text-xs); color: var(--cat-deep); min-width: 0; flex: 1 1 120px; }
+.cardtile-meta .cardtile-must { vertical-align: middle; }
+.cardtile-actions { margin-left: auto; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.cardtile-actions .btn { background: var(--cat-deep); border-color: var(--cat-deep); color: var(--surface); }
+.cardtile-foot-wide { flex-direction: column; align-items: stretch; }
+.cardtile-foot-wide .cardtile-meta { color: var(--ink-2); flex: none; }
+.cardtile-foot-wide .cardtile-actions { margin-left: 0; }
+.cardtile-foot-wide .cardtile-actions .btn { flex: 1 1 0; padding: 0 var(--space-2); font-size: var(--text-s); white-space: nowrap; background: var(--surface); border-color: var(--line); color: var(--ink); }
+.cardtile-foot-wide .cardtile-actions .btn-primary { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+
+/* The tray shows leftovers on white, with the category in its line at the top. */
+.cardtile-full[data-place='tray'] { background: var(--surface); border: 1px solid var(--line); }
+
+/* row and timed: one line (or a block on the timeline) */
+.cardtile-row, .cardtile-timed {
+  flex-direction: row; align-items: center; gap: var(--space-2);
+  border-radius: 10px; padding: var(--space-2) 10px;
+}
+.cardtile-row { min-height: var(--tap); }
+.cardtile-icon { display: flex; color: var(--cat-deep); flex: none; }
+.cardtile-body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.cardtile-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 2px var(--space-2); font-size: var(--text-xs); }
+.cardtile-details { color: var(--cat-deep); }
+.cardtile-row .cardtile-end, .cardtile-timed .cardtile-end { flex: none; }
+
+.cardtile-timed { height: 100%; align-items: flex-start; overflow: hidden; }
+.cardtile-timed .cardtile-icon { padding-top: 2px; }
+.cardtile-timed[data-size='short'] { align-items: center; padding-top: 0; padding-bottom: 0; }
+.cardtile-timed[data-size='short'] .cardtile-icon { padding-top: 0; }
+.cardtile-timed[data-size='short'] .cardtile-body { flex-direction: row; align-items: center; gap: var(--space-2); }
+.cardtile-timed[data-size='short'] .cardtile-open { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cardtile-timed .card-title, .cardtile-row .card-title { font-size: var(--text-m); }
+
+.card[data-doing='true'] { outline-offset: -2px; }
+.card[data-doing='true'] .card-title { font-weight: 700; }
+
+/* A short block keeps one line: the title gives way (ellipsis), the time stays. */
+.cardtile-timed[data-size='short'] .cardtile-body { flex: 1 1 auto; }
+.cardtile-timed[data-size='short'] .cardtile-sub { flex-wrap: nowrap; flex: none; }
+.cardtile-timed[data-size='short'] .cardtile-open { flex: 1 1 5em; min-width: 5em; }
+.cardtile-timed .cardtile-end { max-width: 55%; overflow: hidden; text-overflow: ellipsis; }
+
+@media (max-width: 699px) {
+  /* On a phone the time goes on its own line under the title. */
+  .cardtile-timed {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-2); row-gap: 0;
+    align-content: start; padding: var(--space-1) var(--space-2);
+  }
+  .cardtile-timed[data-size='short'] { padding: var(--space-1) var(--space-2); }
+  .cardtile-timed .cardtile-end { grid-column: 2; margin-left: 0; max-width: none; }
+  .cardtile-timed[data-size='short'] .cardtile-open { flex: 0 1 auto; min-width: 0; }
+  /* A short block keeps only the pin; the word stays for screen readers. */
+  .cardtile-timed[data-size='short'] .cardtile-must-text {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+}

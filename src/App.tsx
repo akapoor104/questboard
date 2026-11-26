@@ -1,5 +1,6 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { DeviceGate, ParentGate, SessionProvider } from './app/session.tsx';
+import { TodayProvider } from './app/TodayProvider.tsx';
 import { ParentFrame } from './components/ParentFrame.tsx';
 import { ToastProvider } from './components/Toast.tsx';
 import { TopBar } from './components/TopBar.tsx';
@@ -17,7 +18,7 @@ export function App() {
       <ToastProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<DeviceGate><TopBar /><Outlet /></DeviceGate>}>
+            <Route element={<DeviceGate><TodayProvider><TopBar /><Outlet /></TodayProvider></DeviceGate>}>
               <Route index element={<Today />} />
               <Route path="week" element={<Week />} />
               <Route path="week/:monday" element={<Week />} />

@@ -1,0 +1,17 @@
+.timebar { display: flex; flex-direction: column; gap: 10px; padding: var(--space-4) 18px; }
+.timebar-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+.timebar-title { font-family: var(--font-ui); font-size: var(--text-l); }
+.timebar-bar { display: flex; gap: 2px; height: 14px; }
+.timebar-seg { flex: 1 1 0; min-width: 4px; background: var(--cat); }
+.timebar-seg:first-child { border-radius: 4px 0 0 4px; }
+.timebar-seg:last-child { border-radius: 0 4px 4px 0; }
+.timebar-seg:only-child { border-radius: 4px; }
+.timebar-legend {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 6px var(--space-4); font-size: var(--text-s); color: var(--ink-2);
+}
+.timebar-key { display: flex; align-items: center; gap: 6px; }
+.timebar-swatch {
+  width: 20px; height: 20px; border-radius: 6px; background: var(--cat); color: var(--surface);
+  display: inline-flex; align-items: center; justify-content: center;
+}

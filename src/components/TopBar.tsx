@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSession } from '../app/session.tsx';
+import { useTodayData } from '../app/TodayProvider.tsx';
+import { CampfireChip } from './CampfireChip.tsx';
 import { Icon } from './Icon.tsx';
 import { useToast } from './Toast.tsx';
 import './TopBar.css';
@@ -9,6 +11,7 @@ import './TopBar.css';
 export function TopBar() {
   const { conn, api, refreshMe } = useSession();
   const { showError } = useToast();
+  const today = useTodayData();
   const [busy, setBusy] = useState(false);
 
   const lock = async () => {
@@ -35,6 +38,7 @@ export function TopBar() {
         <NavLink to="/month" className="topbar-link">Month</NavLink>
       </nav>
       <div className="topbar-end">
+        {today.data && <CampfireChip current={today.data.streak.current} />}
         {conn.mode === 'demo' && <span className="demo-badge" data-testid="demo-badge">Demo</span>}
         <button type="button" className="topbar-lock" aria-label="Lock my board" disabled={busy} onClick={() => void lock()}>
           <Icon name="lock" />
