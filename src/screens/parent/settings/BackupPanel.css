@@ -1,0 +1,4 @@
+/* BackupPanel: the file input is opened by the "Restore from a backup" button. */
+.backup-file { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); opacity: 0; }
+.backup-summary { margin: 0; font-weight: 600; }
+.backup-confirm { display: flex; flex-direction: column; gap: var(--space-3); }

@@ -1,0 +1,35 @@
+/* Parent: Settings. One column of panels; pieces shared by the panels in settings/. */
+.settings-head { display: flex; flex-direction: column; gap: 2px; }
+.settings-title { font-size: var(--text-2xl); }
+.settings-sub { margin: 0; color: var(--ink-2); overflow-wrap: anywhere; }
+
+.settings-panel { padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-3); }
+.settings-paneltitle { font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; }
+.settings-text { margin: 0; color: var(--ink-2); }
+.settings-error { margin: 0; font-weight: 600; }
+
+/* The PIN, Parents and Weekly e-mail rows share one panel, as in the picture. */
+.settings-group { padding: var(--space-1) var(--space-4); display: flex; flex-direction: column; }
+.settings-group > * + * { border-top: 1px solid var(--line-2); }
+.settings-section { padding: var(--space-3) 0; display: flex; flex-direction: column; gap: var(--space-3); }
+
+/* A title and a line of text, with a button on the right. */
+.settings-row { display: flex; align-items: center; gap: var(--space-3); }
+.settings-rowtext { min-width: 0; flex: 1 1 auto; }
+.settings-rowtitle { font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; overflow-wrap: anywhere; }
+.settings-rowsub { margin: 2px 0 0; color: var(--ink-2); font-size: var(--text-s); overflow-wrap: anywhere; }
+.settings-row > .btn { flex: none; }
+
+/* Labelled fields. */
+.settings-field { display: flex; flex-direction: column; gap: var(--space-1); }
+.settings-field > label { font-weight: 600; }
+.settings-field input,
+.settings-field select {
+  min-height: var(--tap); padding: 0 var(--space-3); font: inherit; color: var(--ink);
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface); min-width: 0;
+}
+.settings-buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.settings-buttons > .btn { flex: 1 1 140px; }
+
+.settings-end { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.settings-end > .btn { flex: 1 1 auto; }

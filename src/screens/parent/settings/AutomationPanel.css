@@ -1,0 +1,6 @@
+/* AutomationPanel: the key, shown once. */
+.automation-token { display: flex; flex-direction: column; gap: var(--space-2); }
+.automation-tokenrow { display: flex; gap: var(--space-2); }
+.automation-tokenrow > .btn { flex: none; }
+.automation-tokenvalue { flex: 1 1 auto; font-size: var(--text-s); }
+.automation-steps { font-size: var(--text-s); }

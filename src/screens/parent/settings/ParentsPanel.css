@@ -1,0 +1,8 @@
+/* ParentsPanel: the allowed Google accounts, and the edit form. */
+.parents-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.parents-row { display: flex; align-items: center; gap: var(--space-3); min-height: var(--tap); }
+.parents-row > .btn { flex: none; }
+.parents-email { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.parents-add { display: flex; align-items: flex-end; gap: var(--space-2); }
+.parents-addfield { flex: 1 1 auto; min-width: 0; }
+.parents-add > .btn { flex: none; }
