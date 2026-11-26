@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questboard mock: Anush: Today</title>
+<!-- Reference mock, exported from the design canvas. Static: nothing here is wired up.
+     Fonts fall back to system fonts unless Inter and Bricolage Grotesque are installed.
+     Designed at 1280 x 1260 px. The real screens are built from docs/05-design.md. -->
+<style>
+body{margin:0;background:#DDE2EC}
+a{color:#171C33}a:hover{color:#235598}
+.frame{width:1280px;max-width:100%;margin:0 auto;background:#F3F5F9}
+</style>
+</head>
+<body>
+<div class="frame">
+<div style="min-height: 1260px; background: #F3F5F9; color: #171C33; font-family: Inter, system-ui, sans-serif; font-size: 14px; line-height: 1.4">
+
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 12px 28px; background: #FFFFFF; border-bottom: 1px solid #D9DEE9">
+<div style="display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 21px">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"></path><path d="m12 7 5 8H7l5-8Z"></path></svg>
+<span>Questboard</span>
+</div>
+<nav aria-label="Views" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="kid-today.html" aria-current="page" style="padding: 10px 16px; border-radius: 10px; background: #171C33; color: #FFFFFF; font-weight: 600; text-decoration: none">Today</a>
+<a href="kid-week.html" style="padding: 10px 16px; border-radius: 10px; color: #4A5270; font-weight: 600; text-decoration: none">Week</a>
+<a href="kid-month.html" style="padding: 10px 16px; border-radius: 10px; color: #4A5270; font-weight: 600; text-decoration: none">Month</a>
+</nav>
+<div style="margin-left: auto; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; background: #FCEAE3; color: #854434; font-weight: 600">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9Z"></path></svg>
+<span>Campfire: 6 days</span>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; font-weight: 600">
+<div style="width: 36px; height: 36px; border-radius: 12px; background: #E9E6F9; color: #5044AF; display: flex; align-items: center; justify-content: center">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"></path><path d="m12 7 5 8H7l5-8Z"></path></svg>
+</div>
+<span>Anush</span>
+</div>
+<button type="button" aria-label="Lock the board" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #4A5270; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+</button>
+</div>
+</header>
+
+<main style="max-width: 1280px; margin: 0 auto; padding: 24px 28px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+
+<section style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; letter-spacing: -0.01em">Monday, December 21</h1>
+<p style="margin: 6px 0 0; font-size: 17px; color: #4A5270">A plan is a map, not a cage. Pick your first card and go.</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px">
+<span style="font-weight: 700; font-size: 16px">Today's time</span>
+<span style="color: #4A5270">5 h 50 min planned</span>
+<span style="color: #4A5270">30 min done so far</span>
+</div>
+<div role="img" aria-label="Planned minutes today by category: Math and School 30, Reading and Rest 30, Build and Code 30, Fun and Friends 120, Music 20, Outdoors and Scouts 60, Story and D and D 45, Home and Helping 15" style="display: flex; gap: 2px; height: 14px">
+<div style="flex: 30 1 0; background: #2A78D6; border-radius: 4px 0 0 4px"></div>
+<div style="flex: 30 1 0; background: #EB6834"></div>
+<div style="flex: 30 1 0; background: #1BAF7A"></div>
+<div style="flex: 120 1 0; background: #EDA100"></div>
+<div style="flex: 20 1 0; background: #E87BA4"></div>
+<div style="flex: 60 1 0; background: #008300"></div>
+<div style="flex: 45 1 0; background: #6250D6"></div>
+<div style="flex: 15 1 0; background: #E34948; border-radius: 0 4px 4px 0"></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: #4A5270">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #2A78D6"></span>Math &amp; School 30</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #EB6834"></span>Reading &amp; Rest 30</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #1BAF7A"></span>Build &amp; Code 30</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #EDA100"></span>Fun &amp; Friends 120</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #E87BA4"></span>Music 20</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #008300"></span>Outdoors &amp; Scouts 60</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #6250D6"></span>Story &amp; D&amp;D 45</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #E34948"></span>Home &amp; Helping 15</span>
+</div>
+</div>
+</div>
+
+<aside aria-label="Word of the day" style="flex: 1 1 320px; background: #171C33; color: #FFFFFF; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #C8DCF4">Word of the day</span>
+<div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.1">tenacious</span>
+<span style="color: #C8DCF4; font-style: italic">adjective</span>
+</div>
+<p style="margin: 0; font-size: 15px">Not giving up, even when something is hard.</p>
+<p style="margin: 0; font-size: 14px; color: #C8DCF4">"The tenacious ranger tracked the wyvern through three nights of rain."</p>
+<button type="button" style="margin-top: 6px; align-self: flex-start; min-height: 44px; padding: 0 16px; border-radius: 12px; border: 1px solid #C8DCF4; background: transparent; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">I used it today</button>
+</aside>
+</section>
+
+<section aria-label="Alerts" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 16px; background: #FCF2DB; border-radius: 14px; color: #71541E">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<span style="font-weight: 600; flex: 1 1 280px">Must-do due Wednesday: "Pack for the trip" is not on a day yet.</span>
+<a href="kid-week.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #71541E; color: #FFFFFF; font-weight: 600; text-decoration: none">Give it a day</a>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 20px">This week's stack</h2>
+<span style="color: #4A5270; font-size: 13px">4 cards</span>
+</div>
+<p style="margin: 0; color: #4A5270; font-size: 13px">Planned for any day this week. Move a card to today when you are ready.</p>
+
+<article style="background: #FCEDF2; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px; color: #774867; font-size: 12px; font-weight: 600">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l10-2v13"></path><circle cx="6.5" cy="18" r="2.5"></circle><circle cx="16.5" cy="16" r="2.5"></circle></svg>
+<span>Music</span><span style="margin-left: auto">20 min</span>
+</div>
+<div style="font-weight: 600; font-size: 15px">Music practice</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #774867"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5M8 3h8l-1 6 3 4H6l3-4-1-6Z"></path></svg>Must-do, 3 more this week</span>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 0; background: #774867; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">To today</button>
+</div>
+</article>
+
+<article style="background: #E1ECF9; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px; color: #235598; font-size: 12px; font-weight: 600">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20 20 4v16H4Z"></path><path d="M14 16h2v-2"></path></svg>
+<span>Math &amp; School</span><span style="margin-left: auto">30 min</span>
+</div>
+<div style="font-weight: 600; font-size: 15px">Math Academy</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #235598"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5M8 3h8l-1 6 3 4H6l3-4-1-6Z"></path></svg>Must-do, 2 more this week</span>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 0; background: #235598; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">To today</button>
+</div>
+</article>
+
+<article style="background: #E9E6F9; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px; color: #5044AF; font-size: 12px; font-weight: 600">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"></path><path d="M9 9h5M9 13h5"></path></svg>
+<span>Story &amp; D&amp;D</span><span style="margin-left: auto">30 min</span>
+</div>
+<div style="font-weight: 600; font-size: 15px">Write one encounter for the one-shot</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="font-size: 12px; color: #5044AF">My pick</span>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 0; background: #5044AF; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">To today</button>
+</div>
+</article>
+
+<article style="background: #DFF4EC; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px; color: #196355; font-size: 12px; font-weight: 600">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path></svg>
+<span>Build &amp; Code</span><span style="margin-left: auto">30 min</span>
+</div>
+<div style="font-weight: 600; font-size: 15px">Is my d20 fair? Roll and record 100 rolls</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="font-size: 12px; color: #196355">My pick</span>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 0; background: #196355; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">To today</button>
+</div>
+</article>
+
+<a href="kid-week.html" style="display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; border-radius: 12px; border: 1px dashed #636B88; color: #4A5270; font-weight: 600; text-decoration: none">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+<span>Add from the Library</span>
+</a>
+</div>
+
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 20px">Today</h2>
+<span style="color: #4A5270; font-size: 13px">Tap a card to start it or to say how it went</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5270">Any time today</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<div style="flex: 1 1 200px; background: #FCEDF2; border-radius: 10px; padding: 8px 10px; display: flex; align-items: center; gap: 8px">
+<span style="color: #774867; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l10-2v13"></path><circle cx="6.5" cy="18" r="2.5"></circle><circle cx="16.5" cy="16" r="2.5"></circle></svg></span>
+<span style="font-weight: 600">Music practice</span><span style="margin-left: auto; font-size: 12px; color: #774867">20 min</span>
+</div>
+<div style="flex: 1 1 200px; background: #FBE6E5; border-radius: 10px; padding: 8px 10px; display: flex; align-items: center; gap: 8px">
+<span style="color: #8D363F; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9H4v-9Z"></path><path d="M10 20v-5h4v5"></path></svg></span>
+<span style="font-weight: 600">Help cook dinner</span><span style="margin-left: auto; font-size: 12px; color: #8D363F">15 min</span>
+</div>
+<div style="flex: 1 1 200px; background: #FCEAE3; border-radius: 10px; padding: 8px 10px; display: flex; align-items: center; gap: 8px">
+<span style="color: #854434; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"></path></svg></span>
+<span style="font-weight: 600">Read for fun</span><span style="margin-left: auto; font-size: 12px; color: #854434">30 min</span>
+</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 14px 14px 14px 8px">
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); grid-template-rows: repeat(40, 18px); column-gap: 8px; background-image: repeating-linear-gradient(to bottom, #E3E7EF 0, #E3E7EF 1px, transparent 1px, transparent 72px)">
+<span style="grid-column: 1; grid-row: 1 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">8 AM</span>
+<span style="grid-column: 1; grid-row: 5 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">9 AM</span>
+<span style="grid-column: 1; grid-row: 9 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">10 AM</span>
+<span style="grid-column: 1; grid-row: 13 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">11 AM</span>
+<span style="grid-column: 1; grid-row: 17 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">12 PM</span>
+<span style="grid-column: 1; grid-row: 21 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">1 PM</span>
+<span style="grid-column: 1; grid-row: 25 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">2 PM</span>
+<span style="grid-column: 1; grid-row: 29 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">3 PM</span>
+<span style="grid-column: 1; grid-row: 33 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">4 PM</span>
+<span style="grid-column: 1; grid-row: 37 / span 2; text-align: right; font-size: 12px; color: #4A5270; padding-top: 3px">5 PM</span>
+
+<button type="button" style="grid-column: 2; grid-row: 5 / span 2; margin: 1px 0; border: 0; border-radius: 10px; background: #E1ECF9; padding: 0 10px; display: flex; align-items: center; gap: 8px; font: inherit; color: #171C33; text-align: left; cursor: pointer">
+<span style="width: 22px; height: 22px; border-radius: 50%; background: #235598; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex: none"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg></span>
+<span style="font-weight: 600; text-decoration: line-through; color: #4A5270">Math Academy lesson</span>
+<span style="margin-left: auto; font-size: 12px; font-weight: 600; color: #235598">9:00 · 30 min · done</span>
+</button>
+
+<div style="grid-column: 2; grid-row: 8 / span 3; margin: 1px 0; border-radius: 10px; background: #E9E6F9; border: 2px solid #5044AF; box-sizing: border-box; padding: 0 10px; display: flex; align-items: center; gap: 8px">
+<span style="color: #5044AF; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"></path><path d="M9 9h5M9 13h5"></path></svg></span>
+<div style="min-width: 0">
+<div style="font-weight: 700">Outline the winter one-shot</div>
+<div style="font-size: 12px; font-weight: 600; color: #5044AF">Doing now · started 9:45 · 45 min</div>
+</div>
+<a href="resolve.html" style="margin-left: auto; display: flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 10px; background: #5044AF; color: #FFFFFF; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap">How did it go?</a>
+</div>
+
+<div style="grid-column: 1 / span 2; grid-row: 9; align-self: start; margin-top: 6px; display: flex; align-items: center; gap: 6px">
+<span style="width: 56px; text-align: right; font-size: 11px; font-weight: 700; color: #171C33">10:05</span>
+<span style="flex: 1; height: 2px; background: #171C33; border-radius: 1px"></span>
+</div>
+
+<button type="button" style="grid-column: 2; grid-row: 13 / span 2; margin: 1px 0; border: 0; border-radius: 10px; background: #DFF4EC; padding: 0 10px; display: flex; align-items: center; gap: 8px; font: inherit; color: #171C33; text-align: left; cursor: pointer">
+<span style="color: #196355; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path></svg></span>
+<span style="font-weight: 600">micro:bit: first programs</span>
+<span style="margin-left: auto; font-size: 12px; font-weight: 600; color: #196355">11:00 · 30 min</span>
+</button>
+
+<button type="button" style="grid-column: 2; grid-row: 21 / span 4; margin: 1px 0; border: 0; border-radius: 10px; background: #DBEEDB; padding: 8px 10px; display: flex; align-items: flex-start; gap: 8px; font: inherit; color: #171C33; text-align: left; cursor: pointer">
+<span style="color: #076210; display: flex; padding-top: 2px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 3 20h18L12 4Z"></path><path d="M12 12v8"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-weight: 600">Outside time</span>
+<span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #076210"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5M8 3h8l-1 6 3 4H6l3-4-1-6Z"></path></svg>Must-do</span>
+</span>
+<span style="margin-left: auto; font-size: 12px; font-weight: 600; color: #076210">1:00 · 1 h</span>
+</button>
+
+<button type="button" style="grid-column: 2; grid-row: 29 / span 8; margin: 1px 0; border: 0; border-radius: 10px; background: #FCF2DB; padding: 8px 10px; display: flex; align-items: flex-start; gap: 8px; font: inherit; color: #171C33; text-align: left; cursor: pointer">
+<span style="color: #71541E; display: flex; padding-top: 2px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M9 9h.01M15 9h.01M9 15h.01M15 15h.01"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-weight: 600">D&amp;D session with friends</span>
+<span style="font-size: 12px; color: #71541E">You are the Dungeon Master today</span>
+</span>
+<span style="margin-left: auto; font-size: 12px; font-weight: 600; color: #71541E">3:00 · 2 h</span>
+</button>
+</div>
+</div>
+</div>
+
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 20px">Catch-up tray</h2>
+<span style="color: #4A5270; font-size: 13px">2 cards · 40 min</span>
+</div>
+<p style="margin: 0; color: #4A5270; font-size: 13px">Leftovers wait here until you give them a new time.</p>
+
+<article style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px; color: #235598; font-size: 12px; font-weight: 600">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20 20 4v16H4Z"></path><path d="M14 16h2v-2"></path></svg>
+<span>Math &amp; School</span><span style="margin-left: auto">25 min left</span>
+</div>
+<div style="font-weight: 600; font-size: 15px">Mr Math problem set</div>
+<div style="font-size: 12px; color: #4A5270">Saturday: 50% done. "Play date ran long."</div>
+<div style="display: flex; gap: 8px">
+<button type="button" style="flex: 1; min-height: 40px; border-radius: 10px; border: 0; background: #171C33; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Give it a time</button>
+<button type="button" style="flex: 1; min-height: 40px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Ask to drop</button>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px; color: #5044AF; font-size: 12px; font-weight: 600">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"></path><path d="M9 9h5M9 13h5"></path></svg>
+<span>Story &amp; D&amp;D</span><span style="margin-left: auto">15 min left</span>
+</div>
+<div style="font-weight: 600; font-size: 15px">Write a session recap</div>
+<div style="font-size: 12px; color: #4A5270">Sunday: not started.</div>
+<div style="display: flex; gap: 8px">
+<button type="button" style="flex: 1; min-height: 40px; border-radius: 10px; border: 0; background: #171C33; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Give it a time</button>
+<button type="button" style="flex: 1; min-height: 40px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Drop it</button>
+</div>
+</article>
+
+<div style="margin-top: 6px; background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-weight: 700; font-size: 16px">Close out the day</span>
+<span style="color: #4A5270; font-size: 13px">7 cards still need a percent. When every card has one, close the day to keep the campfire burning.</span>
+<button type="button" disabled="disabled" style="min-height: 44px; border-radius: 12px; border: 0; background: #EBEEF4; color: #4A5270; font: inherit; font-weight: 600">Close out today</button>
+</div>
+</div>
+
+</section>
+</main>
+</div>
+</div>
+</body>
+</html>

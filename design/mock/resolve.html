@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questboard mock: How did it go? Percent done</title>
+<!-- Reference mock, exported from the design canvas. Static: nothing here is wired up.
+     Fonts fall back to system fonts unless Inter and Bricolage Grotesque are installed.
+     Designed at 520 x 720 px. The real screens are built from docs/05-design.md. -->
+<style>
+body{margin:0;background:#DDE2EC}
+a{color:#171C33}a:hover{color:#235598}
+.frame{width:520px;max-width:100%;margin:0 auto;background:#F3F5F9}
+</style>
+</head>
+<body>
+<div class="frame">
+<div style="width: 520px; height: 720px; box-sizing: border-box; padding: 24px 28px; background: #FFFFFF; color: #171C33; font-family: Inter, system-ui, sans-serif; font-size: 14px; line-height: 1.4; display: flex; flex-direction: column; gap: 16px">
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1">How did it go?</h1>
+<p style="margin: 0; color: #4A5270">Be honest. Half done is still half done.</p>
+</div>
+
+<div style="background: #E1ECF9; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 8px; color: #235598; font-size: 12px; font-weight: 600">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20 20 4v16H4Z"></path><path d="M14 16h2v-2"></path></svg>
+<span>Math &amp; School</span><span style="margin-left: auto">Saturday 2:00 · planned 1 h</span>
+</div>
+<div style="font-weight: 600; font-size: 16px">Self-study: Mr Math problem set</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-weight: 700">How much did you get done?</span>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+<div><button type="button" aria-pressed="false" style="width: 100%; height: 64px; border-radius: 14px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px"><span style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 20px; font-weight: 700">0%</span><span style="font-size: 11px; color: #4A5270">Not started</span></button></div>
+<div><button type="button" aria-pressed="false" style="width: 100%; height: 64px; border-radius: 14px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px"><span style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 20px; font-weight: 700">25%</span><span style="font-size: 11px; color: #4A5270">A little</span></button></div>
+<div><button type="button" aria-pressed="true" style="width: 100%; height: 64px; border-radius: 14px; border: 0; background: #171C33; color: #FFFFFF; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px"><span style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 20px; font-weight: 700">50%</span><span style="font-size: 11px">Half</span></button></div>
+<div><button type="button" aria-pressed="false" style="width: 100%; height: 64px; border-radius: 14px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px"><span style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 20px; font-weight: 700">75%</span><span style="font-size: 11px; color: #4A5270">Most</span></button></div>
+<div><button type="button" aria-pressed="false" style="width: 100%; height: 64px; border-radius: 14px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px"><span style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 20px; font-weight: 700">100%</span><span style="font-size: 11px; color: #4A5270">Done</span></button></div>
+
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 10px 12px; border-radius: 12px; background: #F3F5F9; font-weight: 600">
+<span>About 30 min done.</span>
+<span style="color: #4A5270">30 min left over.</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="why" style="font-weight: 700">What got in the way? <span style="font-weight: 400; color: #4A5270">(optional)</span></label>
+<input id="why" type="text" value="Play date with friends ran long" style="height: 44px; border-radius: 12px; border: 1px solid #636B88; padding: 0 12px; font: inherit; color: #171C33; background: #FFFFFF; box-sizing: border-box">
+</div>
+
+
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
+<legend style="padding: 0; font-weight: 700; margin-bottom: 8px">What happens to the time left?</legend>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 12px; border: 2px solid #171C33; font-weight: 600"><input type="radio" name="rest" checked="checked" style="width: 18px; height: 18px; accent-color: #171C33">Put it in my Catch-up tray</label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid #D9DEE9; font-weight: 600"><input type="radio" name="rest" style="width: 18px; height: 18px; accent-color: #171C33">Give it a new day and time now</label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid #D9DEE9; font-weight: 600"><input type="radio" name="rest" style="width: 18px; height: 18px; accent-color: #171C33">Ask a parent to let it go (it is a must-do)</label>
+</fieldset>
+
+
+<div style="margin-top: auto; display: flex; gap: 10px">
+<a href="kid-today.html" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 12px; border: 1px solid #D9DEE9; font-weight: 600; text-decoration: none">Cancel</a>
+<a href="kid-today.html" style="flex: 2; display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 12px; background: #171C33; color: #FFFFFF; font-weight: 600; text-decoration: none">Save</a>
+</div>
+</div>
+</div>
+</body>
+</html>

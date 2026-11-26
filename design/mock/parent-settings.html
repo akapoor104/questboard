@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questboard mock: Parent: devices and backup</title>
+<!-- Reference mock, exported from the design canvas. Static: nothing here is wired up.
+     Fonts fall back to system fonts unless Inter and Bricolage Grotesque are installed.
+     Designed at 390 x 844 px. The real screens are built from docs/05-design.md. -->
+<style>
+body{margin:0;background:#DDE2EC}
+a{color:#171C33}a:hover{color:#235598}
+.frame{width:390px;max-width:100%;margin:0 auto;background:#F3F5F9}
+</style>
+</head>
+<body>
+<div class="frame">
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F5F9; color: #171C33; font-family: Inter, system-ui, sans-serif; font-size: 14px; line-height: 1.35; display: flex; flex-direction: column">
+
+<div style="flex: 1; min-height: 0; padding: 20px 16px 12px; display: flex; flex-direction: column; gap: 12px">
+
+<div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.1">Settings</h1>
+<span style="color: #4A5270; font-size: 13px">Signed in with Google as a parent</span>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-weight: 700">Linked devices</span>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 48px; border-top: 1px solid #EBEEF4">
+<div style="min-width: 0"><div style="font-weight: 600">Anush's laptop</div><div style="font-size: 12px; color: #4A5270">His board, unlocked now</div></div>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Remove</button>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 48px; border-top: 1px solid #EBEEF4">
+<div style="min-width: 0"><div style="font-weight: 600">Family computer</div><div style="font-size: 12px; color: #4A5270">His board, locked</div></div>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Remove</button>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 48px; border-top: 1px solid #EBEEF4">
+<div style="min-width: 0"><div style="font-weight: 600">Kitchen screen</div><div style="font-size: 12px; color: #4A5270">Display only, no PIN, cannot change anything</div></div>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Remove</button>
+</div>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px">
+<label for="code" style="font-weight: 700">Link a new device</label>
+<span style="font-size: 13px; color: #4A5270">Open Questboard on the device and type the six-letter code it shows.</span>
+<div style="display: flex; gap: 8px">
+<input id="code" type="text" value="K7M-2QX" style="flex: 1; min-width: 0; height: 44px; border-radius: 12px; border: 1px solid #636B88; padding: 0 12px; font: inherit; font-weight: 700; letter-spacing: 0.12em; color: #171C33; background: #FFFFFF; box-sizing: border-box">
+<button type="button" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 0; background: #171C33; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Link</button>
+</div>
+<div style="display: flex; gap: 8px; font-size: 13px">
+<label style="flex: 1; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border-radius: 12px; border: 2px solid #171C33; font-weight: 600"><input type="radio" name="kind" checked="checked" style="width: 18px; height: 18px; accent-color: #171C33">His device</label>
+<label style="flex: 1; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border-radius: 12px; border: 1px solid #D9DEE9; font-weight: 600"><input type="radio" name="kind" style="width: 18px; height: 18px; accent-color: #171C33">Display only</label>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 4px 14px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 52px">
+<div style="min-width: 0"><div style="font-weight: 600">Anush's PIN</div><div style="font-size: 12px; color: #4A5270">Set. Changing it locks all his devices.</div></div>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Change</button>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 52px; border-top: 1px solid #EBEEF4">
+<div style="min-width: 0"><div style="font-weight: 600">Parents</div><div style="font-size: 12px; color: #4A5270">2 Google accounts allowed</div></div>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">Edit</button>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 52px; border-top: 1px solid #EBEEF4">
+<div style="min-width: 0"><div style="font-weight: 600">Weekly e-mail and Drive backup</div><div style="font-size: 12px; color: #4A5270">Sundays, from your own Google account</div></div>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">New key</button>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-weight: 700">Backup and moving</span>
+<span style="font-size: 13px; color: #4A5270">One file holds the whole board. Use it to restore, or to move to a new home.</span>
+<div style="display: flex; gap: 8px">
+<button type="button" style="flex: 1; min-height: 44px; border-radius: 12px; border: 0; background: #171C33; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Download backup</button>
+<button type="button" style="flex: 1; min-height: 44px; border-radius: 12px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font: inherit; font-weight: 600; cursor: pointer">Restore from file</button>
+</div>
+</section>
+</div>
+
+<nav aria-label="Parent sections" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: #FFFFFF; border-top: 1px solid #D9DEE9; padding: 6px 8px 10px">
+<a href="parent-home.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 48px; justify-content: center; border-radius: 12px; color: #4A5270; font-size: 12px; font-weight: 600; text-decoration: none">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"></path></svg>This week</a>
+<a href="parent-plan.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 48px; justify-content: center; border-radius: 12px; color: #4A5270; font-size: 12px; font-weight: 600; text-decoration: none">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5M8 3h8l-1 6 3 4H6l3-4-1-6Z"></path></svg>Must-dos</a>
+<a href="parent-settings.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 48px; justify-content: center; border-radius: 12px; background: #EBEEF4; font-size: 12px; font-weight: 700; text-decoration: none">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"></path></svg>Settings</a>
+</nav>
+</div>
+</div>
+</body>
+</html>

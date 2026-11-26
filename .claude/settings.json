@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm install *)",
+      "Bash(npm ci)",
+      "Bash(npm run *)",
+      "Bash(npm test)",
+      "Bash(node scripts/check.mjs)",
+      "Bash(node scripts/check.mjs --quick)",
+      "Bash(node scripts/check.mjs --e2e)",
+      "Bash(node scripts/run-tests.mjs)",
+      "Bash(node scripts/build-seed-sql.mjs)",
+      "Bash(node --test *)",
+      "Bash(npx playwright test *)",
+      "Bash(npx playwright install *)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "deny": [
+      "Edit(/db/migrations/**)",
+      "Edit(/db/test/**)",
+      "Edit(/src/api/memory/**)",
+      "Edit(/src/api/types.ts)",
+      "Edit(/src/api/client.ts)",
+      "Edit(/src/api/memoryBackend.ts)",
+      "Edit(/src/lib/dates.ts)",
+      "Edit(/tests/contract/**)",
+      "Edit(/tests/parity/**)",
+      "Edit(/scripts/check.mjs)",
+      "Edit(/scripts/run-tests.mjs)",
+      "Edit(/sealed.json)",
+      "Edit(/.claude/settings.json)",
+      "Bash(node scripts/check.mjs --reseal)",
+      "Bash(node scripts/check.mjs --reseal *)",
+      "Bash(git push *)",
+      "Bash(git reset --hard *)",
+      "Bash(git commit --no-verify *)"
+    ]
+  }
+}

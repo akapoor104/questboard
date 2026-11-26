@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questboard mock: Anush: My month</title>
+<!-- Reference mock, exported from the design canvas. Static: nothing here is wired up.
+     Fonts fall back to system fonts unless Inter and Bricolage Grotesque are installed.
+     Designed at 1280 x 1260 px. The real screens are built from docs/05-design.md. -->
+<style>
+body{margin:0;background:#DDE2EC}
+a{color:#171C33}a:hover{color:#235598}
+.frame{width:1280px;max-width:100%;margin:0 auto;background:#F3F5F9}
+</style>
+</head>
+<body>
+<div class="frame">
+<div style="min-height: 1260px; background: #F3F5F9; color: #171C33; font-family: Inter, system-ui, sans-serif; font-size: 14px; line-height: 1.4">
+
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 12px 28px; background: #FFFFFF; border-bottom: 1px solid #D9DEE9">
+<div style="display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 21px">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"></path><path d="m12 7 5 8H7l5-8Z"></path></svg>
+<span>Questboard</span>
+</div>
+<nav aria-label="Views" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="kid-today.html" style="padding: 10px 16px; border-radius: 10px; color: #4A5270; font-weight: 600; text-decoration: none">Today</a>
+<a href="kid-week.html" style="padding: 10px 16px; border-radius: 10px; color: #4A5270; font-weight: 600; text-decoration: none">Week</a>
+<a href="kid-month.html" aria-current="page" style="padding: 10px 16px; border-radius: 10px; background: #171C33; color: #FFFFFF; font-weight: 600; text-decoration: none">Month</a>
+</nav>
+<div style="margin-left: auto; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; background: #FCEAE3; color: #854434; font-weight: 600">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9Z"></path></svg>
+<span>Campfire: 6 days</span>
+</div>
+<span style="font-weight: 600">Anush</span>
+</div>
+</header>
+
+<main style="max-width: 1280px; margin: 0 auto; padding: 24px 28px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+
+<section style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 1 1 380px; min-width: 0">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; letter-spacing: -0.01em">December 2026</h1>
+<p style="margin: 6px 0 0; font-size: 17px; color: #4A5270">Ten days on the board so far. Here is where the time went.</p>
+</div>
+<div style="flex: 2 1 520px; background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 14px 18px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5270">Goals for the month</span>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 32px; font-weight: 600"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #171C33">Run a one-shot adventure I wrote</label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 32px; font-weight: 600"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #171C33">Finish the "Is my d20 fair?" data story</label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 32px; font-weight: 600; color: #4A5270"><input type="checkbox" checked="checked" style="width: 20px; height: 20px; accent-color: #171C33"><span style="text-decoration: line-through">Choose my troop</span></label>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 10px">
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 14px; padding: 12px 14px"><div style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">61</div><div style="color: #4A5270; font-size: 13px">cards finished</div></div>
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 14px; padding: 12px 14px"><div style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">9</div><div style="color: #4A5270; font-size: 13px">partly done, carried on</div></div>
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 14px; padding: 12px 14px"><div style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">4</div><div style="color: #4A5270; font-size: 13px">missed</div></div>
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 14px; padding: 12px 14px"><div style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">9 of 10</div><div style="color: #4A5270; font-size: 13px">days closed out</div></div>
+<div style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 14px; padding: 12px 14px"><div style="font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">30 h 50</div><div style="color: #4A5270; font-size: 13px">spent of 34 h 55 planned</div></div>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+
+<div style="flex: 1 1 520px; min-width: 0; background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 20px">Where my time went</h2>
+<span style="color: #4A5270; font-size: 13px">December 11 to 20. Solid is time spent; pale is time planned.</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(120px, 170px) minmax(0, 1fr) minmax(96px, auto); gap: 10px 12px; align-items: center">
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #235598; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20 20 4v16H4Z"></path><path d="M14 16h2v-2"></path></svg></span>Math &amp; School</span>
+<div style="height: 14px; width: 62.5%; background: #C8DCF4; border-radius: 4px; display: flex"><div style="width: 85%; background: #2A78D6; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">4 h 15 of 5 h</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #854434; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"></path></svg></span>Reading &amp; Rest</span>
+<div style="height: 14px; width: 56.25%; background: #FAD8CA; border-radius: 4px; display: flex"><div style="width: 100%; background: #EB6834; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">4 h 30 of 4 h 30</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #196355; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path></svg></span>Build &amp; Code</span>
+<div style="height: 14px; width: 25%; background: #C4EADC; border-radius: 4px; display: flex"><div style="width: 62.5%; background: #1BAF7A; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">1 h 15 of 2 h</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #71541E; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M9 9h.01M15 9h.01M9 15h.01M15 15h.01"></path></svg></span>Fun &amp; Friends</span>
+<div style="height: 14px; width: 100%; background: #FAE7BD; border-radius: 4px; display: flex"><div style="width: 100%; background: #EDA100; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">8 h of 8 h</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #774867; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l10-2v13"></path><circle cx="6.5" cy="18" r="2.5"></circle><circle cx="16.5" cy="16" r="2.5"></circle></svg></span>Music</span>
+<div style="height: 14px; width: 33.3%; background: #F9DDE7; border-radius: 4px; display: flex"><div style="width: 75%; background: #E87BA4; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">2 h of 2 h 40</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #076210; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 3 20h18L12 4Z"></path><path d="M12 12v8"></path></svg></span>Outdoors &amp; Scouts</span>
+<div style="height: 14px; width: 87.5%; background: #BDDFBD; border-radius: 4px; display: flex"><div style="width: 85.7%; background: #008300; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">6 h of 7 h</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #5044AF; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"></path><path d="M9 9h5M9 13h5"></path></svg></span>Story &amp; D&amp;D</span>
+<div style="height: 14px; width: 37.5%; background: #D6D2F4; border-radius: 4px; display: flex"><div style="width: 83.3%; background: #6250D6; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">2 h 30 of 3 h</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #8D363F; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9H4v-9Z"></path><path d="M10 20v-5h4v5"></path></svg></span>Home &amp; Helping</span>
+<div style="height: 14px; width: 21.9%; background: #F8D0CF; border-radius: 4px; display: flex"><div style="width: 85.7%; background: #E34948; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">1 h 30 of 1 h 45</span>
+
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><span style="color: #4C5469; display: flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"></path></svg></span>Plan &amp; Reflect</span>
+<div style="height: 14px; width: 12.5%; background: #D4D7DC; border-radius: 4px; display: flex"><div style="width: 83.3%; background: #5B6478; border-radius: 4px"></div></div>
+<span style="font-size: 13px; color: #4A5270; text-align: right">50 min of 1 h</span>
+</div>
+</div>
+
+<div style="flex: 1 1 520px; min-width: 0; background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 20px">Day by day</h2>
+<span style="color: #4A5270; font-size: 13px">A check means the day was closed out.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; font-size: 12px">
+<span style="text-align: center; font-weight: 700; color: #4A5270">Mon</span><span style="text-align: center; font-weight: 700; color: #4A5270">Tue</span><span style="text-align: center; font-weight: 700; color: #4A5270">Wed</span><span style="text-align: center; font-weight: 700; color: #4A5270">Thu</span><span style="text-align: center; font-weight: 700; color: #4A5270">Fri</span><span style="text-align: center; font-weight: 700; color: #4A5270">Sat</span><span style="text-align: center; font-weight: 700; color: #4A5270">Sun</span>
+
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">30</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">1</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">2</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">3</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">4</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">5</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">6</div>
+
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">7</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">8</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">9</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">10</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #E1ECF9"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>11</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">1 h 30</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #C8DCF4"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>12</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">3 h 10</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #C8DCF4"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>13</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">3 h 25</div></div>
+
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 1px dashed #636B88; box-sizing: border-box"><div style="font-weight: 700">14</div><div style="color: #4A5270">Not closed</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #E1ECF9"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>15</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">2 h 20</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #E1ECF9"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>16</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">2 h 05</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #E1ECF9"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>17</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">2 h 40</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #C8DCF4"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>18</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">3 h 35</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #9EC5F4"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>19</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#104281" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #104281; font-weight: 600">4 h 50</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #C8DCF4"><div style="display: flex; justify-content: space-between; font-weight: 700"><span>20</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#235598" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Closed out"><path d="m5 12 5 5 9-10"></path></svg></div><div style="color: #235598; font-weight: 600">3 h 15</div></div>
+
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 2px solid #171C33; box-sizing: border-box"><div style="font-weight: 700">21</div><div style="font-weight: 600">Today</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 1px solid #D9DEE9; box-sizing: border-box"><div style="font-weight: 700">22</div><div style="color: #4A5270">2 h 50 planned</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 1px solid #D9DEE9; box-sizing: border-box"><div style="font-weight: 700">23</div><div style="color: #4A5270">2 h 45 planned</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #EBEEF4"><div style="font-weight: 700">24</div><div style="color: #4A5270">Rest day</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #EBEEF4"><div style="font-weight: 700">25</div><div style="color: #4A5270">Rest day</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #EBEEF4"><div style="font-weight: 700">26</div><div style="color: #4A5270">Away</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; background: #EBEEF4"><div style="font-weight: 700">27</div><div style="color: #4A5270">Away</div></div>
+
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 1px solid #D9DEE9; box-sizing: border-box"><div style="font-weight: 700">28</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 1px solid #D9DEE9; box-sizing: border-box"><div style="font-weight: 700">29</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 1px solid #D9DEE9; box-sizing: border-box"><div style="font-weight: 700">30</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; border: 1px solid #D9DEE9; box-sizing: border-box"><div style="font-weight: 700">31</div></div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">1</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">2</div>
+<div style="min-height: 60px; border-radius: 10px; padding: 6px; color: #636B88">3</div>
+</div>
+<span style="font-size: 12px; color: #4A5270">Darker blue means more time spent that day.</span>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #D9DEE9; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 20px">Last Sunday's check-in</h2>
+<span style="color: #4A5270; font-size: 13px">You lead it. Four short answers, agreed with Mom and Dad.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 10px">
+<div style="background: #F3F5F9; border-radius: 12px; padding: 10px 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5270">Keep</div><div style="font-weight: 600">The morning focus block</div></div>
+<div style="background: #F3F5F9; border-radius: 12px; padding: 10px 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5270">Change</div><div style="font-weight: 600">Music before lunch, not after dinner</div></div>
+<div style="background: #F3F5F9; border-radius: 12px; padding: 10px 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5270">Stop</div><div style="font-weight: 600">Planning more than three focus cards a day</div></div>
+<div style="background: #F3F5F9; border-radius: 12px; padding: 10px 12px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5270">Start</div><div style="font-weight: 600">Writing the recap right after each session</div></div>
+</div>
+</section>
+
+</main>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questboard mock: Sign-in: profile and PIN</title>
+<!-- Reference mock, exported from the design canvas. Static: nothing here is wired up.
+     Fonts fall back to system fonts unless Inter and Bricolage Grotesque are installed.
+     Designed at 520 x 720 px. The real screens are built from docs/05-design.md. -->
+<style>
+body{margin:0;background:#DDE2EC}
+a{color:#171C33}a:hover{color:#235598}
+.frame{width:520px;max-width:100%;margin:0 auto;background:#F3F5F9}
+</style>
+</head>
+<body>
+<div class="frame">
+<div style="width: 520px; height: 720px; box-sizing: border-box; padding: 28px 40px; background: #F3F5F9; color: #171C33; font-family: Inter, system-ui, sans-serif; font-size: 14px; line-height: 1.4; display: flex; flex-direction: column; align-items: center; gap: 16px">
+
+<div style="display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 21px">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"></path><path d="m12 7 5 8H7l5-8Z"></path></svg>
+<span>Questboard</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div style="width: 84px; height: 84px; border-radius: 26px; background: #E9E6F9; color: #5044AF; display: flex; align-items: center; justify-content: center">
+<svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"></path><path d="m12 7 5 8H7l5-8Z"></path><path d="M12 2v5M3 7l4 8M21 7l-4 8M12 22l-5-7M12 22l5-7"></path></svg>
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">Hi, Anush</h1>
+<p style="margin: 0; color: #4A5270">Enter your PIN to open your board.</p>
+</div>
+
+<div role="img" aria-label="2 of 4 digits entered" style="display: flex; gap: 14px">
+<span style="width: 18px; height: 18px; border-radius: 50%; background: #171C33"></span>
+<span style="width: 18px; height: 18px; border-radius: 50%; background: #171C33"></span>
+<span style="width: 18px; height: 18px; border-radius: 50%; border: 2px solid #636B88; box-sizing: border-box"></span>
+<span style="width: 18px; height: 18px; border-radius: 50%; border: 2px solid #636B88; box-sizing: border-box"></span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: 300px">
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">1</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">2</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">3</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">4</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">5</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">6</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">7</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">8</button>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">9</button>
+<span></span>
+<button type="button" style="height: 64px; border-radius: 16px; border: 1px solid #D9DEE9; background: #FFFFFF; color: #171C33; font-family: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 600; cursor: pointer">0</button>
+<button type="button" aria-label="Delete last digit" style="height: 64px; border-radius: 16px; border: 0; background: transparent; color: #171C33; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5h11v14H9l-6-7 6-7Z"></path><path d="m12 9 5 6M17 9l-5 6"></path></svg>
+</button>
+</div>
+
+<p style="margin: 0; font-size: 13px; color: #4A5270; text-align: center">Five wrong tries lock the board for five minutes. A parent can reset your PIN.</p>
+
+<div style="margin-top: auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; border-top: 1px solid #D9DEE9">
+<span style="font-size: 13px; color: #4A5270">This device: Anush's laptop</span>
+<a href="parent-home.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; border: 1px solid #D9DEE9; background: #FFFFFF; font-weight: 600; text-decoration: none">Parent sign-in</a>
+</div>
+</div>
+</div>
+</body>
+</html>

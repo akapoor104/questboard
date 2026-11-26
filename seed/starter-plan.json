@@ -1,0 +1,342 @@
+{
+ "note": "Starter plan for December 14, 2026 to January 3, 2027. Loaded once, when the board is empty. Everything can be changed in the app.",
+ "goals": [
+  {
+   "scope": "month",
+   "period_start": "2026-12-01",
+   "title": "Run a one-shot adventure I wrote",
+   "category_id": "story"
+  },
+  {
+   "scope": "month",
+   "period_start": "2026-12-01",
+   "title": "Finish the \"Is my d20 fair?\" data story",
+   "category_id": "build"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-14",
+   "title": "Set up my board and plan the break",
+   "category_id": "plan"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-14",
+   "title": "Outline the winter one-shot",
+   "category_id": "story"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-21",
+   "title": "Story: write the one-shot and run it",
+   "category_id": "story"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-21",
+   "title": "Build: first micro:bit programs",
+   "category_id": "build"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-21",
+   "title": "Plan and close out every day",
+   "category_id": "plan"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-28",
+   "title": "Build: the dice-fairness test and its chart",
+   "category_id": "build"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-28",
+   "title": "Story: a session recap and one revision",
+   "category_id": "story"
+  },
+  {
+   "scope": "week",
+   "period_start": "2026-12-28",
+   "title": "Get ready for January",
+   "category_id": "plan"
+  }
+ ],
+ "cards": [
+  {
+   "title": "Read for fun",
+   "category_id": "rest",
+   "minutes": 30,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-14",
+   "count": 7,
+   "details": "Any book you like."
+  },
+  {
+   "title": "Music practice",
+   "category_id": "music",
+   "minutes": 20,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-14",
+   "count": 4,
+   "details": "Drums or flute. You set the goal for each session."
+  },
+  {
+   "title": "Plan the break together",
+   "category_id": "plan",
+   "minutes": 20,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-14",
+   "count": 1,
+   "details": "With Mom or Dad: travel days, must-dos and your own picks."
+  },
+  {
+   "title": "Outline the winter one-shot",
+   "category_id": "story",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-14",
+   "count": 1,
+   "details": "A hook, three scenes, a twist and an ending. One page."
+  },
+  {
+   "title": "micro:bit: first programs",
+   "category_id": "build",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-14",
+   "count": 1,
+   "details": "Show your name, a beating heart, and a dice roller on shake."
+  },
+  {
+   "title": "Weekly check-in with Mom and Dad",
+   "category_id": "plan",
+   "minutes": 15,
+   "kind": "must",
+   "place": "day",
+   "date": "2026-12-20",
+   "details": "You lead it: keep, change, stop, start."
+  },
+  {
+   "title": "Read for fun",
+   "category_id": "rest",
+   "minutes": 30,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 7,
+   "details": "Any book you like."
+  },
+  {
+   "title": "Outside time",
+   "category_id": "outdoors",
+   "minutes": 45,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 5,
+   "details": "Bike, walk or play. Rain gear exists."
+  },
+  {
+   "title": "Music practice",
+   "category_id": "music",
+   "minutes": 20,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 5,
+   "details": "Drums or flute. You set the goal for each session."
+  },
+  {
+   "title": "Math Academy",
+   "category_id": "academics",
+   "minutes": 30,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 4,
+   "details": "Maintenance pace over the break. Stop when the timer ends."
+  },
+  {
+   "title": "Help at home",
+   "category_id": "home",
+   "minutes": 15,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 5,
+   "details": "Pick a job from the Library, or ask what would help most."
+  },
+  {
+   "title": "Write one encounter for the one-shot",
+   "category_id": "story",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 3,
+   "details": "What do the players want, what stands in the way, and what happens if they fail?"
+  },
+  {
+   "title": "Draw a map for the adventure",
+   "category_id": "story",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 1
+  },
+  {
+   "title": "Run the one-shot for family",
+   "category_id": "story",
+   "minutes": 90,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 1
+  },
+  {
+   "title": "micro:bit: log data for an experiment",
+   "category_id": "build",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-21",
+   "count": 1,
+   "details": "Write the question and your prediction before you press record."
+  },
+  {
+   "title": "Weekly check-in with Mom and Dad",
+   "category_id": "plan",
+   "minutes": 15,
+   "kind": "must",
+   "place": "day",
+   "date": "2026-12-27",
+   "details": "You lead it: keep, change, stop, start."
+  },
+  {
+   "title": "Read for fun",
+   "category_id": "rest",
+   "minutes": 30,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 7,
+   "details": "Any book you like."
+  },
+  {
+   "title": "Outside time",
+   "category_id": "outdoors",
+   "minutes": 45,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 5,
+   "details": "Bike, walk or play. Rain gear exists."
+  },
+  {
+   "title": "Music practice",
+   "category_id": "music",
+   "minutes": 20,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 5,
+   "details": "Drums or flute. You set the goal for each session."
+  },
+  {
+   "title": "Math Academy",
+   "category_id": "academics",
+   "minutes": 30,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 4,
+   "details": "Maintenance pace over the break. Stop when the timer ends."
+  },
+  {
+   "title": "Help at home",
+   "category_id": "home",
+   "minutes": 15,
+   "kind": "must",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 5,
+   "details": "Pick a job from the Library, or ask what would help most."
+  },
+  {
+   "title": "Is my d20 fair? Roll and record 100 rolls",
+   "category_id": "build",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 2,
+   "details": "Tally every roll. Two sessions make 200."
+  },
+  {
+   "title": "Is my d20 fair? Chart it and give the verdict",
+   "category_id": "build",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 1,
+   "details": "One chart. How uneven is too uneven to be luck?"
+  },
+  {
+   "title": "Data story: one chart and 150 words",
+   "category_id": "build",
+   "minutes": 30,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 1,
+   "details": "Question, data, one honest chart, what surprised me, who should do what."
+  },
+  {
+   "title": "Write a session recap",
+   "category_id": "story",
+   "minutes": 15,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 1,
+   "details": "150 to 250 words, sent to your players."
+  },
+  {
+   "title": "Revise a piece with the checklist",
+   "category_id": "story",
+   "minutes": 20,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 1,
+   "details": "Is it clear? One vivid detail per scene? What can I cut?"
+  },
+  {
+   "title": "AMC 8 practice: 12 problems, timed",
+   "category_id": "academics",
+   "minutes": 20,
+   "kind": "choice",
+   "place": "week",
+   "week_start": "2026-12-28",
+   "count": 2,
+   "details": "Half a test in 20 minutes. Circle the ones to revisit."
+  },
+  {
+   "title": "Weekly check-in with Mom and Dad",
+   "category_id": "plan",
+   "minutes": 15,
+   "kind": "must",
+   "place": "day",
+   "date": "2027-01-03",
+   "details": "You lead it: keep, change, stop, start. Plan January."
+  }
+ ]
+}

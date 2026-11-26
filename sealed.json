@@ -1,0 +1,31 @@
+{
+  "note": "SHA-256 of the sealed files. Written by `node scripts/check.mjs --reseal`. Do not edit by hand.",
+  "files": {
+    "db/migrations/001_schema.sql": "f15080a21ee5d4adcbf003ffbc297bd79b36b1d91197960cb9fcf431750f6104",
+    "db/migrations/002_core.sql": "9f7803a76275284acdc30bc17cde9e0d9e8e910a6d2fbaf5ad51976a6f3cc908",
+    "db/migrations/003_board.sql": "627fba21cc1a96dfbdf79d851b72f9d732751293a507a20969146b7cd5dfd568",
+    "db/migrations/004_insights.sql": "3485356ebd2802a36f03133d9030ef0a12ec8c2ff399d356aade935475fc081e",
+    "db/migrations/005_grants.sql": "ebbf589faa21517a1c40c3bc76a4a518eb47857478941cf82e0d2eeff948b568",
+    "db/test/supabase_stubs.sql": "aa49c8d42979423ef369c9b8906781257337dec3177945b8d2fd36a5805fb9ad",
+    "db/test/test_helpers.sql": "2ce572cafa1ef079c34e084e83359a4dbad3e6fe5d5d2807fd29e48c44ede3f3",
+    "scripts/check.mjs": "29f1b48be30e74aa114483a71e1b5eeb2ba22a4757b53e30d38319d8c06e9620",
+    "scripts/run-tests.mjs": "62c50b553291e668b0e7838cd18b57fe35916c07a7d8f22b5588aded6f102399",
+    "src/api/client.ts": "394e06c32b4156026b8787583fcd32cc441f56801a784cd6352f393262ea7ce5",
+    "src/api/memory/backup.ts": "8edbe1fab1e2871d76473e299f7cc41dcc7410496f888314a1b60dca5982d4ad",
+    "src/api/memory/board.ts": "9de1f1e9984a4b0c7d63481146bff719e13226f50bebec02cda42e500575fd63",
+    "src/api/memory/core.ts": "b23ca175b6e00dab339c0b016c098fba478e2e761f28c6b0ce137d8090f6f41b",
+    "src/api/memory/insights.ts": "97674055e5d1997afa6f3e006b6dfb2f17b310e70e399a96f8969734d39bb6a5",
+    "src/api/memory/session.ts": "225c7b19f9501d877ab9f57883a2b1053fbfdd85eb6f0d2d4b80d0d9cef52803",
+    "src/api/memoryBackend.ts": "af651117809aafc0f61753f7b27a7c61b6cf5520fbc6eea4a7096b6405615da9",
+    "src/api/types.ts": "830c8b08e089b188a81d133f7a9a110c678b05ce3ddd2a00be9181ee9fd81c9a",
+    "src/lib/dates.ts": "6169cadb3e1def2a4913cca70a36dc43b52ff31ff5a5aec3ea6e60f72b27cde3",
+    "tests/contract/board.test.ts": "8b34fe6e010ad5bd3c08907d8a91c0b41ff858c2e920f01b414e8bb38f3ee937",
+    "tests/contract/fixture.ts": "8ad9793f98d65a732554706be890791066817255520297535a9f6880ea280006",
+    "tests/contract/insights.test.ts": "985a3571f4a62fecd54f04f5a6ede68f6c80e20ef868354e7f9b32a313d6cc6c",
+    "tests/contract/seed.test.ts": "eb4b58d143da9283368071a91df7b4f46f16d7b095ce4e837b7729452d02a9ae",
+    "tests/contract/session.test.ts": "5b9a15d87bc219565919b70848fd8748805ffbae637b2b032eebf99fe430cb69",
+    "tests/contract/world.ts": "77fd78aaa0e4b1947ddca660f77d844c1e12407db160a596393d2b6ad96d34d3",
+    "tests/parity/fuzz.test.ts": "b21b71dd5b9aceb7f138f70762d03f93d444b0e0af6a0812218e42b1ab9e63a9",
+    "tests/parity/privileges.test.ts": "74544de7e97ad8cd0b1330068cd501c5807e9f7bf13d4b734c15ed6c1cbf4308"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "questboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node scripts/run-tests.mjs",
+    "test:pg": "node scripts/run-tests.mjs --pg",
+    "e2e": "playwright test",
+    "seed:sql": "node scripts/build-seed-sql.mjs",
+    "check": "node scripts/check.mjs",
+    "check:quick": "node scripts/check.mjs --quick",
+    "check:e2e": "node scripts/check.mjs --e2e"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.0.0",
+    "@fontsource-variable/inter": "^5.0.0",
+    "@supabase/supabase-js": "^2.50.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "^6.0.0",
+    "vite": "^7.0.0"
+  }
+}

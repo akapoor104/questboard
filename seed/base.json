@@ -1,0 +1,2079 @@
+{
+ "version": 1,
+ "tables": {
+  "categories": [
+   {
+    "id": "academics",
+    "name": "Math & School",
+    "color": "blue",
+    "icon": "math",
+    "kind": "structured",
+    "sort": 1,
+    "active": true
+   },
+   {
+    "id": "rest",
+    "name": "Reading & Rest",
+    "color": "orange",
+    "icon": "moon",
+    "kind": "free",
+    "sort": 2,
+    "active": true
+   },
+   {
+    "id": "build",
+    "name": "Build & Code",
+    "color": "aqua",
+    "icon": "chip",
+    "kind": "structured",
+    "sort": 3,
+    "active": true
+   },
+   {
+    "id": "fun",
+    "name": "Fun & Friends",
+    "color": "yellow",
+    "icon": "die",
+    "kind": "free",
+    "sort": 4,
+    "active": true
+   },
+   {
+    "id": "music",
+    "name": "Music",
+    "color": "magenta",
+    "icon": "note",
+    "kind": "structured",
+    "sort": 5,
+    "active": true
+   },
+   {
+    "id": "outdoors",
+    "name": "Outdoors & Scouts",
+    "color": "green",
+    "icon": "tent",
+    "kind": "free",
+    "sort": 6,
+    "active": true
+   },
+   {
+    "id": "story",
+    "name": "Story & D&D",
+    "color": "violet",
+    "icon": "book",
+    "kind": "structured",
+    "sort": 7,
+    "active": true
+   },
+   {
+    "id": "home",
+    "name": "Home & Helping",
+    "color": "red",
+    "icon": "home",
+    "kind": "free",
+    "sort": 8,
+    "active": true
+   },
+   {
+    "id": "plan",
+    "name": "Plan & Reflect",
+    "color": "slate",
+    "icon": "compass",
+    "kind": "free",
+    "sort": 9,
+    "active": true
+   }
+  ],
+  "library_items": [
+   {
+    "id": "lib-academics-01",
+    "title": "Math Academy lesson",
+    "category_id": "academics",
+    "minutes": 30,
+    "description": "One or two lessons. Stop when the timer ends.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-02",
+    "title": "Math Academy review",
+    "category_id": "academics",
+    "minutes": 20,
+    "description": "Clear the review queue before starting anything new.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-03",
+    "title": "Mr Math problem set",
+    "category_id": "academics",
+    "minutes": 45,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-04",
+    "title": "AMC 8 practice: 12 problems, timed",
+    "category_id": "academics",
+    "minutes": 20,
+    "description": "Half a test in 20 minutes. Circle the ones to revisit.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-05",
+    "title": "AMC 8 full practice test",
+    "category_id": "academics",
+    "minutes": 40,
+    "description": "25 problems in 40 minutes, just like the real one.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-06",
+    "title": "Redo missed contest problems",
+    "category_id": "academics",
+    "minutes": 20,
+    "description": "Solve each again without looking. Then say why the first try went wrong.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-07",
+    "title": "Berkeley Math Circle puzzle",
+    "category_id": "academics",
+    "minutes": 30,
+    "description": "Pick one problem and chew on it. No answer needed.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-08",
+    "title": "Prepare the math club idea of the week",
+    "category_id": "academics",
+    "minutes": 20,
+    "description": "One idea, one example, one question for the club.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-09",
+    "title": "Explain one math idea out loud",
+    "category_id": "academics",
+    "minutes": 10,
+    "description": "Teach it to a parent, a grandparent or the dog.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-10",
+    "title": "School assignment",
+    "category_id": "academics",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-11",
+    "title": "GATE project work",
+    "category_id": "academics",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-12",
+    "title": "Math puzzle or logic game",
+    "category_id": "academics",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-academics-13",
+    "title": "Dice math: what does 2d6 really roll?",
+    "category_id": "academics",
+    "minutes": 30,
+    "description": "List every outcome, count them, draw the shape. Then test it with real dice.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-01",
+    "title": "Write a session recap",
+    "category_id": "story",
+    "minutes": 15,
+    "description": "150 to 250 words: what happened, in order, with one vivid detail. Send it to your players.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-02",
+    "title": "Prep the next D&D session",
+    "category_id": "story",
+    "minutes": 45,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-03",
+    "title": "World bible: add one page",
+    "category_id": "story",
+    "minutes": 30,
+    "description": "A place, a faction, a monster or a legend.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-04",
+    "title": "Outline the winter one-shot",
+    "category_id": "story",
+    "minutes": 30,
+    "description": "A hook, three scenes, a twist and an ending. One page.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-05",
+    "title": "Write one encounter for the one-shot",
+    "category_id": "story",
+    "minutes": 30,
+    "description": "What do the players want, what stands in the way, and what happens if they fail?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-06",
+    "title": "Draw a map for the adventure",
+    "category_id": "story",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-07",
+    "title": "Make three characters with a want and a secret",
+    "category_id": "story",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-08",
+    "title": "Revise a piece with the checklist",
+    "category_id": "story",
+    "minutes": 20,
+    "description": "Is it clear? Is there one vivid detail in each scene? What can I cut?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-09",
+    "title": "Sentence-combining game",
+    "category_id": "story",
+    "minutes": 10,
+    "description": "Take five short sentences from a recap. Turn them into two better ones.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-10",
+    "title": "Free writing, no stopping",
+    "category_id": "story",
+    "minutes": 15,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-11",
+    "title": "Short story: draft a scene",
+    "category_id": "story",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-12",
+    "title": "Read a published adventure like a writer",
+    "category_id": "story",
+    "minutes": 30,
+    "description": "Notice how it is organized. Borrow the structure, never the words.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-13",
+    "title": "Pixar in a Box storytelling lesson",
+    "category_id": "story",
+    "minutes": 20,
+    "description": "One lesson, then use it on your villain or your plot.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-14",
+    "title": "Idea notebook: ten new ideas",
+    "category_id": "story",
+    "minutes": 10,
+    "description": "Bad ideas count. Ten of anything.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-15",
+    "title": "Tell the grandparents the story so far",
+    "category_id": "story",
+    "minutes": 15,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-16",
+    "title": "Practice a 60-second pitch",
+    "category_id": "story",
+    "minutes": 10,
+    "description": "One clear point, one example, one ask.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-17",
+    "title": "Run the one-shot for family",
+    "category_id": "story",
+    "minutes": 90,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-story-18",
+    "title": "Stone Soup piece: draft or revise",
+    "category_id": "story",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-01",
+    "title": "micro:bit: first programs",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "Show your name, a beating heart, and a dice roller on shake.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-02",
+    "title": "micro:bit: log data for an experiment",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "Write the question and your prediction before you press record.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-03",
+    "title": "Is my d20 fair? Roll and record 100 rolls",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "Tally every roll. Do it twice for 200.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-04",
+    "title": "Is my d20 fair? Chart it and give the verdict",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "One chart. How uneven is too uneven to be luck?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-05",
+    "title": "CreateAI: record drum strokes and train a model",
+    "category_id": "build",
+    "minutes": 45,
+    "description": "At least three samples of each stroke. More is better.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-06",
+    "title": "CreateAI: test the model on someone else",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "Count right and wrong out of 20. Why does it miss?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-07",
+    "title": "Data story: one chart and 150 words",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "Question, data, one honest chart, what surprised me, who should do what.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-08",
+    "title": "CS50 Scratch: one project step",
+    "category_id": "build",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-09",
+    "title": "Build something from what is in the house",
+    "category_id": "build",
+    "minutes": 45,
+    "description": "Cardboard, LEGO, tape and string all count.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-10",
+    "title": "Take something apart (ask first)",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "Lay the parts out in order. Can you put it back?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-11",
+    "title": "STEM Fair: brainstorm ten questions",
+    "category_id": "build",
+    "minutes": 20,
+    "description": "Things you could measure at home or at school.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-12",
+    "title": "STEM Fair: plan the test",
+    "category_id": "build",
+    "minutes": 30,
+    "description": "What will you change, what will you measure, and how many times?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-13",
+    "title": "Calibration check",
+    "category_id": "build",
+    "minutes": 15,
+    "description": "Compare a sensor with something you trust and write down the difference.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-build-14",
+    "title": "Catch the AI (with a parent)",
+    "category_id": "build",
+    "minutes": 15,
+    "description": "Compare an AI monster description with your own. Which is better, and why?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-01",
+    "title": "Drums: rudiments with a metronome",
+    "category_id": "music",
+    "minutes": 15,
+    "description": "Slow and even beats fast and messy.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-02",
+    "title": "Drums: work on a song",
+    "category_id": "music",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-03",
+    "title": "Flute: long tones and a scale",
+    "category_id": "music",
+    "minutes": 10,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-04",
+    "title": "Flute: band piece",
+    "category_id": "music",
+    "minutes": 15,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-05",
+    "title": "Record a take and listen back",
+    "category_id": "music",
+    "minutes": 15,
+    "description": "Pick one thing to fix next time.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-06",
+    "title": "Learn a tune by ear",
+    "category_id": "music",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-07",
+    "title": "Make drum cues or a soundtrack for the campaign",
+    "category_id": "music",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-music-08",
+    "title": "Play something for the family",
+    "category_id": "music",
+    "minutes": 10,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-01",
+    "title": "Outside free play",
+    "category_id": "outdoors",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-02",
+    "title": "Bike ride",
+    "category_id": "outdoors",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-03",
+    "title": "Family walk or hike",
+    "category_id": "outdoors",
+    "minutes": 60,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-04",
+    "title": "Arrow of Light: work on a requirement",
+    "category_id": "outdoors",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-05",
+    "title": "Knots: practice three",
+    "category_id": "outdoors",
+    "minutes": 15,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-06",
+    "title": "Pack my own bag for an outing",
+    "category_id": "outdoors",
+    "minutes": 15,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-07",
+    "title": "Troop choice: what I liked about each troop",
+    "category_id": "outdoors",
+    "minutes": 15,
+    "description": "Three things for each. Which felt like your people?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-08",
+    "title": "Scout Oath and Law from memory",
+    "category_id": "outdoors",
+    "minutes": 10,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-09",
+    "title": "Fitness: push-ups, sit-ups and a run",
+    "category_id": "outdoors",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-outdoors-10",
+    "title": "Nature notebook or stargazing",
+    "category_id": "outdoors",
+    "minutes": 20,
+    "description": "Draw one thing you noticed and one question about it.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-01",
+    "title": "D&D session with friends",
+    "category_id": "fun",
+    "minutes": 120,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-02",
+    "title": "Play date",
+    "category_id": "fun",
+    "minutes": 120,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-03",
+    "title": "Board game or card game",
+    "category_id": "fun",
+    "minutes": 45,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-04",
+    "title": "Free choice: anything I want",
+    "category_id": "fun",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-05",
+    "title": "LEGO or free build",
+    "category_id": "fun",
+    "minutes": 45,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-06",
+    "title": "Call or video chat with a friend",
+    "category_id": "fun",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-07",
+    "title": "Family game night",
+    "category_id": "fun",
+    "minutes": 60,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-08",
+    "title": "Movie night",
+    "category_id": "fun",
+    "minutes": 120,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-fun-09",
+    "title": "Game or show time",
+    "category_id": "fun",
+    "minutes": 30,
+    "description": "Within our family media plan.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-01",
+    "title": "Tidy my room",
+    "category_id": "home",
+    "minutes": 15,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-02",
+    "title": "Help cook dinner",
+    "category_id": "home",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-03",
+    "title": "Laundry: wash, dry and fold my load",
+    "category_id": "home",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-04",
+    "title": "Set and clear the table",
+    "category_id": "home",
+    "minutes": 10,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-05",
+    "title": "Help with groceries or errands",
+    "category_id": "home",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-06",
+    "title": "Take out trash and recycling",
+    "category_id": "home",
+    "minutes": 5,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-07",
+    "title": "Cook one meal myself",
+    "category_id": "home",
+    "minutes": 45,
+    "description": "With a parent nearby. You choose the recipe.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-08",
+    "title": "Pack for the trip",
+    "category_id": "home",
+    "minutes": 20,
+    "description": "Make the list first, then pack from the list.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-09",
+    "title": "Write thank-you notes",
+    "category_id": "home",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-10",
+    "title": "Help someone without being asked",
+    "category_id": "home",
+    "minutes": 10,
+    "description": "Then tell us at dinner what you noticed.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-home-11",
+    "title": "Call the grandparents",
+    "category_id": "home",
+    "minutes": 15,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-rest-01",
+    "title": "Read for fun",
+    "category_id": "rest",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-rest-02",
+    "title": "Audiobook or podcast",
+    "category_id": "rest",
+    "minutes": 30,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-rest-03",
+    "title": "Quiet time",
+    "category_id": "rest",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-rest-04",
+    "title": "Read aloud with family",
+    "category_id": "rest",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-rest-05",
+    "title": "Library trip",
+    "category_id": "rest",
+    "minutes": 45,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-rest-06",
+    "title": "Wind down: screens off, book in bed",
+    "category_id": "rest",
+    "minutes": 20,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-plan-01",
+    "title": "Plan my week",
+    "category_id": "plan",
+    "minutes": 15,
+    "description": "Place the must-dos first, then your own picks. Leave room for nothing.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-plan-02",
+    "title": "Plan tomorrow",
+    "category_id": "plan",
+    "minutes": 5,
+    "description": null,
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-plan-03",
+    "title": "Weekly check-in with Mom and Dad",
+    "category_id": "plan",
+    "minutes": 15,
+    "description": "You lead it. What interested you? What was too easy or too hard? What do you want to stop?",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-plan-04",
+    "title": "Sort the Catch-up tray",
+    "category_id": "plan",
+    "minutes": 5,
+    "description": "For each card: new time, smaller, or ask to drop.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-plan-05",
+    "title": "Update my ship log",
+    "category_id": "plan",
+    "minutes": 5,
+    "description": "Write down what you finished this month.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   },
+   {
+    "id": "lib-plan-06",
+    "title": "Pick next week's focus with a parent",
+    "category_id": "plan",
+    "minutes": 10,
+    "description": "Up to three things. They can change every week.",
+    "tags": [],
+    "source": "guide",
+    "plan_ref": null,
+    "active": true
+   }
+  ],
+  "words": [
+   {
+    "id": 1,
+    "word": "tenacious",
+    "part_of_speech": "adjective",
+    "definition": "Not giving up, even when something is hard.",
+    "example": "The tenacious ranger tracked the wyvern through three nights of rain."
+   },
+   {
+    "id": 2,
+    "word": "lucid",
+    "part_of_speech": "adjective",
+    "definition": "Clear and easy to understand.",
+    "example": "Her lucid explanation made the puzzle seem simple."
+   },
+   {
+    "id": 3,
+    "word": "forage",
+    "part_of_speech": "verb",
+    "definition": "To search for food or supplies.",
+    "example": "The scouts foraged for dry wood before the storm."
+   },
+   {
+    "id": 4,
+    "word": "meticulous",
+    "part_of_speech": "adjective",
+    "definition": "Very careful about small details.",
+    "example": "A meticulous mapmaker measures every bend in the river."
+   },
+   {
+    "id": 5,
+    "word": "ambiguous",
+    "part_of_speech": "adjective",
+    "definition": "Able to be understood in more than one way.",
+    "example": "The riddle's ambiguous clue sent half the party left and half right."
+   },
+   {
+    "id": 6,
+    "word": "resilient",
+    "part_of_speech": "adjective",
+    "definition": "Able to recover quickly after something goes wrong.",
+    "example": "The resilient drummer missed a beat and came right back in."
+   },
+   {
+    "id": 7,
+    "word": "hypothesis",
+    "part_of_speech": "noun",
+    "definition": "An idea you can test to see whether it is true.",
+    "example": "My hypothesis is that the red die rolls high more often."
+   },
+   {
+    "id": 8,
+    "word": "diligent",
+    "part_of_speech": "adjective",
+    "definition": "Working steadily and carefully.",
+    "example": "Diligent practice turned the hard measure into an easy one."
+   },
+   {
+    "id": 9,
+    "word": "improvise",
+    "part_of_speech": "verb",
+    "definition": "To make something up on the spot.",
+    "example": "When the players skipped the bridge, the Dungeon Master had to improvise."
+   },
+   {
+    "id": 10,
+    "word": "skeptical",
+    "part_of_speech": "adjective",
+    "definition": "Not believing something until you see good evidence.",
+    "example": "She was skeptical of the lucky dice until she counted the rolls."
+   },
+   {
+    "id": 11,
+    "word": "eloquent",
+    "part_of_speech": "adjective",
+    "definition": "Speaking or writing in a clear, moving way.",
+    "example": "The eloquent bard talked the guards into opening the gate."
+   },
+   {
+    "id": 12,
+    "word": "precise",
+    "part_of_speech": "adjective",
+    "definition": "Exact and accurate.",
+    "example": "A precise measurement needs the same ruler every time."
+   },
+   {
+    "id": 13,
+    "word": "persevere",
+    "part_of_speech": "verb",
+    "definition": "To keep going in spite of difficulty.",
+    "example": "They persevered up the last switchback to the summit."
+   },
+   {
+    "id": 14,
+    "word": "ominous",
+    "part_of_speech": "adjective",
+    "definition": "Suggesting that something bad is about to happen.",
+    "example": "An ominous rumble came from under the old mill."
+   },
+   {
+    "id": 15,
+    "word": "collaborate",
+    "part_of_speech": "verb",
+    "definition": "To work together on something.",
+    "example": "The patrol collaborated to pitch the tent before dark."
+   },
+   {
+    "id": 16,
+    "word": "inquisitive",
+    "part_of_speech": "adjective",
+    "definition": "Eager to learn and full of questions.",
+    "example": "The inquisitive apprentice asked why the potion turned blue."
+   },
+   {
+    "id": 17,
+    "word": "vivid",
+    "part_of_speech": "adjective",
+    "definition": "Making a strong, clear picture in your mind.",
+    "example": "One vivid detail, like the smell of smoke, makes a scene feel real."
+   },
+   {
+    "id": 18,
+    "word": "deduce",
+    "part_of_speech": "verb",
+    "definition": "To figure something out from clues.",
+    "example": "From the muddy prints she deduced that the thief had come by the river."
+   },
+   {
+    "id": 19,
+    "word": "calibrate",
+    "part_of_speech": "verb",
+    "definition": "To adjust a tool so that it measures correctly.",
+    "example": "Calibrate the sensor before you trust its numbers."
+   },
+   {
+    "id": 20,
+    "word": "concise",
+    "part_of_speech": "adjective",
+    "definition": "Saying a lot in few words.",
+    "example": "A concise recap fits on one card."
+   },
+   {
+    "id": 21,
+    "word": "formidable",
+    "part_of_speech": "adjective",
+    "definition": "Impressive in a way that is a little frightening.",
+    "example": "The dragon was a formidable opponent, even asleep."
+   },
+   {
+    "id": 22,
+    "word": "plausible",
+    "part_of_speech": "adjective",
+    "definition": "Seeming reasonable or likely to be true.",
+    "example": "It was a plausible excuse, but the cookie crumbs told another story."
+   },
+   {
+    "id": 23,
+    "word": "anticipate",
+    "part_of_speech": "verb",
+    "definition": "To expect something and get ready for it.",
+    "example": "Good planners anticipate rain and pack a tarp."
+   },
+   {
+    "id": 24,
+    "word": "momentum",
+    "part_of_speech": "noun",
+    "definition": "The force that keeps something moving once it has started.",
+    "example": "After three good days, the project had real momentum."
+   },
+   {
+    "id": 25,
+    "word": "intricate",
+    "part_of_speech": "adjective",
+    "definition": "Having many small parts or details.",
+    "example": "The lock had an intricate pattern of gears."
+   },
+   {
+    "id": 26,
+    "word": "candid",
+    "part_of_speech": "adjective",
+    "definition": "Honest and direct.",
+    "example": "A candid friend tells you when your plan has a hole in it."
+   },
+   {
+    "id": 27,
+    "word": "endeavor",
+    "part_of_speech": "noun",
+    "definition": "A serious attempt to do something.",
+    "example": "Building the treehouse was a summer-long endeavor."
+   },
+   {
+    "id": 28,
+    "word": "analyze",
+    "part_of_speech": "verb",
+    "definition": "To study something closely in order to understand it.",
+    "example": "Analyze the problems you missed before you try new ones."
+   },
+   {
+    "id": 29,
+    "word": "nimble",
+    "part_of_speech": "adjective",
+    "definition": "Quick and light in movement or thought.",
+    "example": "The nimble rogue slipped past the trap."
+   },
+   {
+    "id": 30,
+    "word": "novice",
+    "part_of_speech": "noun",
+    "definition": "A person who is new to something.",
+    "example": "Every expert drummer started as a novice."
+   },
+   {
+    "id": 31,
+    "word": "revise",
+    "part_of_speech": "verb",
+    "definition": "To change something in order to make it better.",
+    "example": "Revise the ending so the villain's plan makes sense."
+   },
+   {
+    "id": 32,
+    "word": "tangible",
+    "part_of_speech": "adjective",
+    "definition": "Real enough to touch or measure.",
+    "example": "A finished map is tangible proof of a week's work."
+   },
+   {
+    "id": 33,
+    "word": "vigilant",
+    "part_of_speech": "adjective",
+    "definition": "Watching carefully for danger or problems.",
+    "example": "The vigilant lookout spotted the smoke first."
+   },
+   {
+    "id": 34,
+    "word": "synthesize",
+    "part_of_speech": "verb",
+    "definition": "To combine parts into a new whole.",
+    "example": "Synthesize your notes into one clear page."
+   },
+   {
+    "id": 35,
+    "word": "arduous",
+    "part_of_speech": "adjective",
+    "definition": "Needing a great deal of effort.",
+    "example": "It was an arduous climb with full packs."
+   },
+   {
+    "id": 36,
+    "word": "perplexed",
+    "part_of_speech": "adjective",
+    "definition": "Confused because something is hard to understand.",
+    "example": "The perplexed wizard stared at the map that kept redrawing itself."
+   },
+   {
+    "id": 37,
+    "word": "ingenious",
+    "part_of_speech": "adjective",
+    "definition": "Clever and original.",
+    "example": "An ingenious pulley let one scout lift the whole food bag."
+   },
+   {
+    "id": 38,
+    "word": "obstacle",
+    "part_of_speech": "noun",
+    "definition": "Something that blocks your way.",
+    "example": "Every good adventure puts an obstacle between the heroes and the goal."
+   },
+   {
+    "id": 39,
+    "word": "prudent",
+    "part_of_speech": "adjective",
+    "definition": "Wise and careful about the future.",
+    "example": "It is prudent to check the weather before a hike."
+   },
+   {
+    "id": 40,
+    "word": "gratitude",
+    "part_of_speech": "noun",
+    "definition": "The feeling of being thankful.",
+    "example": "He showed his gratitude with a handwritten note."
+   },
+   {
+    "id": 41,
+    "word": "hesitate",
+    "part_of_speech": "verb",
+    "definition": "To pause before acting because you are unsure.",
+    "example": "Do not hesitate to ask when the directions are unclear."
+   },
+   {
+    "id": 42,
+    "word": "estimate",
+    "part_of_speech": "verb",
+    "definition": "To make a careful guess about a number or an amount.",
+    "example": "Estimate how long the task will take, then check afterward."
+   },
+   {
+    "id": 43,
+    "word": "consequence",
+    "part_of_speech": "noun",
+    "definition": "Something that happens because of an action.",
+    "example": "Skipping the map check had a soggy consequence."
+   },
+   {
+    "id": 44,
+    "word": "versatile",
+    "part_of_speech": "adjective",
+    "definition": "Able to do many different things well.",
+    "example": "A versatile drummer can play jazz, rock and marching band."
+   },
+   {
+    "id": 45,
+    "word": "diminish",
+    "part_of_speech": "verb",
+    "definition": "To become smaller or weaker.",
+    "example": "The echo diminished as they left the cave."
+   },
+   {
+    "id": 46,
+    "word": "abundant",
+    "part_of_speech": "adjective",
+    "definition": "Present in large amounts.",
+    "example": "Blackberries were abundant along the trail."
+   },
+   {
+    "id": 47,
+    "word": "negotiate",
+    "part_of_speech": "verb",
+    "definition": "To reach an agreement by talking.",
+    "example": "The party negotiated a truce with the goblin chief."
+   },
+   {
+    "id": 48,
+    "word": "optimistic",
+    "part_of_speech": "adjective",
+    "definition": "Expecting good things to happen.",
+    "example": "She stayed optimistic about the second try."
+   },
+   {
+    "id": 49,
+    "word": "evidence",
+    "part_of_speech": "noun",
+    "definition": "Facts that help show whether something is true.",
+    "example": "Two hundred rolls gave him enough evidence to judge the die."
+   },
+   {
+    "id": 50,
+    "word": "fluctuate",
+    "part_of_speech": "verb",
+    "definition": "To keep changing, up and down.",
+    "example": "The temperature fluctuated all afternoon."
+   },
+   {
+    "id": 51,
+    "word": "composure",
+    "part_of_speech": "noun",
+    "definition": "Calmness, especially under pressure.",
+    "example": "The Dungeon Master kept her composure when the plan fell apart."
+   },
+   {
+    "id": 52,
+    "word": "elaborate",
+    "part_of_speech": "adjective",
+    "definition": "Having many carefully arranged details.",
+    "example": "They built an elaborate fort from cardboard and tape."
+   },
+   {
+    "id": 53,
+    "word": "reluctant",
+    "part_of_speech": "adjective",
+    "definition": "Not wanting to do something.",
+    "example": "The reluctant hero finally picked up the sword."
+   },
+   {
+    "id": 54,
+    "word": "initiative",
+    "part_of_speech": "noun",
+    "definition": "The power to start something on your own.",
+    "example": "She took the initiative and organized the club's first game night."
+   },
+   {
+    "id": 55,
+    "word": "dilemma",
+    "part_of_speech": "noun",
+    "definition": "A hard choice between two options.",
+    "example": "Save the village or chase the thief: a real dilemma."
+   },
+   {
+    "id": 56,
+    "word": "anomaly",
+    "part_of_speech": "noun",
+    "definition": "Something different from what is normal or expected.",
+    "example": "One reading of ninety degrees was an anomaly in the data."
+   },
+   {
+    "id": 57,
+    "word": "harmony",
+    "part_of_speech": "noun",
+    "definition": "Notes that sound good together; also, peaceful agreement.",
+    "example": "The flute and the clarinet played in harmony."
+   },
+   {
+    "id": 58,
+    "word": "tempo",
+    "part_of_speech": "noun",
+    "definition": "The speed of a piece of music.",
+    "example": "Start at a slow tempo and speed up when it is clean."
+   },
+   {
+    "id": 59,
+    "word": "crescendo",
+    "part_of_speech": "noun",
+    "definition": "A gradual increase in loudness.",
+    "example": "The drums built to a crescendo before the final chord."
+   },
+   {
+    "id": 60,
+    "word": "syncopation",
+    "part_of_speech": "noun",
+    "definition": "Rhythm that stresses the beats you do not expect.",
+    "example": "Syncopation gives the groove its bounce."
+   },
+   {
+    "id": 61,
+    "word": "terrain",
+    "part_of_speech": "noun",
+    "definition": "The shape and features of the land.",
+    "example": "Check the terrain on the map before choosing a campsite."
+   },
+   {
+    "id": 62,
+    "word": "navigate",
+    "part_of_speech": "verb",
+    "definition": "To find the way from one place to another.",
+    "example": "They navigated by compass when the fog rolled in."
+   },
+   {
+    "id": 63,
+    "word": "summit",
+    "part_of_speech": "noun",
+    "definition": "The highest point of a mountain.",
+    "example": "They reached the summit just before noon."
+   },
+   {
+    "id": 64,
+    "word": "kindle",
+    "part_of_speech": "verb",
+    "definition": "To start a fire; also, to spark a feeling.",
+    "example": "A good question can kindle a week of curiosity."
+   },
+   {
+    "id": 65,
+    "word": "venture",
+    "part_of_speech": "verb",
+    "definition": "To go somewhere or try something risky.",
+    "example": "Few travelers venture past the broken bridge."
+   },
+   {
+    "id": 66,
+    "word": "cunning",
+    "part_of_speech": "adjective",
+    "definition": "Clever at getting what you want, sometimes by tricks.",
+    "example": "The cunning fox led the hounds in circles."
+   },
+   {
+    "id": 67,
+    "word": "odyssey",
+    "part_of_speech": "noun",
+    "definition": "A long journey full of adventures.",
+    "example": "Their trip to the science fair turned into an odyssey."
+   },
+   {
+    "id": 68,
+    "word": "peril",
+    "part_of_speech": "noun",
+    "definition": "Serious danger.",
+    "example": "The map marked the swamp with one word: peril."
+   },
+   {
+    "id": 69,
+    "word": "valor",
+    "part_of_speech": "noun",
+    "definition": "Great courage in a hard moment.",
+    "example": "The knight was remembered for valor, not for winning."
+   },
+   {
+    "id": 70,
+    "word": "lore",
+    "part_of_speech": "noun",
+    "definition": "Knowledge and stories passed down over time.",
+    "example": "Every world needs lore: who built the ruins, and why."
+   },
+   {
+    "id": 71,
+    "word": "artifact",
+    "part_of_speech": "noun",
+    "definition": "An object made by people long ago.",
+    "example": "The artifact hummed when the moon rose."
+   },
+   {
+    "id": 72,
+    "word": "alliance",
+    "part_of_speech": "noun",
+    "definition": "An agreement to work together.",
+    "example": "The dwarves and the elves formed an uneasy alliance."
+   },
+   {
+    "id": 73,
+    "word": "probability",
+    "part_of_speech": "noun",
+    "definition": "How likely something is to happen.",
+    "example": "The probability of rolling a 20 on a fair d20 is one in twenty."
+   },
+   {
+    "id": 74,
+    "word": "variable",
+    "part_of_speech": "noun",
+    "definition": "Something that can change in an experiment.",
+    "example": "Change one variable at a time, or you will not know what caused the result."
+   },
+   {
+    "id": 75,
+    "word": "correlation",
+    "part_of_speech": "noun",
+    "definition": "A link between two things that change together.",
+    "example": "There was a correlation between practice time and clean takes."
+   },
+   {
+    "id": 76,
+    "word": "symmetry",
+    "part_of_speech": "noun",
+    "definition": "A match between two halves, like mirror images.",
+    "example": "A snowflake has six-fold symmetry."
+   },
+   {
+    "id": 77,
+    "word": "sequence",
+    "part_of_speech": "noun",
+    "definition": "Things that follow each other in a set order.",
+    "example": "Find the next number in the sequence."
+   },
+   {
+    "id": 78,
+    "word": "conjecture",
+    "part_of_speech": "noun",
+    "definition": "A guess based on some evidence but not yet proven.",
+    "example": "His conjecture was that the pattern would repeat every seven steps."
+   },
+   {
+    "id": 79,
+    "word": "infer",
+    "part_of_speech": "verb",
+    "definition": "To reach a conclusion from evidence.",
+    "example": "From the wet umbrella we can infer that it is raining."
+   },
+   {
+    "id": 80,
+    "word": "optimize",
+    "part_of_speech": "verb",
+    "definition": "To make something as good or as efficient as possible.",
+    "example": "Optimize the route so no one walks the same trail twice."
+   },
+   {
+    "id": 81,
+    "word": "prototype",
+    "part_of_speech": "noun",
+    "definition": "A first version built to test an idea.",
+    "example": "The cardboard prototype showed that the handle was too short."
+   },
+   {
+    "id": 82,
+    "word": "iterate",
+    "part_of_speech": "verb",
+    "definition": "To repeat a process, improving it each time.",
+    "example": "Build, test, fix, and iterate."
+   },
+   {
+    "id": 83,
+    "word": "efficient",
+    "part_of_speech": "adjective",
+    "definition": "Getting a lot done with little waste.",
+    "example": "An efficient packer fits a week of gear in one bag."
+   },
+   {
+    "id": 84,
+    "word": "empathy",
+    "part_of_speech": "noun",
+    "definition": "Understanding how someone else feels.",
+    "example": "Empathy helped him see why his teammate was upset."
+   },
+   {
+    "id": 85,
+    "word": "integrity",
+    "part_of_speech": "noun",
+    "definition": "Being honest and doing what is right, even when no one is watching.",
+    "example": "Marking a card half done when it was half done takes integrity."
+   },
+   {
+    "id": 86,
+    "word": "humble",
+    "part_of_speech": "adjective",
+    "definition": "Not thinking you are better than other people.",
+    "example": "The champion stayed humble and thanked her coach."
+   },
+   {
+    "id": 87,
+    "word": "generous",
+    "part_of_speech": "adjective",
+    "definition": "Happy to give or share.",
+    "example": "He was generous with his time and taught the new scout three knots."
+   },
+   {
+    "id": 88,
+    "word": "steadfast",
+    "part_of_speech": "adjective",
+    "definition": "Loyal and not easily changed.",
+    "example": "A steadfast friend shows up on moving day."
+   },
+   {
+    "id": 89,
+    "word": "accountable",
+    "part_of_speech": "adjective",
+    "definition": "Responsible for what you do and willing to explain it.",
+    "example": "A patrol leader is accountable for the whole patrol's gear."
+   },
+   {
+    "id": 90,
+    "word": "deliberate",
+    "part_of_speech": "adjective",
+    "definition": "Done on purpose and with thought.",
+    "example": "Slow, deliberate practice beats fast, sloppy practice."
+   },
+   {
+    "id": 91,
+    "word": "priority",
+    "part_of_speech": "noun",
+    "definition": "Something that matters more than other things.",
+    "example": "Sleep is a priority, even on game night."
+   },
+   {
+    "id": 92,
+    "word": "procrastinate",
+    "part_of_speech": "verb",
+    "definition": "To put off something you should do.",
+    "example": "He procrastinated until the tray was full."
+   },
+   {
+    "id": 93,
+    "word": "reflect",
+    "part_of_speech": "verb",
+    "definition": "To think carefully about something that happened.",
+    "example": "Reflect on the week: what would you keep?"
+   },
+   {
+    "id": 94,
+    "word": "autonomy",
+    "part_of_speech": "noun",
+    "definition": "The freedom to make your own choices.",
+    "example": "With autonomy comes the job of planning your own time."
+   },
+   {
+    "id": 95,
+    "word": "aspire",
+    "part_of_speech": "verb",
+    "definition": "To aim for something great.",
+    "example": "She aspires to design her own game."
+   },
+   {
+    "id": 96,
+    "word": "narrative",
+    "part_of_speech": "noun",
+    "definition": "A story, or the way a story is told.",
+    "example": "A good chart has a narrative: a question, a surprise and an answer."
+   },
+   {
+    "id": 97,
+    "word": "protagonist",
+    "part_of_speech": "noun",
+    "definition": "The main character of a story.",
+    "example": "The protagonist wants something, and something stands in the way."
+   },
+   {
+    "id": 98,
+    "word": "foreshadow",
+    "part_of_speech": "verb",
+    "definition": "To hint at what will happen later in a story.",
+    "example": "The cracked bell foreshadowed the fall of the tower."
+   },
+   {
+    "id": 99,
+    "word": "dialogue",
+    "part_of_speech": "noun",
+    "definition": "The words characters say to each other.",
+    "example": "Dialogue shows who a character is faster than description does."
+   },
+   {
+    "id": 100,
+    "word": "climax",
+    "part_of_speech": "noun",
+    "definition": "The most exciting and important moment of a story.",
+    "example": "The climax came when the bridge began to burn."
+   }
+  ],
+  "encouragements": [
+   {
+    "id": 1,
+    "text": "A plan is a map, not a cage. Pick your first card and go."
+   },
+   {
+    "id": 2,
+    "text": "Small steps add up. What is the smallest one you can take right now?"
+   },
+   {
+    "id": 3,
+    "text": "Start with the card you least want to do. The rest of the day gets lighter."
+   },
+   {
+    "id": 4,
+    "text": "Half done is still half done. Mark it honestly and move on."
+   },
+   {
+    "id": 5,
+    "text": "You are the one who decides what today looks like."
+   },
+   {
+    "id": 6,
+    "text": "A finished small thing beats an unfinished big thing."
+   },
+   {
+    "id": 7,
+    "text": "Stuck? Shrink the task until it fits in ten minutes."
+   },
+   {
+    "id": 8,
+    "text": "Slow and even beats fast and messy. Ask any drummer."
+   },
+   {
+    "id": 9,
+    "text": "Every expert was once a beginner who kept showing up."
+   },
+   {
+    "id": 10,
+    "text": "Leave some room in the day for nothing at all."
+   },
+   {
+    "id": 11,
+    "text": "Mistakes are data. What did this one tell you?"
+   },
+   {
+    "id": 12,
+    "text": "The tray is not a failure pile. It is a list of second chances."
+   },
+   {
+    "id": 13,
+    "text": "Do one thing today that next week's you will thank you for."
+   },
+   {
+    "id": 14,
+    "text": "A good Dungeon Master prepares, then improvises. So does a good planner."
+   },
+   {
+    "id": 15,
+    "text": "You do not have to feel ready to start."
+   },
+   {
+    "id": 16,
+    "text": "Curiosity first. What do you want to find out today?"
+   },
+   {
+    "id": 17,
+    "text": "Rest is part of the plan, not a break from it."
+   },
+   {
+    "id": 18,
+    "text": "If the plan is not working, change the plan, not the goal."
+   },
+   {
+    "id": 19,
+    "text": "One card at a time. The board will still be here."
+   },
+   {
+    "id": 20,
+    "text": "Did something go well yesterday? Do more of that."
+   },
+   {
+    "id": 21,
+    "text": "Ask for help early. It is a skill, not a weakness."
+   },
+   {
+    "id": 22,
+    "text": "Hard is not the same as bad. Hard is where the growing happens."
+   },
+   {
+    "id": 23,
+    "text": "Be the kind of teammate you would want in your party."
+   },
+   {
+    "id": 24,
+    "text": "Look at what is already in Done. That is progress you can see."
+   },
+   {
+    "id": 25,
+    "text": "Estimate, then check. Your guesses get better every week."
+   },
+   {
+    "id": 26,
+    "text": "Closing out the day takes two minutes. Tomorrow's you will be glad."
+   },
+   {
+    "id": 27,
+    "text": "You can do difficult things for a short time. Set a timer."
+   },
+   {
+    "id": 28,
+    "text": "Leave it better than you found it: your room, your work, your campsite."
+   },
+   {
+    "id": 29,
+    "text": "A question you cannot answer yet is the start of a project."
+   },
+   {
+    "id": 30,
+    "text": "Nobody rolls a 20 every time. Play the roll you got."
+   },
+   {
+    "id": 31,
+    "text": "Notice one thing you did well today, and one thing to try differently."
+   },
+   {
+    "id": 32,
+    "text": "Kindness counts. Who could you help today without being asked?"
+   },
+   {
+    "id": 33,
+    "text": "Protect your sleep. Everything works better after it."
+   },
+   {
+    "id": 34,
+    "text": "Finish, then polish. Not the other way around."
+   },
+   {
+    "id": 35,
+    "text": "It is okay to drop something. Do it on purpose, not by accident."
+   },
+   {
+    "id": 36,
+    "text": "The first draft is allowed to be bad. That is its job."
+   },
+   {
+    "id": 37,
+    "text": "Practice is where you are allowed to sound terrible."
+   },
+   {
+    "id": 38,
+    "text": "Read something today just because you want to."
+   },
+   {
+    "id": 39,
+    "text": "Go outside. Ideas like fresh air."
+   },
+   {
+    "id": 40,
+    "text": "You have done hard things before. This is one more."
+   },
+   {
+    "id": 41,
+    "text": "What would make today feel like a good day? Plan that in."
+   },
+   {
+    "id": 42,
+    "text": "Explain it out loud. If you can teach it, you know it."
+   },
+   {
+    "id": 43,
+    "text": "Trade perfect for done, then make it better tomorrow."
+   },
+   {
+    "id": 44,
+    "text": "A streak is nice. Starting again after a miss is nicer."
+   },
+   {
+    "id": 45,
+    "text": "Do the must-dos first, then the day is yours."
+   },
+   {
+    "id": 46,
+    "text": "Check twice, then trust it."
+   },
+   {
+    "id": 47,
+    "text": "Good adventures have obstacles. So do good weeks."
+   },
+   {
+    "id": 48,
+    "text": "Pack your bag the night before. Plan your day the same way."
+   },
+   {
+    "id": 49,
+    "text": "Be honest with the board. It only helps if it is true."
+   },
+   {
+    "id": 50,
+    "text": "Too much on today? Move something. That is what the week is for."
+   },
+   {
+    "id": 51,
+    "text": "Your ideas are yours. Write one down before it gets away."
+   },
+   {
+    "id": 52,
+    "text": "Listen first. The best players and the best leaders do."
+   },
+   {
+    "id": 53,
+    "text": "Take the next step, not all the steps."
+   },
+   {
+    "id": 54,
+    "text": "You get better at what you repeat. Choose what you repeat."
+   },
+   {
+    "id": 55,
+    "text": "Being bored is where good ideas start."
+   },
+   {
+    "id": 56,
+    "text": "Say thank you to someone today."
+   },
+   {
+    "id": 57,
+    "text": "One good question is worth ten quick answers."
+   },
+   {
+    "id": 58,
+    "text": "Check in with yourself: tired, hungry, or just stuck?"
+   },
+   {
+    "id": 59,
+    "text": "Celebrate the finish. Then pick the next quest."
+   },
+   {
+    "id": 60,
+    "text": "Today is a fresh page."
+   }
+  ]
+ }
+}
