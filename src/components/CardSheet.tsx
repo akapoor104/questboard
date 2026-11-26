@@ -31,6 +31,10 @@ export interface CardSheetProps {
   timeZone: string;
   /** Open straight on one action's form (an inline button on a card) instead of the card details. */
   start?: CardAction;
+  /** The days "Move" offers (default: today and the next six). */
+  placeDays?: { date: string; label: string }[];
+  /** The week whose stack "This week's stack" means (default: this week). */
+  stackWeek?: string;
 }
 
 function viewFor(action: CardAction | undefined): View {
@@ -42,7 +46,7 @@ function viewFor(action: CardAction | undefined): View {
 
 /** Tap a card: its details and one button per thing he can do with it. */
 export function CardSheet(props: CardSheetProps) {
-  const { card, board, role, api, reload, onClose, cats, settings, timeZone, start } = props;
+  const { card, board, role, api, reload, onClose, cats, settings, timeZone, start, placeDays, stackWeek } = props;
   const id = useId();
   const toast = useToast();
   const { run, busy, error, clearError } = useAction(reload);
@@ -77,7 +81,7 @@ export function CardSheet(props: CardSheetProps) {
   };
 
   const place = (p: Place) => void change(
-    () => api.placeCard(card.id, p.place === 'week' ? { place: 'week' } : { place: 'day', date: p.date, start_min: p.start_min }),
+    () => api.placeCard(card.id, p.place === 'week' ? { place: 'week', week_start: stackWeek } : { place: 'day', date: p.date, start_min: p.start_min }),
     p.place === 'week' ? "Back in this week's stack." : 'Moved.',
   );
   const edit = (patch: CardPatch) => {
@@ -102,6 +106,7 @@ export function CardSheet(props: CardSheetProps) {
       <PlaceForm
         card={card} board={board} settings={settings} timeZone={timeZone} allowStack={view === 'move' && card.place !== 'tray'}
         initialDate={card.place === 'day' && card.date !== null ? card.date : board.today} onSave={place} busy={busy}
+        days={placeDays}
       />
     );
   } else if (view === 'edit') {

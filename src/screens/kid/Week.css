@@ -1,0 +1,32 @@
+/* Week: the heading and load check, the stack, seven day columns and the Library. */
+.week-page { max-width: 1440px; width: 100%; margin: 0 auto; }
+
+.week-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 360px); gap: var(--space-4) var(--space-6); align-items: start; }
+.week-head { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.week-titlerow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.week-title { font-size: var(--text-3xl); }
+.week-arrow { width: var(--tap); padding: 0; flex: none; }
+.week-back { color: var(--ink-2); font-weight: 600; min-height: var(--tap); display: inline-flex; align-items: center; }
+
+/* Seven columns side by side; a sideways strip under 900px (the only thing that scrolls sideways). */
+.week-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; align-items: start; }
+
+@media (max-width: 1099px) {
+  .week-top { grid-template-columns: 1fr; }
+  .week-title { font-size: var(--text-2xl); }
+}
+
+@media (max-width: 899px) {
+  .week-days {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 0;
+    padding-bottom: var(--space-2);
+  }
+  .week-days > .daycol { flex: 0 0 220px; scroll-snap-align: start; }
+}
+
+@media (max-width: 699px) {
+  .week-days > .daycol { flex-basis: 78%; }
+  .week-titlerow { gap: var(--space-2); }
+  .week-title { font-size: var(--text-xl); flex: 1 1 0; min-width: 0; }
+  .week-back { flex-basis: 100%; }
+}

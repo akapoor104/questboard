@@ -1,0 +1,12 @@
+/* WeekStack: "Any day this week", the week's stack as a grid of rows. */
+.weekstack { display: flex; flex-direction: column; gap: var(--space-3); }
+.weekstack-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); }
+.weekstack-head h2 { font-size: var(--text-xl); }
+.weekstack-head .muted { font-size: var(--text-s); }
+.weekstack-hint { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+.weekstack-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-2);
+}
+.weekstack-list .cardtile-row { height: 100%; }
+.weekstack-empty { margin: 0; color: var(--ink-2); }

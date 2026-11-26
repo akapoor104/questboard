@@ -1,0 +1,30 @@
+/* LibraryPanel: the category filter and the ideas in a responsive grid. */
+.library { display: flex; flex-direction: column; gap: var(--space-3); scroll-margin-top: var(--space-4); }
+.library-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); }
+.library-head h2 { font-size: var(--text-xl); }
+.library-hint { margin: 0; color: var(--ink-2); font-size: var(--text-s); flex: 1 1 240px; }
+.library-new { margin-left: auto; }
+.library-past { margin: 0; padding: var(--space-3); border-radius: var(--radius-m); background: var(--surface-2); font-weight: 600; }
+
+.library-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.library-filter {
+  display: inline-flex; align-items: center; gap: 6px; min-height: var(--tap); padding: 0 var(--space-3);
+  border-radius: var(--radius-pill); border: 1px solid var(--line); background: var(--surface);
+  color: var(--cat-deep, var(--ink)); font-weight: 600; cursor: pointer;
+}
+.library-filter[aria-pressed='true'] { background: var(--cat, var(--ink)); border-color: var(--cat, var(--ink)); color: var(--on-ink); }
+.library-filter:not([class*='cat-'])[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); }
+
+.library-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-2);
+}
+.library-item {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: 10px 10px 10px 12px; border-radius: var(--radius-m); background: var(--cat-tint); color: var(--ink);
+}
+.library-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
+.library-title { font-weight: 600; font-size: 15px; overflow-wrap: anywhere; }
+.library-meta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: var(--text-xs); color: var(--cat-deep); }
+.library-add { flex: none; min-height: var(--tap); background: var(--cat-deep); border-color: var(--cat-deep); color: var(--surface); }
+.library-empty { margin: 0; color: var(--ink-2); }

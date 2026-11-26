@@ -1,0 +1,8 @@
+/* FocusChips: the week's focus goals as chips. */
+.focuschips { display: flex; flex-direction: column; gap: var(--space-2); }
+.focuschips-label { font-family: var(--font-ui); }
+.focuschips-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.focuschips-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.focuschips-chip { min-height: 36px; }
+.focuschips-chip[data-status='done'] .focuschips-title { text-decoration: line-through; }
+.focuschips-empty { margin: 0; }

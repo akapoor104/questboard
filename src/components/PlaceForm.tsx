@@ -23,6 +23,8 @@ export interface PlaceFormProps {
   /** Called with every change (for a form that has its own Save, such as "How did it go?"). */
   onChange?: (place: Place) => void;
   busy?: boolean;
+  /** The days to offer (default: today and the next six). Week passes the shown week's days from today on. */
+  days?: { date: string; label: string }[];
 }
 
 const HOURS = Array.from({ length: 24 }, (_, h) => h);
@@ -33,8 +35,8 @@ const hourText = (h: number) => `${h % 12 === 0 ? 12 : h % 12} ${h < 12 ? 'AM' :
 export function PlaceForm(props: PlaceFormProps) {
   const { card, board, settings, timeZone, allowStack, onSave, busy } = props;
   const id = useId();
-  const days = placeDays(board.today);
-  const startDay = days.some((d) => d.date === props.initialDate) ? props.initialDate as string : board.today;
+  const days = props.days && props.days.length > 0 ? props.days : placeDays(board.today);
+  const startDay = days.some((d) => d.date === props.initialDate) ? props.initialDate as string : days[0].date;
 
   const suggest = (date: string) => suggestStart({
     card, date, today: board.today, nowMin: minutesInZone(Date.now(), timeZone),

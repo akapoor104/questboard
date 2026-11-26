@@ -1,0 +1,30 @@
+/* DayColumn: one day of the week, as a narrow column (a strip item under 900px). */
+.daycol {
+  display: flex; flex-direction: column; gap: var(--space-2); min-width: 0;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-l); padding: 10px;
+}
+.daycol[data-today='true'] { border: 2px solid var(--ink); padding: 9px; }
+.daycol[data-past='true'] { opacity: 0.75; }
+.daycol[data-mark] { background: var(--surface-2); border-style: dashed; border-color: var(--ink-3); }
+.daycol-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+.daycol-title { font-family: var(--font-ui); font-size: var(--text-l); }
+.daycol-total { font-size: var(--text-xs); color: var(--ink-2); white-space: nowrap; }
+.daycol-today { margin-top: calc(-1 * var(--space-1)); }
+.daycol-mark { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+.daycol-chip {
+  display: inline-flex; padding: 2px 10px; border-radius: var(--radius-pill);
+  background: var(--surface); border: 1px solid var(--line); font-size: var(--text-xs); font-weight: 600; color: var(--ink-2);
+}
+.daycol-note, .daycol-empty { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+.daycol-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+
+/* Rows in a narrow column: title on its own line, the time under it. */
+.daycol .cardtile-row { flex-wrap: wrap; align-items: flex-start; row-gap: 2px; }
+.daycol .cardtile-row .cardtile-icon { padding-top: 2px; }
+.daycol .cardtile-row .cardtile-body { flex: 1 1 0; }
+.daycol .cardtile-row .cardtile-end { flex-basis: 100%; margin-left: 0; padding-left: 24px; white-space: normal; }
+
+.daycol-add {
+  display: flex; align-items: center; justify-content: center; min-height: var(--tap); width: 100%;
+  border: 1px dashed var(--ink-3); border-radius: var(--radius-m); background: none; color: var(--ink-2); cursor: pointer;
+}
