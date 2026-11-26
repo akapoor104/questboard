@@ -1,5 +1,6 @@
-import type { ReactNode } from 'react';
+import { useId, type ReactNode } from 'react';
 import type { Card, Category } from '../api/types.ts';
+import { useDragSource, type CardDrop } from '../app/useDrag.ts';
 import { formatDuration } from '../lib/dates.ts';
 import { cardMeta } from '../lib/today.ts';
 import { Icon } from './Icon.tsx';
@@ -24,10 +25,14 @@ export interface CardTileProps {
   wideActions?: boolean;
   /** Opens the card sheet. */
   onOpen?: () => void;
+  /** Makes an open card draggable onto the screen's drop targets (ticket T16). */
+  drop?: CardDrop;
 }
 
 /** One card. The root element and its data- attributes are a contract (docs/05-design.md, "Shared pieces"). */
-export function CardTile({ card, category, colorClass, variant, timeZone, extra, actions, wideActions, onOpen }: CardTileProps) {
+export function CardTile({ card, category, colorClass, variant, timeZone, extra, actions, wideActions, onOpen, drop }: CardTileProps) {
+  const hintId = useId();
+  const drag = useDragSource(card, drop);
   const icon = category?.icon ?? 'star';
   const name = category?.name ?? 'Other';
   const done = card.status === 'resolved' && card.pct === 100;
@@ -42,12 +47,19 @@ export function CardTile({ card, category, colorClass, variant, timeZone, extra,
   );
   const metaText = [...parts, ...(extra ? [extra] : [])].join(' · ');
   const title = (
-    <button type="button" className="cardtile-open card-title" onClick={onOpen}>{card.title}</button>
+    <button
+      type="button" className="cardtile-open card-title" onClick={onOpen}
+      aria-describedby={drag.draggable ? hintId : undefined}
+    >
+      {card.title}
+    </button>
   );
+  const hint = drag.draggable && <span id={hintId} className="sr-only">Press Enter for options, including Move.</span>;
 
   return (
     <article
-      className={`card ${colorClass} cardtile cardtile-${variant}`}
+      ref={drag.ref} onPointerDown={drag.onPointerDown}
+      className={`card ${colorClass} cardtile cardtile-${variant}${drag.draggable ? ' cardtile-drag' : ''}`}
       data-testid="card"
       data-card-id={card.id}
       data-status={card.status === 'resolved' ? 'resolved' : 'open'}
@@ -66,6 +78,7 @@ export function CardTile({ card, category, colorClass, variant, timeZone, extra,
             </span>
           </div>
           {title}
+          {hint}
           {(mustMark || metaText || actions) && (
             <div className={`cardtile-foot${wideActions ? ' cardtile-foot-wide' : ''}`}>
               {(mustMark || metaText) && (
@@ -85,6 +98,7 @@ export function CardTile({ card, category, colorClass, variant, timeZone, extra,
           <span className="sr-only">{name}:</span>
           <div className="cardtile-body">
             {title}
+            {hint}
             {(mustMark || (variant === 'timed' && card.details)) && (
               <span className="cardtile-sub">
                 {mustMark}

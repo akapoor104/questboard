@@ -1,6 +1,7 @@
 import { useId } from 'react';
 import type { Card, DayMark } from '../../../api/types.ts';
 import type { Categories } from '../../../app/useCategories.ts';
+import type { CardDrop } from '../../../app/useDrag.ts';
 import { CardTile } from '../../../components/CardTile.tsx';
 import { Icon } from '../../../components/Icon.tsx';
 import { formatDuration, formatLongDate, weekdayName } from '../../../lib/dates.ts';
@@ -18,10 +19,12 @@ interface Props {
   onOpen: (card: Card) => void;
   /** Opens the new-card form for this day. Past days have none. */
   onAdd?: () => void;
+  /** Drag and drop: the day is a drop target and its cards can be dragged (T16). */
+  drop?: CardDrop;
 }
 
 /** One day of the week: header, marks, its cards as rows, and an add button. */
-export function DayColumn({ date, today, cards, mark, cats, timeZone, onOpen, onAdd }: Props) {
+export function DayColumn({ date, today, cards, mark, cats, timeZone, onOpen, onAdd, drop }: Props) {
   const id = useId();
   const isToday = date === today;
   const past = date < today;
@@ -29,7 +32,7 @@ export function DayColumn({ date, today, cards, mark, cats, timeZone, onOpen, on
   return (
     <section
       className="daycol" aria-label={name} data-today={isToday ? 'true' : undefined} data-past={past ? 'true' : undefined}
-      data-mark={mark?.kind}
+      data-mark={mark?.kind} data-drop={drop ? 'day' : undefined} data-drop-date={drop ? date : undefined}
     >
       <div className="daycol-head">
         <h3 id={`${id}-title`} className="daycol-title">{weekdayName(date, true)} {Number(date.slice(8))}</h3>
@@ -48,7 +51,7 @@ export function DayColumn({ date, today, cards, mark, cats, timeZone, onOpen, on
             <li key={c.id}>
               <CardTile
                 card={c} category={cats.byId.get(c.category_id)} colorClass={cats.colorClass(c.category_id)}
-                variant="row" timeZone={timeZone} onOpen={() => onOpen(c)}
+                variant="row" timeZone={timeZone} onOpen={() => onOpen(c)} drop={drop}
               />
             </li>
           ))}

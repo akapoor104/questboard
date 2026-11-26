@@ -4,6 +4,7 @@ import type { Board, Card } from '../../api/types.ts';
 import { useChild, useSession } from '../../app/session.tsx';
 import { useTodayData } from '../../app/TodayProvider.tsx';
 import { useCategories } from '../../app/useCategories.ts';
+import { useCardDrop } from '../../app/useDrag.ts';
 import { useLoad } from '../../app/useLoad.ts';
 import { ErrorPanel } from '../../components/ErrorPanel.tsx';
 import { usePageTitle } from '../../components/usePageTitle.ts';
@@ -60,6 +61,9 @@ export function Week() {
   const reload = async () => {
     await Promise.all([board.reload(), stats.reload(), today.reload(), cats.library.reload()]);
   };
+  // Drag and drop (T16): onto a day or back to the stack. A past week has nowhere to drop.
+  const weekOver = week < thisMonday;
+  const drop = useCardDrop({ api, role: 'kid', today: me.today, stackWeek: weekOver ? null : week, reload, toast });
 
   const ready = board.data !== null && stats.data !== null && cats.library.data !== null;
 
@@ -121,14 +125,14 @@ export function Week() {
         <LoadMeter plannedMin={planned} guideMin={stats.data.structured_weekly_max_min} />
       </div>
 
-      <WeekStack cards={stack} cats={cats} timeZone={me.timezone} onOpen={setOpen} />
+      <WeekStack cards={stack} cats={cats} timeZone={me.timezone} onOpen={setOpen} drop={past ? undefined : drop} />
 
       <div className="week-days" ref={strip}>
         {weekDates(week).map((date) => (
           <DayColumn
             key={date} date={date} today={b.today} cards={b.cards.filter((c) => c.date === date)}
             mark={b.day_marks.find((x) => x.date === date)} cats={cats} timeZone={me.timezone} onOpen={setOpen}
-            onAdd={() => setDialog({ kind: 'new', date, category: null })}
+            onAdd={() => setDialog({ kind: 'new', date, category: null })} drop={past ? undefined : drop}
           />
         ))}
       </div>

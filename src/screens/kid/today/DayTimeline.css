@@ -31,3 +31,7 @@
   .dayline-lane { left: 50px; }
   .dayline-anylist { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Drag and drop (T16): the timeline, while a card is dragged over it. */
+.dayline-grid[data-drop-ok='true'] { outline: 2px dashed var(--ink); outline-offset: 6px; border-radius: var(--radius-s); }
+.dayline-grid[data-drop-over='true'] { outline: 3px solid var(--ink); outline-offset: 6px; }

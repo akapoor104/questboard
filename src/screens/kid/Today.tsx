@@ -3,6 +3,7 @@ import type { Board, Card } from '../../api/types.ts';
 import { useSession, useChild } from '../../app/session.tsx';
 import { useTodayData } from '../../app/TodayProvider.tsx';
 import { useCategories } from '../../app/useCategories.ts';
+import { useCardDrop } from '../../app/useDrag.ts';
 import { useAction, useLoad } from '../../app/useLoad.ts';
 import { ErrorPanel } from '../../components/ErrorPanel.tsx';
 import { usePageTitle } from '../../components/usePageTitle.ts';
@@ -52,6 +53,8 @@ export function Today() {
     await Promise.all([board.reload(), today.reload()]);
   };
   const quick = useAction(reload);
+  // Drag and drop (T16): from the stack or the day onto a time on the timeline.
+  const drop = useCardDrop({ api, role: 'kid', today: me.today, stackWeek: null, reload, toast });
   useEffect(() => {
     if (quick.error !== null) toast.showError(quick.error);
   }, [quick.error, toast]);
@@ -110,13 +113,13 @@ export function Today() {
         </div>
         <div className="today-stack">
           <StackColumn
-            pool={b.pool} week={week} cats={cats} timeZone={me.timezone} onOpen={openCard} onToToday={toToday} busy={quick.busy}
+            pool={b.pool} week={week} cats={cats} timeZone={me.timezone} onOpen={openCard} onToToday={toToday} busy={quick.busy} drop={drop}
           />
         </div>
         <div className="today-day">
           <DayTimeline
-            cards={todayCards} dayStartMin={me.day_start_min} dayEndMin={me.day_end_min} cats={cats} timeZone={me.timezone}
-            onOpen={openCard}
+            date={b.today} cards={todayCards} dayStartMin={me.day_start_min} dayEndMin={me.day_end_min} cats={cats} timeZone={me.timezone}
+            onOpen={openCard} drop={drop}
           />
         </div>
         <div className="today-side">

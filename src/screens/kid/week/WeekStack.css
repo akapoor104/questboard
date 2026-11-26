@@ -10,3 +10,7 @@
 }
 .weekstack-list .cardtile-row { height: 100%; }
 .weekstack-empty { margin: 0; color: var(--ink-2); }
+
+/* Drag and drop (T16): the stack, as a place to drop a card back. */
+.weekstack[data-drop-ok='true'] { outline: 2px dashed var(--ink); outline-offset: 2px; }
+.weekstack[data-drop-over='true'] { outline: 3px solid var(--ink); outline-offset: 2px; }
