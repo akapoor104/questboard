@@ -1,0 +1,93 @@
+/* The kitchen display: one wall screen, read from across the room. Dark by default
+   (Display.tsx sets data-theme="dark"). Sizes are multiples of the type tokens. */
+
+.display {
+  position: relative;
+  min-height: 100vh; min-height: 100dvh;
+  padding: var(--space-6);
+  padding-top: calc(var(--space-6) + var(--space-2));   /* the "Display only" tag sits in this strip */
+  display: flex; flex-direction: column; gap: var(--space-6);
+  background: var(--ground); color: var(--ink);
+  font-family: var(--font-ui);
+}
+
+.display-tag {
+  position: absolute; top: var(--space-2); right: var(--space-4); margin: 0;
+  font-size: var(--text-xs); color: var(--ink-3); letter-spacing: 0.04em;
+}
+
+.display-muted { color: var(--ink-2); font-size: var(--text-2xl); }
+.display-error { margin: 0; color: var(--ink); font-size: var(--text-xl); }
+
+/* Clock, date, campfire */
+.display-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); }
+.display-clock {
+  margin: 0; font-family: var(--font-display); font-weight: 700; line-height: 1;
+  font-size: calc(var(--text-3xl) * 2.4); font-variant-numeric: tabular-nums;
+}
+.display-headside { display: flex; flex-direction: column; gap: var(--space-3); }
+.display-date { margin: 0; font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; }
+.display-chips { display: flex; flex-wrap: wrap; gap: var(--space-3); font-size: var(--text-xl); }
+.display-mark { background: var(--surface-2); color: var(--ink); }
+
+/* Now and next on the left, the rest of the day on the right */
+.display-grid {
+  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--space-6);
+  align-items: start;
+}
+.display-main { display: flex; flex-direction: column; gap: var(--space-6); }
+
+.display-label {
+  margin: 0 0 var(--space-2); font-family: var(--font-ui); font-size: var(--text-xl);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2);
+}
+
+.display-big {
+  padding: var(--space-5) var(--space-6); border-radius: var(--radius-l);
+  background: var(--cat-tint); border-left: var(--space-2) solid var(--cat);
+}
+.display-big p { margin: 0; }
+.display-big .display-meta { margin-top: var(--space-3); }
+.display-now-title {
+  font-family: var(--font-display); font-weight: 700; line-height: 1.1;
+  font-size: calc(var(--text-3xl) * 1.4); overflow-wrap: anywhere;
+}
+.display-next-time { font-size: var(--text-2xl); font-weight: 700; color: var(--cat-deep); font-variant-numeric: tabular-nums; }
+.display-next-title {
+  font-family: var(--font-display); font-weight: 700; line-height: 1.1;
+  font-size: var(--text-3xl); overflow-wrap: anywhere;
+}
+.display-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-5);
+  font-size: var(--text-xl); color: var(--ink-2);
+}
+.display-cat { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--cat-deep); font-weight: 700; }
+.display-free { margin: 0; font-family: var(--font-display); font-size: var(--text-3xl); color: var(--ink-2); }
+
+/* Rest of today */
+.display-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.display-row {
+  display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: center;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-m);
+  background: var(--surface); border-left: var(--space-1) solid var(--cat);
+}
+.display-row-time { font-size: var(--text-xl); color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.display-row-icon { display: inline-flex; color: var(--cat-deep); }
+.display-row-title { font-size: var(--text-2xl); font-weight: 700; overflow-wrap: anywhere; }
+.display-row-cat { grid-column: 3; font-size: var(--text-l); color: var(--cat-deep); font-weight: 600; }
+
+.display-empty { margin: 0; font-family: var(--font-display); font-size: var(--text-3xl); color: var(--ink-2); }
+
+/* Word of the day, at the bottom */
+.display-word { margin-top: auto; padding-top: var(--space-4); border-top: 1px solid var(--line); }
+.display-word p { margin: 0; font-size: var(--text-xl); color: var(--ink-2); }
+.display-word-word { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: var(--ink); }
+.display-word-pos { font-style: italic; }
+
+/* A portrait tablet or a small screen: one column */
+@media (max-width: 899px) {
+  .display { padding: var(--space-4); padding-top: calc(var(--space-5) + var(--space-3)); gap: var(--space-5); }
+  .display-grid { grid-template-columns: minmax(0, 1fr); }
+  .display-clock { font-size: calc(var(--text-3xl) * 1.8); }
+}

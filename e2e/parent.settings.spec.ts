@@ -104,7 +104,7 @@ test('link it as a display: display only', async ({ page }) => {
   await expect(devices(page).getByTestId('device-row'))
     .toContainText('Display only, no PIN, cannot change anything');
   await page.goto('/');
-  await expect(page.getByText('This screen is display only.')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Now' })).toBeVisible();   // the display screen (T15)
 });
 
 test('a wrong code keeps the form and says so', async ({ page }) => {

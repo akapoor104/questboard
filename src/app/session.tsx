@@ -4,6 +4,7 @@ import type { Connection } from '../api/connection.ts';
 import type { ChildSummary, WhoAmI } from '../api/types.ts';
 import { getConnection } from './connection.ts';
 import { errorText } from './errors.ts';
+import { Display } from '../screens/display/Display.tsx';
 import { Link } from '../screens/Link.tsx';
 import { Unlock } from '../screens/Unlock.tsx';
 import { SignIn } from '../screens/parent/SignIn.tsx';
@@ -111,7 +112,7 @@ function GateError({ error, retry }: { error: unknown; retry: () => void }) {
   );
 }
 
-/** His screens: link the device, unlock with the PIN, then the board. */
+/** His screens: link the device, unlock with the PIN, then the board. A display device gets the display screen. */
 export function DeviceGate({ children }: { children: ReactNode }) {
   const { me, refreshMe } = useSession();
   const { error, retry } = useAsk(refreshMe);
@@ -121,9 +122,7 @@ export function DeviceGate({ children }: { children: ReactNode }) {
     return <GateMessage><p className="muted">Loading...</p></GateMessage>;
   }
   if (me.role === 'kid') return <>{children}</>;
-  if (me.role === 'display') {
-    return <GateMessage><div className="panel"><p>This screen is display only.</p></div></GateMessage>;
-  }
+  if (me.role === 'display') return <Display />;
   if (me.device?.status === 'approved') return <Unlock />;
   return <Link />;
 }
