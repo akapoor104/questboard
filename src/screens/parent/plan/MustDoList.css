@@ -1,0 +1,20 @@
+/* MustDoList: the week's must-dos, one row per group. */
+.mustdolist { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.mustdolist-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-3); }
+.mustdolist-title { font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; }
+.mustdolist-empty { margin: 0; }
+.mustdolist-rows { list-style: none; margin: 0; padding: 0; }
+.mustdolist-rows li + li { border-top: 1px solid var(--line); }
+.mustdolist-rows li:first-child { border-top: 1px solid var(--line); }
+.mustdolist-row {
+  width: 100%; min-height: var(--tap); padding: var(--space-3) 0; display: flex; align-items: center; gap: var(--space-3);
+  background: none; border: 0; color: var(--ink); font: inherit; text-align: left; cursor: pointer;
+}
+.mustdolist-cat {
+  flex: none; width: 28px; height: 28px; border-radius: var(--radius-s); display: inline-flex;
+  align-items: center; justify-content: center; background: var(--cat-tint); color: var(--cat-deep);
+}
+.mustdolist-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
+.mustdolist-name { font-weight: 600; font-size: var(--text-l); overflow-wrap: anywhere; }
+.mustdolist-meta { color: var(--ink-2); }
+.mustdolist-status { flex: 0 1 auto; max-width: 45%; text-align: right; color: var(--ink-2); }

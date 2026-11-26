@@ -22,11 +22,13 @@ export interface LibraryPanelProps {
   reload: () => Promise<void>;
   /** Opens the new-card form (with the category the filter shows, if any). */
   onNewCard: (categoryId: string | null) => void;
+  /** As a picker (the parent's must-do form): each item gets a "Pick" button instead of "Add". */
+  onPick?: (item: LibraryItem) => void;
 }
 
 /** The Library: about 100 ideas, filtered by category. "Add" puts one in the week's stack. */
 export function LibraryPanel(props: LibraryPanelProps) {
-  const { api, childId, week, categories, items, colorClass, past, reload, onNewCard } = props;
+  const { api, childId, week, categories, items, colorClass, past, reload, onNewCard, onPick } = props;
   const id = useId();
   const toast = useToast();
   const [filter, setFilter] = useState<string | null>(null);
@@ -60,15 +62,22 @@ export function LibraryPanel(props: LibraryPanelProps) {
   };
 
   return (
-    <section id="library" className="panel library" aria-labelledby={`${id}-title`}>
+    <section
+      id={onPick ? undefined : 'library'} className={onPick ? 'library library-picker' : 'panel library'}
+      aria-labelledby={`${id}-title`}
+    >
       <div className="library-head">
         <h2 id={`${id}-title`}>Library</h2>
-        <p className="library-hint">About 100 ideas from your plan. Add any card to this week, or make your own.</p>
-        <button type="button" className="btn btn-primary library-new" disabled={past} onClick={() => onNewCard(filter)}>
-          New card
-        </button>
+        {onPick ? <p className="library-hint">Pick an idea to fill in the must-do.</p> : (
+          <>
+            <p className="library-hint">About 100 ideas from your plan. Add any card to this week, or make your own.</p>
+            <button type="button" className="btn btn-primary library-new" disabled={past} onClick={() => onNewCard(filter)}>
+              New card
+            </button>
+          </>
+        )}
       </div>
-      {past && <p className="library-past">This week is over. Go to this week to add cards.</p>}
+      {past && !onPick && <p className="library-past">This week is over. Go to this week to add cards.</p>}
       <div className="library-filters" role="group" aria-label="Show a category">
         <button type="button" className="library-filter" aria-pressed={filter === null} onClick={() => setFilter(null)}>
           All
@@ -82,7 +91,9 @@ export function LibraryPanel(props: LibraryPanelProps) {
           </button>
         ))}
       </div>
-      {shown.length === 0 ? <p className="library-empty">No ideas here yet. Make your own with New card.</p> : (
+      {shown.length === 0 ? (
+        <p className="library-empty">{onPick ? 'No ideas here yet.' : 'No ideas here yet. Make your own with New card.'}</p>
+      ) : (
         <ul className="library-grid">
           {shown.map((item) => {
             const cat = byId.get(item.category_id);
@@ -97,12 +108,21 @@ export function LibraryPanel(props: LibraryPanelProps) {
                     {item.description && <span className="library-desc"> · {item.description}</span>}
                   </span>
                 </div>
-                <button
-                  type="button" className="btn btn-small library-add" aria-label={`Add ${item.title}`}
-                  disabled={past || saving.has(item.id)} onClick={() => void add(item)}
-                >
-                  Add
-                </button>
+                {onPick ? (
+                  <button
+                    type="button" className="btn btn-small library-add" aria-label={`Pick ${item.title}`}
+                    onClick={() => onPick(item)}
+                  >
+                    Pick
+                  </button>
+                ) : (
+                  <button
+                    type="button" className="btn btn-small library-add" aria-label={`Add ${item.title}`}
+                    disabled={past || saving.has(item.id)} onClick={() => void add(item)}
+                  >
+                    Add
+                  </button>
+                )}
               </li>
             );
           })}

@@ -1,0 +1,22 @@
+/* MustDoForm: a must-do for the week, a few times over. */
+.mustdoform { display: flex; flex-direction: column; gap: var(--space-3); }
+.mustdoform-field { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
+.mustdoform-field label { font-weight: 700; }
+.mustdoform-field input, .mustdoform-field select {
+  min-height: var(--tap); padding: var(--space-2) var(--space-3); font: inherit; color: var(--ink);
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface); min-width: 0;
+}
+.mustdoform-field [aria-invalid='true'] { border-width: 2px; border-color: var(--ink); }
+.mustdoform-titlerow { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.mustdoform-titlerow input { flex: 1 1 180px; }
+.mustdoform-titlerow .btn { min-height: var(--tap); }
+.mustdoform-pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); align-items: end; }
+.mustdoform-hint { font-size: var(--text-s); color: var(--ink-2); margin-top: calc(-1 * var(--space-2)); }
+.mustdoform-problem { font-size: var(--text-s); font-weight: 700; color: var(--ink); }
+.mustdoform-error { margin: 0; font-weight: 600; }
+.mustdoform-buttons { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-3); }
+
+.mustdoform-picker { display: flex; flex-direction: column; gap: var(--space-3); align-items: flex-start; }
+.mustdoform-picker > .btn { min-height: var(--tap); }
+.mustdoform-picker .library { align-self: stretch; }
+.mustdoform-picker .library-grid { grid-template-columns: 1fr; }

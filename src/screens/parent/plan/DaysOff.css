@@ -1,0 +1,14 @@
+/* DaysOff: seven day buttons that cycle none, Rest, Away. */
+.daysoff { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.daysoff-title { font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; }
+.daysoff-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.daysoff-day {
+  min-height: 56px; padding: 0 2px; border-radius: var(--radius-m); border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2;
+}
+.daysoff-day[data-mark='rest'] { background: var(--ink-2); border-color: var(--ink-2); color: var(--on-ink); }
+.daysoff-day[data-mark='away'] { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.daysoff-day:disabled { cursor: default; }
+.daysoff-hint { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+.daysoff-error { margin: 0; font-weight: 600; }

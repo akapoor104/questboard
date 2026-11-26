@@ -1,0 +1,16 @@
+/* Parent: Must-dos. Heading with the week arrows, then panels in one column. */
+.plan-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); }
+.plan-titles { min-width: 0; }
+.plan-title { font-size: var(--text-2xl); overflow-wrap: anywhere; }
+.plan-sub { margin: 2px 0 0; color: var(--ink-2); font-size: var(--text-l); }
+.plan-arrows { display: flex; gap: var(--space-2); flex: none; }
+.plan-arrow { width: var(--tap); padding: 0; }
+
+.plan-panel { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.plan-panelhead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-3); }
+.plan-paneltitle { font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; }
+.plan-empty { margin: 0; }
+.plan-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.plan-chip { min-height: 36px; }
+.plan-chiptitle { overflow-wrap: anywhere; }
+.plan-chip[data-status='done'] .plan-chiptitle { text-decoration: line-through; }
