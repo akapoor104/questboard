@@ -1,0 +1,51 @@
+/* DayGrid: the month calendar. Always seven columns; the text gets shorter on a phone. */
+.daygrid { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.daygrid-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); }
+.daygrid-title { font-size: var(--text-xl); }
+.daygrid-hint { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+
+.daygrid-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.daygrid-wd { text-align: center; font-size: var(--text-s); font-weight: 600; color: var(--ink-2); padding-bottom: var(--space-1); }
+.daygrid-out { min-height: 72px; padding: 6px var(--space-2); font-size: var(--text-s); color: var(--ink-3); }
+
+.daygrid-cell {
+  min-height: 72px; min-width: 0; padding: 6px var(--space-2); border-radius: var(--radius-s);
+  display: flex; flex-direction: column; gap: 2px; overflow: hidden;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  text-decoration: none; font-size: var(--text-s); line-height: 1.25;
+}
+.daygrid-top { display: flex; align-items: center; justify-content: space-between; gap: 2px; }
+.daygrid-num { font-weight: 700; }
+.daygrid-check { display: inline-flex; color: var(--c-blue-deep); }
+.daygrid-text { color: var(--ink-2); overflow-wrap: anywhere; }
+.daygrid-short { display: none; }
+
+/* The blue tint: three steps of time spent. */
+.daygrid-cell[data-tint='1'] { background: var(--c-blue-tint); border-color: var(--c-blue-tint); }
+.daygrid-cell[data-tint='2'] { background: var(--c-blue-tint2); border-color: var(--c-blue-tint2); }
+.daygrid-cell[data-tint='3'] {
+  background: color-mix(in srgb, var(--c-blue-tint2) 70%, var(--c-blue));
+  border-color: color-mix(in srgb, var(--c-blue-tint2) 70%, var(--c-blue));
+}
+.daygrid-cell[data-tint='1'] .daygrid-text,
+.daygrid-cell[data-tint='2'] .daygrid-text,
+.daygrid-cell[data-tint='3'] .daygrid-text { color: var(--ink); font-weight: 600; }
+.daygrid-cell[data-tint='3'] .daygrid-check { color: var(--ink); }
+
+.daygrid-cell[data-label='today'] { border: 2px solid var(--ink); }
+.daygrid-cell[data-label='today'] .daygrid-text { color: var(--ink); font-weight: 600; }
+.daygrid-cell[data-label='rest'], .daygrid-cell[data-label='away'] { background: var(--surface-2); border-color: var(--surface-2); }
+.daygrid-cell[data-label='not_closed'] { border: 1px dashed var(--ink-3); }
+
+.daygrid-legend { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+
+@media (max-width: 699px) {
+  .daygrid { padding: var(--space-3); }
+  .daygrid-grid { gap: 3px; }
+  .daygrid-cell, .daygrid-out { min-height: 52px; padding: 3px 2px; font-size: 11px; }
+  .daygrid-text { font-size: 10px; overflow-wrap: normal; }
+  .daygrid-wd { font-size: 11px; }
+  .daygrid-long { display: none; }
+  .daygrid-short { display: inline; }
+  .daygrid-check svg { width: 11px; height: 11px; }
+}

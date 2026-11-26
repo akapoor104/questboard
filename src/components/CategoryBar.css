@@ -1,0 +1,16 @@
+/* CategoryBar: name, bar and "{spent} of {planned}" on one line; the bar drops below the name when narrow. */
+.catbar {
+  display: grid; grid-template-columns: minmax(150px, 180px) minmax(0, 1fr) auto; align-items: center;
+  gap: var(--space-2) var(--space-4); min-height: 30px;
+}
+.catbar-name { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 600; min-width: 0; }
+.catbar-icon { color: var(--cat-deep); display: inline-flex; flex: none; }
+.catbar-area { display: flex; min-width: 0; }
+.catbar-track { min-width: 4px; }
+.catbar-fill { display: block; height: 100%; }
+.catbar-text { color: var(--ink-2); font-size: var(--text-s); text-align: right; white-space: nowrap; }
+
+@media (max-width: 699px) {
+  .catbar { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-1) var(--space-3); }
+  .catbar-area { grid-column: 1 / -1; grid-row: 2; }
+}

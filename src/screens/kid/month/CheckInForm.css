@@ -1,0 +1,11 @@
+/* CheckInForm: five labelled text areas, each with a one-line prompt. */
+.checkinform { display: flex; flex-direction: column; gap: var(--space-4); }
+.checkinform-field { display: flex; flex-direction: column; gap: 2px; }
+.checkinform-field label { font-weight: 700; }
+.checkinform-prompt { margin: 0 0 var(--space-1); color: var(--ink-2); font-size: var(--text-s); }
+.checkinform-field textarea {
+  min-height: var(--tap); padding: var(--space-2) var(--space-3); color: var(--ink); resize: vertical;
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface);
+}
+.checkinform-buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.checkinform-error { margin: 0; font-weight: 600; }

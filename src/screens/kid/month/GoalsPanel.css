@@ -1,0 +1,17 @@
+/* GoalsPanel: the month's goals as checkboxes, and the "Add a goal" form. */
+.goalspanel { padding: var(--space-4) var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
+.goalspanel-empty { margin: 0; }
+.goalspanel-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.goalspanel-goal { display: flex; align-items: center; gap: var(--space-3); min-height: var(--tap); cursor: pointer; font-weight: 600; }
+.goalspanel-goal input { width: 22px; height: 22px; margin: 0; flex: none; accent-color: var(--ink); cursor: pointer; }
+.goalspanel-list [data-status='done'] .goalspanel-title { text-decoration: line-through; color: var(--ink-2); }
+.goalspanel-add { display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-2); }
+.goalspanel-field { display: flex; flex-direction: column; gap: var(--space-1); }
+.goalspanel-field label { font-weight: 700; }
+.goalspanel-field label .muted { font-weight: 400; }
+.goalspanel-field input, .goalspanel-field select {
+  min-height: var(--tap); padding: var(--space-2) var(--space-3); color: var(--ink);
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface);
+}
+.goalspanel-buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.goalspanel-error { margin: 0; font-weight: 600; }

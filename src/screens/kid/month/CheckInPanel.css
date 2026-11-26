@@ -1,0 +1,14 @@
+/* CheckInPanel: the latest check-in's four answers in a row (stacked on a phone). */
+.checkin { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.checkin-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-3); }
+.checkin-title { font-size: var(--text-xl); }
+.checkin-hint { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+.checkin-week { margin: 0; }
+.checkin-answers { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); }
+.checkin-answer { background: var(--surface-2); border-radius: var(--radius-m); padding: var(--space-3) var(--space-3) var(--space-4); }
+.checkin-answer dd { margin: var(--space-1) 0 0; font-weight: 600; overflow-wrap: anywhere; white-space: pre-line; }
+.checkin-notes { margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.checkin-empty { margin: 0; }
+
+@media (max-width: 899px) { .checkin-answers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 499px) { .checkin-answers { grid-template-columns: 1fr; } }

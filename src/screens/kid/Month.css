@@ -1,0 +1,26 @@
+/* Month: heading and goals, five tiles, time by category beside the calendar, the check-in. */
+.month-page { max-width: 1440px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-5); }
+
+.month-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: var(--space-4) var(--space-5); align-items: start; }
+.month-head { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.month-titlerow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.month-title { font-size: var(--text-3xl); }
+.month-arrow { width: var(--tap); padding: 0; flex: none; }
+.month-back { color: var(--ink-2); font-weight: 600; min-height: var(--tap); display: inline-flex; align-items: center; }
+.month-line { margin: 0; font-size: var(--text-l); color: var(--ink-2); }
+
+.month-mid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-5); align-items: start; }
+.month-mid > :only-child { grid-column: 1 / -1; }
+
+@media (max-width: 1099px) {
+  .month-top, .month-mid { grid-template-columns: minmax(0, 1fr); }
+  .month-title { font-size: var(--text-2xl); }
+}
+
+@media (max-width: 699px) {
+  .month-page { gap: var(--space-4); }
+  .month-titlerow { gap: var(--space-2); }
+  .month-title { font-size: var(--text-xl); flex: 1 1 0; min-width: 0; }
+  .month-back { flex-basis: 100%; }
+  .month-line { font-size: var(--text-m); }
+}

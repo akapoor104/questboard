@@ -1,0 +1,17 @@
+/* StatTiles: five number tiles in a row; two columns on a phone. */
+.stattiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); }
+.stattiles-tile {
+  display: flex; flex-direction: column; gap: 2px; padding: var(--space-3) var(--space-4);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-l);
+}
+.stattiles-value { font-family: var(--font-display); font-weight: 700; font-size: var(--text-2xl); line-height: 1.15; }
+.stattiles-text { color: var(--ink-2); font-size: var(--text-s); }
+
+@media (max-width: 899px) {
+  .stattiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 599px) {
+  .stattiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stattiles-tile:last-child { grid-column: 1 / -1; }
+  .stattiles-value { font-size: var(--text-xl); }
+}
