@@ -1,0 +1,21 @@
+.toast-area {
+  position: fixed; left: 0; right: 0; bottom: calc(var(--space-4) + env(safe-area-inset-bottom)); z-index: 60;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  padding: 0 var(--space-4); pointer-events: none;
+}
+.toast-live { display: contents; }
+.toast {
+  margin: 0; max-width: 520px; pointer-events: auto;
+  background: var(--ink); color: var(--on-ink); border-radius: var(--radius-m);
+  padding: var(--space-3) var(--space-4); font-weight: 600;
+}
+.toast-error {
+  display: flex; align-items: center; gap: var(--space-3);
+  background: var(--surface); color: var(--ink); border: 2px solid var(--ink);
+  padding-right: var(--space-2);
+}
+.toast-dismiss {
+  flex: none; width: var(--tap); height: var(--tap); border-radius: var(--radius-s);
+  border: none; background: transparent; color: var(--ink-2); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+}

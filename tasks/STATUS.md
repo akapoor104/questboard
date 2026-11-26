@@ -6,7 +6,7 @@ One ticket per Claude Code session. Add a dated line under Notes for anything su
 ## Core: build in demo mode (November 14 to December 4)
 
 - [x] T01 Install and check the toolchain
-- [ ] T02 App shell: connection, session, routes, shared pieces
+- [x] T02 App shell: connection, session, routes, shared pieces
 - [ ] T03 Link this device and the PIN pad
 - [ ] T04 Today, read-only
 - [ ] T05 Card actions: start, how did it go, move, drop, undo
@@ -44,3 +44,4 @@ One ticket per Claude Code session. Add a dated line under Notes for anything su
 
 ## Notes
 
+- 2026-11-25 (T02): `e2e/smoke.spec.ts` still fails until T03 builds the PIN pad, so `npm run check:e2e` is red until then; the T02 browser files pass. TopBar and ParentFrame call `useSession()` themselves (they are layouts); the layouts are composed inline in `App.tsx` with `<Outlet />`. The `Demo` chip style is `.demo-badge` in `src/ui/app.css`.
