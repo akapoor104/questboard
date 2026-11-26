@@ -1,0 +1,57 @@
+.unlock { align-items: center; text-align: center; }
+.unlock-demo { align-self: flex-start; }
+
+.unlock-brand {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-display); font-weight: 700; font-size: 21px;
+}
+
+.unlock-hello { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+.unlock-avatar {
+  width: 84px; height: 84px; border-radius: 26px;
+  background: var(--c-violet-tint); color: var(--c-violet-deep);
+  display: flex; align-items: center; justify-content: center;
+}
+.unlock-title { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1.1; }
+.unlock-hint { margin: 0; color: var(--ink-2); }
+
+.unlock-dots { display: flex; gap: 14px; }
+.unlock-dot {
+  width: 18px; height: 18px; border-radius: 50%; box-sizing: border-box;
+  border: 2px solid var(--ink-3);
+}
+.unlock-dot-on { background: var(--ink); border-color: var(--ink); }
+
+.unlock-pad {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;
+  width: 300px; max-width: 100%;
+}
+.unlock-key {
+  min-height: 64px; min-width: 64px; border-radius: var(--radius-l);
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font-family: var(--font-display); font-size: 26px; font-weight: 600; cursor: pointer;
+  touch-action: manipulation;
+}
+.unlock-key:active:not(:disabled) { background: var(--surface-2); }
+.unlock-key:disabled { background: var(--surface-2); color: var(--ink-3); cursor: default; }
+.unlock-key-delete {
+  border-color: transparent; background: transparent;
+  display: flex; align-items: center; justify-content: center;
+}
+.unlock-key-delete:disabled { background: transparent; }
+
+.unlock-message { min-height: 40px; display: flex; align-items: center; justify-content: center; }
+.unlock-message p { margin: 0; font-size: var(--text-s); }
+.unlock-note { color: var(--ink-2); }
+.unlock-alert { color: var(--ink); font-weight: 600; }
+
+.unlock-footer {
+  width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--space-3); padding-top: 14px; border-top: 1px solid var(--line);
+  font-size: var(--text-s); color: var(--ink-2); text-align: left;
+}
+.unlock-parent {
+  display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--space-4);
+  border-radius: var(--radius-m); border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink); font-weight: 600; text-decoration: none; margin-left: auto;
+}
