@@ -23,3 +23,18 @@
 
 .page-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
 .page-error { color: var(--ink); }
+
+/* "Skip to content": the first stop of both layouts, out of sight until it has focus. */
+.skip-link {
+  position: absolute; left: var(--space-3); top: var(--space-3); z-index: 100;
+  padding: var(--space-2) var(--space-4); min-height: var(--tap); display: inline-flex; align-items: center;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-pill);
+  font-weight: 700; text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus, .skip-link:focus-visible { transform: none; }
+main:focus { outline: none; }
+
+/* A small button looks 36px tall but takes taps over 44px (the --tap minimum). */
+.btn-small { position: relative; }
+.btn-small::after { content: ''; position: absolute; inset: -4px 0; }

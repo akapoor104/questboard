@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import type { Board, Card } from '../../api/types.ts';
-import { errorText } from '../../app/errors.ts';
 import { useChild, useSession } from '../../app/session.tsx';
 import { useTodayData } from '../../app/TodayProvider.tsx';
 import { useCategories } from '../../app/useCategories.ts';
 import { useLoad } from '../../app/useLoad.ts';
+import { ErrorPanel } from '../../components/ErrorPanel.tsx';
+import { usePageTitle } from '../../components/usePageTitle.ts';
 import { CardSheet } from '../../components/CardSheet.tsx';
 import { Icon } from '../../components/Icon.tsx';
 import { Sheet } from '../../components/Sheet.tsx';
@@ -37,6 +38,7 @@ function findCard(b: Board, id: string): Card | undefined {
 
 /** His week: seven days, the focus, the load check, the stack and the Library. */
 export function Week() {
+  usePageTitle('Week');
   const { api, me } = useSession();
   if (!me) throw new Error('Week needs an unlocked device');
   const child = useChild();
@@ -81,12 +83,9 @@ export function Week() {
 
   if (!board.data || !stats.data || !cats.library.data) {
     return (
-      <main className="page week-page">
+      <main id="main" className="page week-page">
         {failed ? (
-          <div className="panel page-actions">
-            <p role="alert" className="page-error">{errorText(failed.error)}</p>
-            <button type="button" className="btn" onClick={reloadAll}>Try again</button>
-          </div>
+          <ErrorPanel error={failed.error} onRetry={reloadAll} />
         ) : <p className="muted">Loading...</p>}
       </main>
     );
@@ -101,12 +100,9 @@ export function Week() {
   const sheetCard = open ? findCard(b, open.id) ?? open : null;
 
   return (
-    <main className="page week-page">
+    <main id="main" className="page week-page">
       {failed && (
-        <div className="panel page-actions">
-          <p role="alert" className="page-error">{errorText(failed.error)}</p>
-          <button type="button" className="btn" onClick={reloadAll}>Try again</button>
-        </div>
+        <ErrorPanel error={failed.error} onRetry={reloadAll} />
       )}
       <div className="week-top">
         <div className="week-head">

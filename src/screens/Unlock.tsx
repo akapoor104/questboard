@@ -5,6 +5,7 @@ import { useSession } from '../app/session.tsx';
 import { Icon } from '../components/Icon.tsx';
 import { pinMessage } from '../lib/pin.ts';
 import './Unlock.css';
+import { usePageTitle } from '../components/usePageTitle.ts';
 
 const PIN_LENGTH = 4;
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -14,6 +15,7 @@ const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
  * No <input>, so a tablet shows no keyboard and no browser offers to save the PIN.
  */
 export function Unlock() {
+  usePageTitle('Unlock');
   const { conn, api, me, refreshMe } = useSession();
   const child = me?.children[0];
   const [digits, setDigits] = useState('');

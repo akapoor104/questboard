@@ -5,6 +5,7 @@ import { useTodayData } from '../app/TodayProvider.tsx';
 import { CampfireChip } from './CampfireChip.tsx';
 import { Icon } from './Icon.tsx';
 import { ProfileSheet } from './ProfileSheet.tsx';
+import { SkipLink } from './SkipLink.tsx';
 import { useToast } from './Toast.tsx';
 import './TopBar.css';
 
@@ -35,6 +36,8 @@ export function TopBar() {
   };
 
   return (
+    <>
+    <SkipLink />
     <header className="topbar">
       <div className="topbar-brand">
         <Icon name="d20" size={24} />
@@ -60,5 +63,6 @@ export function TopBar() {
         <ProfileSheet api={api} child={child} reload={async () => { await refreshMe(); }} onClose={() => setProfile(false)} />
       )}
     </header>
+    </>
   );
 }

@@ -5,6 +5,7 @@ import { useSession } from '../app/session.tsx';
 import { useToast } from '../components/Toast.tsx';
 import { formatPairCode } from '../lib/pin.ts';
 import './Link.css';
+import { usePageTitle } from '../components/usePageTitle.ts';
 
 const POLL_MS = 4000;
 
@@ -23,6 +24,7 @@ function needsCode(me: WhoAmI | null): boolean {
  * approved, DeviceGate shows the PIN pad by itself.
  */
 export function Link() {
+  usePageTitle('Link this device');
   const { conn, api, me, refreshMe } = useSession();
   const { showError } = useToast();
   const [wasRevoked] = useState(() => me?.device?.status === 'revoked');

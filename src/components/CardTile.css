@@ -8,6 +8,9 @@
   overflow-wrap: anywhere;
 }
 .cardtile-open:focus-visible { outline-offset: 1px; border-radius: 4px; }
+/* The whole card is the tap target (a title line alone is under 44px); its own buttons sit above. */
+.cardtile-open::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+.cardtile-actions { position: relative; z-index: 1; }
 
 .cardtile-end { margin-left: auto; white-space: nowrap; }
 .cardtile-must { display: inline-flex; align-items: center; gap: var(--space-1); font-weight: 600; color: var(--cat-deep); white-space: nowrap; }
@@ -41,6 +44,13 @@
 .cardtile-row .cardtile-end, .cardtile-timed .cardtile-end { flex: none; }
 
 .cardtile-timed { height: 100%; align-items: flex-start; overflow: hidden; }
+/* A tall block (45 min and up) with a button ("How did it go?"): the time goes under the
+   title and the button stays beside them, so the title is never squeezed to a word per line. */
+.cardtile-timed:not([data-size='short']):has(.cardtile-actions-inline) {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: var(--space-2); row-gap: 2px; align-content: start;
+}
+.cardtile-timed:not([data-size='short']):has(.cardtile-actions-inline) .cardtile-end { grid-column: 2; margin-left: 0; max-width: none; white-space: normal; }
+.cardtile-timed:not([data-size='short']):has(.cardtile-actions-inline) .cardtile-actions-inline { grid-column: 3; grid-row: 1 / span 2; }
 .cardtile-timed .cardtile-icon { padding-top: 2px; }
 .cardtile-timed[data-size='short'] { align-items: center; padding-top: 0; padding-bottom: 0; }
 .cardtile-timed[data-size='short'] .cardtile-icon { padding-top: 0; }
@@ -69,6 +79,7 @@
   }
   .cardtile-timed[data-size='short'] { padding: var(--space-1) var(--space-2); }
   .cardtile-timed .cardtile-end { grid-column: 2; margin-left: 0; max-width: none; }
+  .cardtile-timed:not([data-size='short']) .cardtile-end { white-space: normal; }
   .cardtile-timed:has(.cardtile-actions-inline) { grid-template-columns: auto minmax(0, 1fr) auto; }
   .cardtile-timed .cardtile-actions-inline { grid-column: 3; grid-row: 1 / span 2; }
   .cardtile-timed[data-size='short'] .cardtile-open { flex: 0 1 auto; min-width: 0; }

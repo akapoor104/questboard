@@ -1,8 +1,9 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { errorText } from '../../app/errors.ts';
 import { useChild, useSession } from '../../app/session.tsx';
 import { useCategories } from '../../app/useCategories.ts';
 import { useLoad } from '../../app/useLoad.ts';
+import { ErrorPanel } from '../../components/ErrorPanel.tsx';
+import { usePageTitle } from '../../components/usePageTitle.ts';
 import { Icon } from '../../components/Icon.tsx';
 import { addDays, firstOfMonth, lastOfMonth, monday, monthName } from '../../lib/dates.ts';
 import { boardLine, daysOnBoard, monthParam, parseMonth, shiftMonth } from '../../lib/month.ts';
@@ -15,6 +16,7 @@ import './Month.css';
 
 /** His month: goals, the numbers so far, where the time went, a calendar, and the Sunday check-in. */
 export function Month() {
+  usePageTitle('Month');
   const { api, me } = useSession();
   if (!me) throw new Error('Month needs an unlocked device');
   const child = useChild();
@@ -46,10 +48,7 @@ export function Month() {
   const thisMonth = firstOfMonth(me.today);
 
   const errorPanel = failed && (
-    <div className="panel page-actions">
-      <p role="alert" className="page-error">{errorText(failed.error)}</p>
-      <button type="button" className="btn" onClick={reloadAll}>Try again</button>
-    </div>
+    <ErrorPanel error={failed.error} onRetry={reloadAll} />
   );
 
   const head = (
@@ -67,7 +66,7 @@ export function Month() {
 
   if (!whole.data || (!future && !done.data) || !board.data || !review.data || !cats.library.data) {
     return (
-      <main className="page month-page">
+      <main id="main" className="page month-page">
         {head}
         {errorPanel || <p className="muted">Loading...</p>}
       </main>
@@ -77,7 +76,7 @@ export function Month() {
   const soFarStats = future ? null : done.data;
 
   return (
-    <main className="page month-page">
+    <main id="main" className="page month-page">
       {errorPanel}
       <div className="month-top">
         <div className="month-head">

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import type { Board, Card } from '../../api/types.ts';
 import { useSession, useChild } from '../../app/session.tsx';
-import { errorText } from '../../app/errors.ts';
 import { useTodayData } from '../../app/TodayProvider.tsx';
 import { useCategories } from '../../app/useCategories.ts';
 import { useAction, useLoad } from '../../app/useLoad.ts';
+import { ErrorPanel } from '../../components/ErrorPanel.tsx';
+import { usePageTitle } from '../../components/usePageTitle.ts';
 import { CardSheet } from '../../components/CardSheet.tsx';
 import { useToast } from '../../components/Toast.tsx';
 import type { CardAction } from '../../lib/cardActions.ts';
@@ -32,6 +33,7 @@ function findCard(b: Board, id: string): Card | undefined {
 
 /** His Today screen. Tap a card for its sheet; the inline buttons are shortcuts into it. */
 export function Today() {
+  usePageTitle('Today');
   const { api, me } = useSession();
   if (!me) throw new Error('Today needs an unlocked device');
   const child = useChild();
@@ -60,12 +62,9 @@ export function Today() {
 
   if (!board.data || !today.data || !cats.library.data) {
     return (
-      <main className="page today-page">
+      <main id="main" className="page today-page">
         {failed ? (
-          <div className="panel page-actions">
-            <p role="alert" className="page-error">{errorText(failed.error)}</p>
-            <button type="button" className="btn" onClick={reloadAll}>Try again</button>
-          </div>
+          <ErrorPanel error={failed.error} onRetry={reloadAll} />
         ) : <p className="muted">Loading...</p>}
       </main>
     );
@@ -84,12 +83,9 @@ export function Today() {
   const sheetCard = open ? findCard(b, open.card.id) ?? open.card : null;
 
   return (
-    <main className="page today-page">
+    <main id="main" className="page today-page">
       {failed && (
-        <div className="panel page-actions today-wide">
-          <p role="alert" className="page-error">{errorText(failed.error)}</p>
-          <button type="button" className="btn" onClick={reloadAll}>Try again</button>
-        </div>
+        <ErrorPanel error={failed.error} onRetry={reloadAll} className="today-wide" />
       )}
       <div className="today">
         <div className="today-head">

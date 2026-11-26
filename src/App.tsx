@@ -4,6 +4,7 @@ import { TodayProvider } from './app/TodayProvider.tsx';
 import { ParentFrame } from './components/ParentFrame.tsx';
 import { ToastProvider } from './components/Toast.tsx';
 import { TopBar } from './components/TopBar.tsx';
+import { ErrorPreview } from './screens/ErrorPreview.tsx';
 import { NotFound } from './screens/NotFound.tsx';
 import { Month } from './screens/kid/Month.tsx';
 import { Today } from './screens/kid/Today.tsx';
@@ -30,6 +31,7 @@ export function App() {
               <Route path="plan" element={<Plan />} />
               <Route path="settings" element={<Settings />} />
             </Route>
+            {import.meta.env.DEV && <Route path="_error" element={<ErrorPreview />} />}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

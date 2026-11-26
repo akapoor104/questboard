@@ -1,8 +1,9 @@
 import { Fragment, useState } from 'react';
-import { errorText } from '../../app/errors.ts';
 import { resetDemo } from '../../app/connection.ts';
 import { useParentChild, useSession } from '../../app/session.tsx';
 import { useLoad } from '../../app/useLoad.ts';
+import { ErrorPanel } from '../../components/ErrorPanel.tsx';
+import { usePageTitle } from '../../components/usePageTitle.ts';
 import { Sheet } from '../../components/Sheet.tsx';
 import { useToast } from '../../components/Toast.tsx';
 import { familyForm } from '../../lib/settings.ts';
@@ -17,6 +18,7 @@ import './Settings.css';
 
 /** Parent: Settings. Devices, the PIN, the parents, the automation key, backups and the family. */
 export function Settings() {
+  usePageTitle('Settings');
   const { conn, parentApi, parentMe, refreshParent } = useSession();
   if (!parentMe) throw new Error('Settings needs a signed-in parent');
   const child = useParentChild();
@@ -56,10 +58,7 @@ export function Settings() {
     </div>
   );
   const errorPanel = failed && (
-    <div className="panel page-actions">
-      <p role="alert" className="page-error">{errorText(failed.error)}</p>
-      <button type="button" className="btn" onClick={() => void reloadAll()}>Try again</button>
-    </div>
+    <ErrorPanel error={failed.error} onRetry={() => void reloadAll()} />
   );
   if (!settings.data || !devices.data) return <>{head}{errorPanel || <p className="muted">Loading...</p>}</>;
 

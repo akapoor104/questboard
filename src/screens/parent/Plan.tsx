@@ -1,9 +1,10 @@
 import { useId, useState } from 'react';
 import { Link, Navigate, useSearchParams } from 'react-router-dom';
-import { errorText } from '../../app/errors.ts';
 import { useParentChild, useSession } from '../../app/session.tsx';
 import { useCategories } from '../../app/useCategories.ts';
 import { useLoad } from '../../app/useLoad.ts';
+import { ErrorPanel } from '../../components/ErrorPanel.tsx';
+import { usePageTitle } from '../../components/usePageTitle.ts';
 import { Icon } from '../../components/Icon.tsx';
 import { Sheet } from '../../components/Sheet.tsx';
 import { useToast } from '../../components/Toast.tsx';
@@ -21,6 +22,7 @@ import './Plan.css';
 
 /** Parent: Must-dos. The week's frame: focus areas, must-dos, days off, and a note. */
 export function Plan() {
+  usePageTitle('Must-dos');
   const { parentApi, parentMe } = useSession();
   if (!parentMe) throw new Error('Plan needs a signed-in parent');
   const child = useParentChild();
@@ -59,10 +61,7 @@ export function Plan() {
   );
 
   const errorPanel = failed && (
-    <div className="panel page-actions">
-      <p role="alert" className="page-error">{errorText(failed.error)}</p>
-      <button type="button" className="btn" onClick={reloadAll}>Try again</button>
-    </div>
+    <ErrorPanel error={failed.error} onRetry={reloadAll} />
   );
 
   if (!board.data || !today.data || !cats.library.data) {

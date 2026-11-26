@@ -1,9 +1,10 @@
 import { useId, useState } from 'react';
 import { Link, Navigate, useSearchParams } from 'react-router-dom';
-import { errorText } from '../../app/errors.ts';
 import { useParentChild, useSession } from '../../app/session.tsx';
 import { useCategories } from '../../app/useCategories.ts';
 import { useLoad } from '../../app/useLoad.ts';
+import { ErrorPanel } from '../../components/ErrorPanel.tsx';
+import { usePageTitle } from '../../components/usePageTitle.ts';
 import { CardSheet } from '../../components/CardSheet.tsx';
 import { CategoryBar } from '../../components/CategoryBar.tsx';
 import { Icon } from '../../components/Icon.tsx';
@@ -23,6 +24,7 @@ const ANSWERS = [
 
 /** Parent: This week. What needs a parent now, and how the shown week went. */
 export function Home() {
+  usePageTitle('Parents');
   const { parentApi, parentMe } = useSession();
   if (!parentMe) throw new Error('Home needs a signed-in parent');
   const child = useParentChild();
@@ -64,10 +66,7 @@ export function Home() {
   );
 
   const errorPanel = failed && (
-    <div className="panel page-actions">
-      <p role="alert" className="page-error">{errorText(failed.error)}</p>
-      <button type="button" className="btn" onClick={reloadAll}>Try again</button>
-    </div>
+    <ErrorPanel error={failed.error} onRetry={reloadAll} />
   );
 
   // getReview answers null for "no check-in", so "not loaded yet" is data null while still loading.

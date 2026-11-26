@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSession } from '../../app/session.tsx';
 import { errorText } from '../../app/errors.ts';
+import { usePageTitle } from '../../components/usePageTitle.ts';
 
 /** Parent sign-in: Google for real, one button in demo mode. */
 export function SignIn() {
+  usePageTitle('Parent sign-in');
   const { conn, refreshParent } = useSession();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<unknown>(null);

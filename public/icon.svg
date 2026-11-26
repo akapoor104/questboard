@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Questboard</title>
+  <!-- qb-allow: the home-screen icon cannot read CSS variables; these are --ground and --ink from src/ui/tokens.css -->
+  <rect width="512" height="512" rx="96" fill="#f3f5f9"/><!-- qb-allow: --ground -->
+  <g transform="translate(64 64) scale(16)" fill="none" stroke="#171c33" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><!-- qb-allow: --ink -->
+    <path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"/>
+    <path d="m12 7 5 8H7l5-8Z"/>
+  </g>
+</svg>
