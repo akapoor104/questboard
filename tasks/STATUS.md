@@ -5,7 +5,7 @@ One ticket per Claude Code session. Add a dated line under Notes for anything su
 
 ## Core: build in demo mode (November 14 to December 4)
 
-- [ ] T01 Install and check the toolchain
+- [x] T01 Install and check the toolchain
 - [ ] T02 App shell: connection, session, routes, shared pieces
 - [ ] T03 Link this device and the PIN pad
 - [ ] T04 Today, read-only
@@ -34,13 +34,13 @@ One ticket per Claude Code session. Add a dated line under Notes for anything su
 
 | Package | Version |
 |---|---|
-| node | |
-| react | |
-| react-router-dom | |
-| @supabase/supabase-js | |
-| vite | |
-| typescript | |
-| @playwright/test | |
+| node | v24.12.0 |
+| react | 19.3.1 |
+| react-router-dom | 7.18.7 |
+| @supabase/supabase-js | 2.119.2 |
+| vite | 7.3.8 |
+| typescript | 6.0.3 |
+| @playwright/test | 1.65.1 |
 
 ## Notes
 
