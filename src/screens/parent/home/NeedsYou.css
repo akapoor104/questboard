@@ -1,0 +1,23 @@
+/* NeedsYou: drop requests with two big buttons, short lines, and the tray line under a rule. */
+.needsyou { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.needsyou-title { margin: 0; }
+.needsyou-drop { display: flex; flex-direction: column; gap: var(--space-2); }
+.needsyou-drop-title { margin: 0; font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; }
+.needsyou-drop-line { margin: 0; color: var(--ink-2); overflow-wrap: anywhere; }
+.needsyou-card {
+  background: none; border: 0; padding: 0; margin: 0; font: inherit; color: var(--ink); font-weight: 600;
+  text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left;
+  /* Sits in the sentence; the ::before makes the touch area 44px tall without changing the line height. */
+  position: relative; line-height: inherit;
+}
+.needsyou-card::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: var(--tap); transform: translateY(-50%); }
+.needsyou-drop-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-1); }
+.needsyou-drop-buttons .btn { min-height: 52px; font-size: var(--text-l); }
+.needsyou-line { margin: 0; overflow-wrap: anywhere; }
+.needsyou-tray {
+  margin: 0; padding-top: var(--space-3); border-top: 1px solid var(--line);
+  display: flex; align-items: flex-start; gap: var(--space-3); overflow-wrap: anywhere;
+}
+.needsyou-tray > svg { flex: none; margin-top: 2px; color: var(--ink-2); }
+.needsyou-tray-alert { font-weight: 700; }
+.needsyou-tray-alert > svg { color: var(--ink); }

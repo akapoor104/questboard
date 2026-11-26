@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import type { Api } from '../api/client.ts';
 import type { Category, Library, LibraryItem } from '../api/types.ts';
 import { useSession } from './session.tsx';
 import { useLoad, type Loaded } from './useLoad.ts';
@@ -16,10 +17,14 @@ export interface Categories {
   library: Loaded<Library>;
 }
 
-/** The library's categories (and items), loaded once per screen. */
-export function useCategories(): Categories {
+/**
+ * The library's categories (and items), loaded once per screen. Parent screens pass
+ * `parentApi`; his screens use the device session.
+ */
+export function useCategories(from?: Api): Categories {
   const { api } = useSession();
-  const library = useLoad(() => api.getLibrary(), []);
+  const via = from ?? api;
+  const library = useLoad(() => via.getLibrary(), [via]);
   const data = library.data;
   const derived = useMemo(() => {
     const categories = (data?.categories ?? []).filter((c) => c.active !== false);

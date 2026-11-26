@@ -1,0 +1,13 @@
+/* WeekTiles: three number tiles in a row, even on a phone. */
+.weektiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+.weektiles-tile {
+  display: flex; flex-direction: column; gap: 2px; padding: var(--space-3) var(--space-4); min-width: 0;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-l);
+}
+.weektiles-value { font-family: var(--font-display); font-weight: 700; font-size: var(--text-2xl); line-height: 1.15; overflow-wrap: anywhere; }
+.weektiles-text { color: var(--ink-2); font-size: var(--text-s); }
+
+@media (max-width: 379px) {
+  .weektiles-tile { padding: var(--space-3); }
+  .weektiles-value { font-size: var(--text-xl); }
+}

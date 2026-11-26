@@ -1,0 +1,23 @@
+/* Parent: This week. Heading with the week arrows, then panels in one column. */
+.phome-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); }
+.phome-titles { min-width: 0; }
+.phome-title { font-size: var(--text-2xl); overflow-wrap: anywhere; }
+.phome-range { margin: 2px 0 0; color: var(--ink-2); font-size: var(--text-l); }
+.phome-arrows { display: flex; gap: var(--space-2); flex: none; }
+.phome-arrow { width: var(--tap); padding: 0; }
+
+.phome-panel { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.phome-panelhead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-1) var(--space-3); }
+.phome-paneltitle { font-family: var(--font-ui); font-size: var(--text-l); font-weight: 700; }
+.phome-hint { margin: 0; color: var(--ink-2); font-size: var(--text-s); }
+.phome-empty { margin: 0; }
+.phome-bars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+
+.phome-answers { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.phome-answer { background: var(--surface-2); border-radius: var(--radius-m); padding: var(--space-3); min-width: 0; }
+.phome-answer dd { margin: var(--space-1) 0 0; overflow-wrap: anywhere; white-space: pre-line; }
+.phome-notes { margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+
+@media (max-width: 359px) {
+  .phome-answers { grid-template-columns: 1fr; }
+}
