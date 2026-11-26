@@ -1,8 +1,13 @@
+import { useEffect, useState } from 'react';
+import type { Board, Card } from '../../api/types.ts';
 import { useSession, useChild } from '../../app/session.tsx';
 import { errorText } from '../../app/errors.ts';
 import { useTodayData } from '../../app/TodayProvider.tsx';
 import { useCategories } from '../../app/useCategories.ts';
-import { useLoad } from '../../app/useLoad.ts';
+import { useAction, useLoad } from '../../app/useLoad.ts';
+import { CardSheet } from '../../components/CardSheet.tsx';
+import { useToast } from '../../components/Toast.tsx';
+import type { CardAction } from '../../lib/cardActions.ts';
 import { addDays, formatLongDate, monday } from '../../lib/dates.ts';
 import { openCount } from '../../lib/today.ts';
 import { CloseOutPanel } from './today/CloseOutPanel.tsx';
@@ -14,17 +19,36 @@ import { TrayColumn } from './today/TrayColumn.tsx';
 import { WordPanel } from './today/WordPanel.tsx';
 import './Today.css';
 
-/** His Today screen (read-only until T05). */
+/** The newest copy of a card in the board, wherever it now sits. */
+function findCard(b: Board, id: string): Card | undefined {
+  for (const list of [b.cards, b.pool, b.tray, b.unconfirmed, b.drop_requests]) {
+    const c = list.find((x) => x.id === id);
+    if (c) return c;
+  }
+  return undefined;
+}
+
+/** His Today screen. Tap a card for its sheet; the inline buttons are shortcuts into it. */
 export function Today() {
   const { api, me } = useSession();
   if (!me) throw new Error('Today needs an unlocked device');
   const child = useChild();
+  const toast = useToast();
   const week = monday(me.today);
   // Four weeks back, so leftovers can say where they came from and nothing left in an
   // older stack is lost from view. Today's cards are the ones with date === board.today.
   const board = useLoad(() => api.getBoard(child.id, addDays(week, -28), addDays(week, 6)), [child.id, week]);
   const today = useTodayData();
   const cats = useCategories();
+  const [open, setOpen] = useState<{ card: Card; start?: CardAction } | null>(null);
+
+  const reload = async () => {
+    await Promise.all([board.reload(), today.reload()]);
+  };
+  const quick = useAction(reload);
+  useEffect(() => {
+    if (quick.error !== null) toast.showError(quick.error);
+  }, [quick.error, toast]);
 
   const loads = [board, today, cats.library];
   const reloadAll = () => { for (const l of loads) void l.reload(); };
@@ -46,6 +70,13 @@ export function Today() {
   const b = board.data;
   const t = today.data;
   const todayCards = b.cards.filter((c) => c.date === b.today);
+  const openCard = (card: Card, start?: CardAction) => setOpen({ card, start });
+  const toToday = (card: Card) => {
+    void quick.run(() => api.placeCard(card.id, { place: 'day', date: b.today }))
+      .then((r) => { if (r) toast.show('Moved to today.'); });
+  };
+  // The sheet always shows the server's latest copy of its card.
+  const sheetCard = open ? findCard(b, open.card.id) ?? open.card : null;
 
   return (
     <main className="page today-page">
@@ -72,18 +103,27 @@ export function Today() {
         {t.word && <div className="today-word"><WordPanel word={t.word} /></div>}
         <div className="today-alerts"><Reminders alerts={t.alerts} board={b} /></div>
         <div className="today-stack">
-          <StackColumn pool={b.pool} week={week} cats={cats} timeZone={me.timezone} />
+          <StackColumn
+            pool={b.pool} week={week} cats={cats} timeZone={me.timezone} onOpen={openCard} onToToday={toToday} busy={quick.busy}
+          />
         </div>
         <div className="today-day">
           <DayTimeline
             cards={todayCards} dayStartMin={me.day_start_min} dayEndMin={me.day_end_min} cats={cats} timeZone={me.timezone}
+            onOpen={openCard}
           />
         </div>
         <div className="today-side">
-          <TrayColumn tray={b.tray} cards={b.cards} cats={cats} timeZone={me.timezone} />
+          <TrayColumn tray={b.tray} cards={b.cards} cats={cats} timeZone={me.timezone} onOpen={openCard} />
           <CloseOutPanel open={openCount(b.cards, b.today)} closed={b.closeouts.some((c) => c.date === b.today)} />
         </div>
       </div>
+      {open && sheetCard && (
+        <CardSheet
+          key={open.card.id + (open.start ?? '')} card={sheetCard} board={b} role="kid" api={api} reload={reload}
+          onClose={() => setOpen(null)} cats={cats} settings={me} timeZone={me.timezone} start={open.start}
+        />
+      )}
     </main>
   );
 }

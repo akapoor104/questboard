@@ -18,11 +18,11 @@ export interface CardTileProps {
   timeZone: string;
   /** One more piece of text for the meta line, such as "6 more this week" or where a leftover came from. */
   extra?: string;
-  /** Buttons under the card (full variant). */
+  /** Buttons under the card (full variant), or at its end (row and timed, such as "How did it go?"). */
   actions?: ReactNode;
   /** Make the action buttons share the card's width (the tray). */
   wideActions?: boolean;
-  /** Opens the card sheet (ticket T05). */
+  /** Opens the card sheet. */
   onOpen?: () => void;
 }
 
@@ -96,6 +96,7 @@ export function CardTile({ card, category, colorClass, variant, timeZone, extra,
             {done && <Icon name="check" size={14} />}
             {metaText}
           </span>
+          {actions && <div className="cardtile-actions cardtile-actions-inline">{actions}</div>}
         </>
       )}
     </article>

@@ -1,0 +1,21 @@
+/* CardSheet: a card's details and its buttons. */
+.cardsheet-facts { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+.cardsheet-facts p { margin: 0; }
+.cardsheet-cat { padding: 6px 12px; }
+.cardsheet-where { font-size: var(--text-l); font-weight: 600; }
+.cardsheet-doing, .cardsheet-details, .cardsheet-waiting { color: var(--ink-2); }
+.cardsheet-details { white-space: pre-wrap; overflow-wrap: anywhere; }
+.cardsheet-kind, .cardsheet-result { display: inline-flex; align-items: center; gap: var(--space-1); font-weight: 600; }
+.cardsheet-note { font-weight: 400; color: var(--ink-2); overflow-wrap: anywhere; }
+.cardsheet-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.cardsheet-actions .btn { flex: 1 1 140px; }
+.cardsheet-ask { margin: 0; font-size: var(--text-l); font-weight: 600; }
+.cardsheet-form { display: flex; flex-direction: column; gap: var(--space-2); }
+.cardsheet-label { font-weight: 700; }
+.cardsheet-input {
+  min-height: var(--tap); padding: 0 var(--space-3); font: inherit; color: var(--ink);
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface);
+}
+.cardsheet-buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-2); }
+.cardsheet-buttons .btn { flex: 1 1 140px; }
+.cardsheet-error { margin: 0; font-weight: 600; }

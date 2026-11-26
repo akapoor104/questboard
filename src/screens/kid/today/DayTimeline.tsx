@@ -3,6 +3,7 @@ import type { Card } from '../../../api/types.ts';
 import type { Categories } from '../../../app/useCategories.ts';
 import { CardTile } from '../../../components/CardTile.tsx';
 import { layoutDay } from '../../../lib/board.ts';
+import type { CardAction } from '../../../lib/cardActions.ts';
 import { formatClock, minutesInZone } from '../../../lib/dates.ts';
 import { hourLabel, hourRows, timedBox } from '../../../lib/today.ts';
 import './DayTimeline.css';
@@ -14,6 +15,8 @@ interface Props {
   dayEndMin: number;
   cats: Categories;
   timeZone: string;
+  /** Opens the card sheet, or one of its forms. */
+  onOpen: (card: Card, start?: CardAction) => void;
 }
 
 /** Minutes as a length on the timeline: 15 minutes = var(--slot). */
@@ -32,7 +35,7 @@ function useNowMinute(timeZone: string): number {
 }
 
 /** Today: the any-time strip, then the day from start to end with timed cards placed side by side. */
-export function DayTimeline({ cards, dayStartMin, dayEndMin, cats, timeZone }: Props) {
+export function DayTimeline({ cards, dayStartMin, dayEndMin, cats, timeZone, onOpen }: Props) {
   const { anytime, timed } = layoutDay(cards);
   const now = useNowMinute(timeZone);
   const span = Math.max(dayEndMin - dayStartMin, 15);
@@ -43,7 +46,10 @@ export function DayTimeline({ cards, dayStartMin, dayEndMin, cats, timeZone }: P
   const tile = (card: Card, variant: 'row' | 'timed') => (
     <CardTile
       card={card} category={cats.byId.get(card.category_id)} colorClass={cats.colorClass(card.category_id)}
-      variant={variant} timeZone={timeZone}
+      variant={variant} timeZone={timeZone} onOpen={() => onOpen(card)}
+      actions={card.doing_since !== null && card.status === 'open' ? (
+        <button type="button" className="btn btn-small" onClick={() => onOpen(card, 'resolve')}>How did it go?</button>
+      ) : undefined}
     />
   );
 

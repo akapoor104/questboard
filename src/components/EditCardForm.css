@@ -1,0 +1,12 @@
+/* EditCardForm: a card's title, category, minutes and details. */
+.editcard { display: flex; flex-direction: column; gap: var(--space-3); }
+.editcard-field { display: flex; flex-direction: column; gap: var(--space-1); }
+.editcard-field label { font-weight: 700; }
+.editcard-field label .muted { font-weight: 400; }
+.editcard-field input, .editcard-field select, .editcard-field textarea {
+  min-height: var(--tap); padding: var(--space-2) var(--space-3); font: inherit; color: var(--ink);
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface);
+}
+.editcard-field [aria-invalid='true'] { border-width: 2px; border-color: var(--ink); }
+.editcard-hint { font-size: var(--text-s); color: var(--ink-2); }
+.editcard-buttons { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-3); }

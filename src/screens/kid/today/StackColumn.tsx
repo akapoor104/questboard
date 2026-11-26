@@ -3,6 +3,7 @@ import type { Card } from '../../../api/types.ts';
 import type { Categories } from '../../../app/useCategories.ts';
 import { CardTile } from '../../../components/CardTile.tsx';
 import { Icon } from '../../../components/Icon.tsx';
+import type { CardAction } from '../../../lib/cardActions.ts';
 import { cardCount, splitPool, stackGroups } from '../../../lib/today.ts';
 import './StackColumn.css';
 
@@ -12,17 +13,24 @@ interface Props {
   week: string;
   cats: Categories;
   timeZone: string;
+  /** Opens the card sheet, or one of its forms. */
+  onOpen: (card: Card, start?: CardAction) => void;
+  /** "To today", straight from the stack. */
+  onToToday: (card: Card) => void;
+  /** A change is being saved. */
+  busy: boolean;
 }
 
-/** This week's stack, and anything left in an earlier week's stack. "To today" works from T05. */
-export function StackColumn({ pool, week, cats, timeZone }: Props) {
+/** This week's stack, and anything left in an earlier week's stack. */
+export function StackColumn({ pool, week, cats, timeZone, onOpen, onToToday, busy }: Props) {
   const { current, older } = splitPool(pool, week);
   const tiles = (cards: Card[], label: string) => stackGroups(cards).map(({ card, more }) => (
     <li key={card.id}>
       <CardTile
         card={card} category={cats.byId.get(card.category_id)} colorClass={cats.colorClass(card.category_id)}
         variant="full" timeZone={timeZone} extra={more > 0 ? `${more} more ${label}` : undefined}
-        actions={<button type="button" className="btn btn-small">To today</button>}
+        onOpen={() => onOpen(card)}
+        actions={<button type="button" className="btn btn-small" disabled={busy} onClick={() => onToToday(card)}>To today</button>}
       />
     </li>
   ));

@@ -1,0 +1,24 @@
+/* ResolveDialog: "How did it go?" (design/screens/resolve.png). */
+.resolve-sub { margin: calc(-1 * var(--space-2)) 0 0; color: var(--ink-2); font-size: var(--text-l); }
+.resolve-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-3) var(--space-4); border-radius: var(--radius-m); background: var(--cat-tint); }
+.resolve-card .card-meta { flex-wrap: wrap; font-size: var(--text-s); }
+.resolve-when { margin-left: auto; }
+.resolve-title { margin: 0; font-size: var(--text-l); font-weight: 600; overflow-wrap: anywhere; }
+.resolve-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.resolve-label { font-size: var(--text-l); font-weight: 700; padding: 0; }
+.resolve-label .muted { font-weight: 400; }
+.resolve-input {
+  min-height: var(--tap); padding: 0 var(--space-3); font: inherit; font-size: var(--text-l); color: var(--ink);
+  border: 1px solid var(--ink-3); border-radius: var(--radius-m); background: var(--surface);
+}
+.resolve-rest { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.resolve-rest legend { margin-bottom: var(--space-2); }
+.resolve-option {
+  min-height: 52px; display: flex; align-items: center; gap: var(--space-3); padding: 0 var(--space-4);
+  border: 1px solid var(--line); border-radius: var(--radius-m); font-size: var(--text-l); font-weight: 600; cursor: pointer;
+}
+.resolve-option:has(input:checked) { border: 2px solid var(--ink); }
+.resolve-option input { width: 20px; height: 20px; accent-color: var(--ink); margin: 0; }
+.resolve-place { padding: var(--space-3) 0 0 var(--space-2); }
+.resolve-error { margin: 0; color: var(--ink); font-weight: 600; }
+.resolve-buttons { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-3); padding-top: var(--space-2); }
