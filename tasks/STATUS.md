@@ -30,6 +30,12 @@ One ticket per Claude Code session. Add a dated line under Notes for anything su
 - [x] T16 Drag and drop
 - [ ] T17 Nest Hub: calendar and spoken reminders (with a parent)
 
+## Repeating cards (after the trial; design in `docs/08-repeating-cards.md`)
+
+- [ ] T18 Repeating cards: the series in the backend (with a parent; changes sealed files, the parent reseals)
+- [ ] T19 Repeating cards: the Repeats field and the preview
+- [ ] T20 Repeating cards: see, change, skip and end a series
+
 ## Installed versions (filled in by T01)
 
 | Package | Version |
