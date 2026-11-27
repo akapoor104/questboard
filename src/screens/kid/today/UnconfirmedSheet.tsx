@@ -2,9 +2,11 @@ import { useState } from 'react';
 import type { Api } from '../../../api/client.ts';
 import type { Board, Card } from '../../../api/types.ts';
 import type { Categories } from '../../../app/useCategories.ts';
+import { useMarkDone } from '../../../app/useMarkDone.ts';
 import { CardTile } from '../../../components/CardTile.tsx';
 import { ResolveDialog } from '../../../components/ResolveDialog.tsx';
 import { Sheet } from '../../../components/Sheet.tsx';
+import { errorText } from '../../../app/errors.ts';
 import { formatLongDate } from '../../../lib/dates.ts';
 import './UnconfirmedSheet.css';
 
@@ -19,10 +21,11 @@ export interface UnconfirmedSheetProps {
   onClose: () => void;
 }
 
-/** Open cards on earlier days, by date, each with "How did it go?". */
+/** Open cards on earlier days, by date, each with "Done" and "How did it go?". */
 export function UnconfirmedSheet(props: UnconfirmedSheetProps) {
   const { board, api, role, reload, cats, settings, timeZone, onClose } = props;
   const [resolving, setResolving] = useState<string | null>(null);
+  const done = useMarkDone({ api, role, today: board.today, reload });
 
   const current = resolving ? board.unconfirmed.find((c) => c.id === resolving) : undefined;
   if (current) {
@@ -43,6 +46,7 @@ export function UnconfirmedSheet(props: UnconfirmedSheetProps) {
 
   return (
     <Sheet title="Cards that still need a percent" onClose={onClose}>
+      {done.error !== null && <p role="alert" className="unconfirmed-error">{errorText(done.error)}</p>}
       {byDate.size === 0 ? (
         <>
           <p className="unconfirmed-done">All sorted. Nice.</p>
@@ -59,9 +63,15 @@ export function UnconfirmedSheet(props: UnconfirmedSheetProps) {
                     card={c} category={cats.byId.get(c.category_id)} colorClass={cats.colorClass(c.category_id)}
                     variant="row" timeZone={timeZone} onOpen={() => setResolving(c.id)}
                     actions={
-                      <button type="button" className="btn btn-small btn-primary" onClick={() => setResolving(c.id)}>
-                        How did it go?
-                      </button>
+                      <>
+                        <button type="button" className="btn btn-small btn-primary" disabled={done.busy}
+                          onClick={() => void done.markDone(c)}>
+                          Done
+                        </button>
+                        <button type="button" className="btn btn-small" onClick={() => setResolving(c.id)}>
+                          How did it go?
+                        </button>
+                      </>
                     }
                   />
                 </li>

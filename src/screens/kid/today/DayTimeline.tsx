@@ -20,6 +20,10 @@ interface Props {
   timeZone: string;
   /** Opens the card sheet, or one of its forms. */
   onOpen: (card: Card, start?: CardAction) => void;
+  /** "Done" on the card that is doing now: 100 % in one tap. */
+  onDone: (card: Card) => void;
+  /** A change is on its way (disables "Done"). */
+  busy?: boolean;
   /** Drag and drop: the timeline is a drop target and today's cards can be dragged (T16). */
   drop?: CardDrop;
 }
@@ -40,7 +44,7 @@ function useNowMinute(timeZone: string): number {
 }
 
 /** Today: the any-time strip, then the day from start to end with timed cards placed side by side. */
-export function DayTimeline({ date, cards, dayStartMin, dayEndMin, cats, timeZone, onOpen, drop }: Props) {
+export function DayTimeline({ date, cards, dayStartMin, dayEndMin, cats, timeZone, onOpen, onDone, busy, drop }: Props) {
   const { anytime, timed } = layoutDay(cards);
   const now = useNowMinute(timeZone);
   const span = Math.max(dayEndMin - dayStartMin, 15);
@@ -53,7 +57,10 @@ export function DayTimeline({ date, cards, dayStartMin, dayEndMin, cats, timeZon
       card={card} category={cats.byId.get(card.category_id)} colorClass={cats.colorClass(card.category_id)}
       variant={variant} timeZone={timeZone} onOpen={() => onOpen(card)} drop={drop}
       actions={card.doing_since !== null && card.status === 'open' ? (
-        <button type="button" className="btn btn-small" onClick={() => onOpen(card, 'resolve')}>How did it go?</button>
+        <>
+          <button type="button" className="btn btn-small btn-primary" disabled={busy} onClick={() => onDone(card)}>Done</button>
+          <button type="button" className="btn btn-small dayline-howwent" onClick={() => onOpen(card, 'resolve')}>How did it go?</button>
+        </>
       ) : undefined}
     />
   );

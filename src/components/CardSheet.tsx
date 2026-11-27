@@ -4,6 +4,7 @@ import type { Board, Card, CardPatch } from '../api/types.ts';
 import { errorText } from '../app/errors.ts';
 import type { Categories } from '../app/useCategories.ts';
 import { useAction } from '../app/useLoad.ts';
+import { useMarkDone } from '../app/useMarkDone.ts';
 import { ACTION_LABEL, cardActions, whereText, type CardAction } from '../lib/cardActions.ts';
 import { formatClock, minutesInZone } from '../lib/dates.ts';
 import { pctText } from '../lib/today.ts';
@@ -49,7 +50,12 @@ export function CardSheet(props: CardSheetProps) {
   const { card, board, role, api, reload, onClose, cats, settings, timeZone, start, placeDays, stackWeek } = props;
   const id = useId();
   const toast = useToast();
-  const { run, busy, error, clearError } = useAction(reload);
+  const action = useAction(reload);
+  const done = useMarkDone({ api, role, today: board.today, reload });
+  const busy = action.busy || done.busy;
+  const error = action.error ?? done.error;
+  const { run } = action;
+  const clearError = () => { action.clearError(); done.clearError(); };
   const [view, setView] = useState<View>(() => viewFor(start));
   const [reason, setReason] = useState('');
   const category = cats.byId.get(card.category_id);
@@ -76,6 +82,7 @@ export function CardSheet(props: CardSheetProps) {
       case 'stop': return void change(() => api.stopCard(card.id));
       case 'to_today': return void change(() => api.placeCard(card.id, { place: 'day', date: board.today }), 'Moved to today.');
       case 'undo': return void change(() => api.reopenCard(card.id), 'Undone.');
+      case 'done': return void done.markDone(card).then((ok) => { if (ok) onClose(); });
       default: return show(viewFor(a));
     }
   };
@@ -171,7 +178,7 @@ export function CardSheet(props: CardSheetProps) {
             {actions.map((a) => (
               <button
                 key={a} type="button" disabled={busy}
-                className={`btn${a === 'resolve' || a === 'to_today' || a === 'give_time' ? ' btn-primary' : ''}`}
+                className={`btn${a === 'done' || a === 'to_today' || a === 'give_time' ? ' btn-primary' : ''}`}
                 onClick={() => press(a)}
               >
                 {ACTION_LABEL[a]}

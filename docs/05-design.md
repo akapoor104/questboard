@@ -160,14 +160,19 @@ Title = the card title. Shows category, time, minutes, details, kind. Buttons by
 
 | Card is | Buttons |
 |---|---|
-| Open, on today | `Start` (or `Stop` when doing), `How did it go?`, `Move`, `Edit` (his picks; parents always), `Drop it` or `Ask to drop` |
+| Open, on today | `Start` (or `Stop` when doing), `Done`, `How did it go?`, `Move`, `Edit` (his picks; parents always), `Drop it` or `Ask to drop` |
 | Open, on a later day | `Move`, `Edit`, `Drop it` or `Ask to drop` |
-| Open, on an earlier day | `How did it go?`, `Move` |
+| Open, on an earlier day | `Done`, `How did it go?`, `Move` |
 | Open, in the stack | `To today`, `Move`, `Edit`, `Drop it` or `Ask to drop` |
 | Open, in the tray | `Give it a time`, `Drop it` or `Ask to drop` |
 | Resolved, today or yesterday | the percent and note, and `Undo` |
 | Resolved, older | the percent and note only |
 | Drop requested | `Waiting for a parent to decide.` (no drop button) |
+
+`Done` is the main button: one tap records 100 % (no form, nothing left over) and shows the
+toast `Done. Nice work.` with an `Undo` button when he may still undo it (today's and
+yesterday's cards; parents always). The doing-now card on the timeline and each row of
+`Cards that still need a percent` show `Done` next to `How did it go?`.
 
 `Ask to drop` opens a small form: label `Why should it go? (optional)`, button `Ask a parent`.
 `Drop it` asks `Drop this card?` with `Drop it` / `Keep it`.

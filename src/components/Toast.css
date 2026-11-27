@@ -19,3 +19,13 @@
   border: none; background: transparent; color: var(--ink-2); cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center;
 }
+.toast-with-action {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding-right: var(--space-2);
+}
+.toast-action {
+  flex: none; min-width: var(--tap); min-height: var(--tap); padding: 0 var(--space-3);
+  border-radius: var(--radius-s); border: 2px solid var(--on-ink); background: transparent;
+  color: var(--on-ink); font: inherit; font-weight: 700; cursor: pointer;
+}
+.toast-action:focus-visible { outline: 3px solid var(--on-ink); outline-offset: 2px; }

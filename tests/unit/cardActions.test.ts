@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import type { Card } from '../../src/api/types.ts';
 import {
-  cardActions, dayName, placeDays, resolveText, roundUp5, suggestStart, whereText,
+  ACTION_LABEL, canUndo, cardActions, dayName, placeDays, resolveText, roundUp5, suggestStart, whereText,
 } from '../../src/lib/cardActions.ts';
 import { previewResolve } from '../../src/lib/board.ts';
 
@@ -19,12 +19,12 @@ const must = { kind: 'must' as const, created_by: 'parent' as const };
 const stack = { place: 'week' as const, date: null, week_start: TODAY };
 const tray = { place: 'tray' as const, date: null };
 
-test('open on today: start, how did it go, move, edit (his picks), drop or ask', () => {
-  assert.deepEqual(cardActions(card({}), TODAY, 'kid'), ['start', 'resolve', 'move', 'edit', 'drop']);
-  assert.deepEqual(cardActions(card(must), TODAY, 'kid'), ['start', 'resolve', 'move', 'ask_drop']);
+test('open on today: start, done, how did it go, move, edit (his picks), drop or ask', () => {
+  assert.deepEqual(cardActions(card({}), TODAY, 'kid'), ['start', 'done', 'resolve', 'move', 'edit', 'drop']);
+  assert.deepEqual(cardActions(card(must), TODAY, 'kid'), ['start', 'done', 'resolve', 'move', 'ask_drop']);
   assert.deepEqual(cardActions(card({ doing_since: '2026-12-21T17:45:00Z' }), TODAY, 'kid'),
-    ['stop', 'resolve', 'move', 'edit', 'drop']);
-  assert.deepEqual(cardActions(card(must), TODAY, 'parent'), ['start', 'resolve', 'move', 'edit', 'drop']);
+    ['stop', 'done', 'resolve', 'move', 'edit', 'drop']);
+  assert.deepEqual(cardActions(card(must), TODAY, 'parent'), ['start', 'done', 'resolve', 'move', 'edit', 'drop']);
 });
 
 test('open on a later day: move, edit (his picks), drop or ask', () => {
@@ -34,11 +34,11 @@ test('open on a later day: move, edit (his picks), drop or ask', () => {
   assert.deepEqual(cardActions(card({ ...later, ...must }), TODAY, 'parent'), ['move', 'edit', 'drop']);
 });
 
-test('open on an earlier day: how did it go and move (parents may also edit)', () => {
+test('open on an earlier day: done, how did it go and move (parents may also edit)', () => {
   const earlier = { date: '2026-12-19' };
-  assert.deepEqual(cardActions(card(earlier), TODAY, 'kid'), ['resolve', 'move']);
-  assert.deepEqual(cardActions(card({ ...earlier, ...must }), TODAY, 'kid'), ['resolve', 'move']);
-  assert.deepEqual(cardActions(card({ ...earlier, ...must }), TODAY, 'parent'), ['resolve', 'move', 'edit']);
+  assert.deepEqual(cardActions(card(earlier), TODAY, 'kid'), ['done', 'resolve', 'move']);
+  assert.deepEqual(cardActions(card({ ...earlier, ...must }), TODAY, 'kid'), ['done', 'resolve', 'move']);
+  assert.deepEqual(cardActions(card({ ...earlier, ...must }), TODAY, 'parent'), ['done', 'resolve', 'move', 'edit']);
 });
 
 test('open in the stack: to today, move, edit (his picks), drop or ask', () => {
@@ -63,7 +63,7 @@ test('resolved: undo for today and yesterday (him), any day (parents)', () => {
 
 test('drop requested: no drop or ask button; dropped: nothing', () => {
   const asked = { ...must, drop_requested_at: '2026-12-21T18:00:00Z' };
-  assert.deepEqual(cardActions(card(asked), TODAY, 'kid'), ['start', 'resolve', 'move']);
+  assert.deepEqual(cardActions(card(asked), TODAY, 'kid'), ['start', 'done', 'resolve', 'move']);
   assert.deepEqual(cardActions(card({ ...asked, ...tray }), TODAY, 'kid'), ['give_time']);
   assert.deepEqual(cardActions(card({ ...asked, ...tray }), TODAY, 'parent'), ['give_time', 'edit']);
   assert.deepEqual(cardActions(card({ status: 'dropped' }), TODAY, 'parent'), []);
@@ -116,4 +116,21 @@ test('suggestStart: from now on today, from the day start elsewhere, null when f
   assert.equal(suggestStart({ ...base, nowMin: 400, card: me, date: TODAY, dayCards: [] }), 480);
   // Nothing fits late in the evening.
   assert.equal(suggestStart({ ...base, nowMin: 1190, card: me, date: TODAY, dayCards: [] }), null);
+});
+
+test('done is one tap at 100 %, labelled Done, and only where how did it go is offered', () => {
+  assert.equal(ACTION_LABEL.done, 'Done');
+  for (const o of [{}, { date: '2026-12-19' }, { date: '2026-12-23' }, stack, tray, { status: 'resolved' as const, pct: 100 }]) {
+    for (const role of ['kid', 'parent'] as const) {
+      const a = cardActions(card(o), TODAY, role);
+      assert.equal(a.includes('done'), a.includes('resolve'));
+    }
+  }
+});
+
+test('canUndo: him for today and yesterday, a parent for any day', () => {
+  assert.equal(canUndo(card({}), TODAY, 'kid'), true);
+  assert.equal(canUndo(card({ date: '2026-12-20' }), TODAY, 'kid'), true);
+  assert.equal(canUndo(card({ date: '2026-12-19' }), TODAY, 'kid'), false);
+  assert.equal(canUndo(card({ date: '2026-12-01' }), TODAY, 'parent'), true);
 });

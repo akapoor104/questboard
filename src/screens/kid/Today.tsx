@@ -5,6 +5,7 @@ import { useTodayData } from '../../app/TodayProvider.tsx';
 import { useCategories } from '../../app/useCategories.ts';
 import { useCardDrop } from '../../app/useDrag.ts';
 import { useAction, useLoad } from '../../app/useLoad.ts';
+import { useMarkDone } from '../../app/useMarkDone.ts';
 import { ErrorPanel } from '../../components/ErrorPanel.tsx';
 import { usePageTitle } from '../../components/usePageTitle.ts';
 import { CardSheet } from '../../components/CardSheet.tsx';
@@ -53,11 +54,15 @@ export function Today() {
     await Promise.all([board.reload(), today.reload()]);
   };
   const quick = useAction(reload);
+  const done = useMarkDone({ api, role: 'kid', today: me.today, reload });
   // Drag and drop (T16): from the stack or the day onto a time on the timeline.
   const drop = useCardDrop({ api, role: 'kid', today: me.today, stackWeek: null, reload, toast });
   useEffect(() => {
     if (quick.error !== null) toast.showError(quick.error);
   }, [quick.error, toast]);
+  useEffect(() => {
+    if (done.error !== null) toast.showError(done.error);
+  }, [done.error, toast]);
 
   const loads = [board, today, cats.library];
   const reloadAll = () => { for (const l of loads) void l.reload(); };
@@ -119,7 +124,7 @@ export function Today() {
         <div className="today-day">
           <DayTimeline
             date={b.today} cards={todayCards} dayStartMin={me.day_start_min} dayEndMin={me.day_end_min} cats={cats} timeZone={me.timezone}
-            onOpen={openCard} drop={drop}
+            onOpen={openCard} onDone={(card) => void done.markDone(card)} busy={done.busy} drop={drop}
           />
         </div>
         <div className="today-side">

@@ -4,13 +4,14 @@ import type { Card } from '../api/types.ts';
 import { nextFreeSlot, previewResolve } from './board.ts';
 import { addDays, formatClock, formatDuration, weekdayName } from './dates.ts';
 
-export type CardAction = 'start' | 'stop' | 'resolve' | 'to_today' | 'move' | 'give_time'
+export type CardAction = 'start' | 'stop' | 'done' | 'resolve' | 'to_today' | 'move' | 'give_time'
   | 'edit' | 'drop' | 'ask_drop' | 'undo';
 
 /** The button text for each action (docs/05-design.md, "Card sheet"). */
 export const ACTION_LABEL: Record<CardAction, string> = {
   start: 'Start',
   stop: 'Stop',
+  done: 'Done',
   resolve: 'How did it go?',
   to_today: 'To today',
   move: 'Move',
@@ -26,8 +27,7 @@ export function cardActions(card: Card, today: string, role: 'kid' | 'parent'): 
   const parent = role === 'parent';
   if (card.status === 'dropped') return [];
   if (card.status === 'resolved') {
-    const recent = card.date !== null && card.date >= addDays(today, -1);
-    return parent || recent ? ['undo'] : [];
+    return canUndo(card, today, role) ? ['undo'] : [];
   }
 
   const canEdit = parent || card.kind === 'choice';
@@ -39,10 +39,18 @@ export function cardActions(card: Card, today: string, role: 'kid' | 'parent'): 
   if (card.place === 'week') return ['to_today', 'move', ...edit, ...dropAction];
   // On a day.
   if (card.date === null || card.date === today) {
-    return [card.doing_since !== null ? 'stop' : 'start', 'resolve', 'move', ...edit, ...dropAction];
+    return [card.doing_since !== null ? 'stop' : 'start', 'done', 'resolve', 'move', ...edit, ...dropAction];
   }
   if (card.date > today) return ['move', ...edit, ...dropAction];
-  return ['resolve', 'move', ...(parent ? ['edit' as const] : [])];
+  return ['done', 'resolve', 'move', ...(parent ? ['edit' as const] : [])];
+}
+
+/**
+ * Whether a card that was just resolved can be undone by this caller (the server's rule:
+ * him for today's and yesterday's cards, a parent for any). "Done" offers Undo only then.
+ */
+export function canUndo(card: Card, today: string, role: 'kid' | 'parent'): boolean {
+  return role === 'parent' || (card.date !== null && card.date >= addDays(today, -1));
 }
 
 /** The two preview sentences under the percent buttons. */

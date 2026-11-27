@@ -30,6 +30,8 @@
   .dayline-hourlabel, .dayline-nowlabel { width: 44px; }
   .dayline-lane { left: 50px; }
   .dayline-anylist { grid-template-columns: minmax(0, 1fr); }
+  /* Two buttons squeeze the doing-now card's title: keep Done; the card sheet has How did it go? */
+  .dayline-howwent { display: none; }
 }
 
 /* Drag and drop (T16): the timeline, while a card is dragged over it. */

@@ -4,24 +4,33 @@ import { Icon } from './Icon.tsx';
 import './Toast.css';
 
 export interface Toaster {
-  /** One line about a result. Disappears after 4 seconds. */
-  show(text: string): void;
+  /**
+   * One line about a result. Disappears after 4 seconds, or 8 with an action
+   * (one button, such as "Undo", that also closes the toast).
+   */
+  show(text: string, action?: ToastAction): void;
   /** errorText(err) in role="alert". Stays until dismissed. */
   showError(err: unknown): void;
+}
+
+export interface ToastAction {
+  label: string;
+  onPress: () => void;
 }
 
 const ToastContext = createContext<Toaster | null>(null);
 
 export function ToastProvider({ children }: { children: ReactNode }) {
-  const [note, setNote] = useState<{ text: string; n: number } | null>(null);
+  const [note, setNote] = useState<{ text: string; action?: ToastAction; n: number } | null>(null);
   const [problem, setProblem] = useState<string | null>(null);
 
-  const show = useCallback((text: string) => setNote((old) => ({ text, n: (old?.n ?? 0) + 1 })), []);
+  const show = useCallback(
+    (text: string, action?: ToastAction) => setNote((old) => ({ text, action, n: (old?.n ?? 0) + 1 })), []);
   const showError = useCallback((err: unknown) => setProblem(errorText(err)), []);
 
   useEffect(() => {
     if (!note) return;
-    const timer = window.setTimeout(() => setNote(null), 4000);
+    const timer = window.setTimeout(() => setNote(null), note.action ? 8000 : 4000);
     return () => window.clearTimeout(timer);
   }, [note]);
 
@@ -31,7 +40,18 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       {children}
       <div className="toast-area">
         <div aria-live="polite" className="toast-live">
-          {note && <p className="toast">{note.text}</p>}
+          {note && !note.action && <p className="toast">{note.text}</p>}
+          {note?.action && (
+            <div className="toast toast-with-action">
+              <span>{note.text}</span>
+              <button
+                type="button" className="toast-action"
+                onClick={() => { const a = note.action; setNote(null); a?.onPress(); }}
+              >
+                {note.action.label}
+              </button>
+            </div>
+          )}
         </div>
         {problem && (
           <div role="alert" className="toast toast-error">
